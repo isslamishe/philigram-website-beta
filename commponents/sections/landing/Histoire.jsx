@@ -11,7 +11,7 @@ export default function Section2() {
         <Image src={"/home/histoire-bg-rogne.png"} alt="" fill />
       </div>
       <div className="h-[80%] absolute bottom-0 z-10 min-w-[12rem] right-[-6%] md:right-0  w-[20vw]">
-        <Image src={"/home/histoire-bg2.png"} alt="" fill />
+        <Image src={"/home/Histoire-bg2.png"} alt="" fill />
       </div>
 
       {/* content  */}

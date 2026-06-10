@@ -10,7 +10,7 @@ export default function Races({ content }) {
   const { setCurrentNav } = useMainContext();
 
   return (
-    <div className="flex flex-col overflow-hidden justify-center items-center gap-[10vh]  bg-black  bg-no-repeat bg-cover bg-center relative w-screen min-h-screen">
+    <div className="flex flex-col overflow-hidden pt-[10vh] justify-center items-center gap-[10vh]  bg-black  bg-no-repeat bg-cover bg-center relative w-screen min-h-screen">
       {content.map((c) => (
         <div
           key={c.title}
