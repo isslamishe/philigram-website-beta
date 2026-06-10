@@ -18,7 +18,7 @@ export default function Reservez() {
         </div>
       </div>
       <div className=" w-[90%] md:w-1/2  h-full z-20  text-[#403E37]/90 gap-4 justify-center items-center md:items-start flex flex-col">
-        <span className=" text-[clamp(1rem,10vw,2rem)] md:text-[clamp(1rem,3vw,3rem)] font-serif72 font-bold md:font-light">
+        <span className="  text-center text-[clamp(1rem,10vw,2rem)] md:text-[clamp(1rem,3vw,3rem)] font-serif72 font-bold md:font-light">
           RÉSERVEZ VOTRE PLACE
         </span>
 
