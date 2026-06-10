@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Outfit } from "next/font/google";
+import NavBar from "@/commponents/layout/navbar";
+import Footer from "@/commponents/layout/footer";
+import { UserProvider } from "@/context/main.context";
 
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-outfit",
+});
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,7 +36,15 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body
+        className={`${outfit.className} min-h-full bg-black overflow-x-hidden flex flex-col`}
+      >
+        <UserProvider>
+          <NavBar />
+          {children}
+          <Footer />
+        </UserProvider>
+      </body>
     </html>
   );
 }
