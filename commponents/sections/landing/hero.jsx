@@ -3,7 +3,7 @@ import HeroBg from "@/commponents/layout/landing-bg";
 import Link from "next/link";
 export default function hero() {
   return (
-    <div className="flex flex-col  overflow-hidden gap-5  relative   w- h-screen items-center   justify-center ">
+    <div className="flex flex-col  overflow-hidden gap-5  relative   w-dvw h-dvh items-center   justify-center ">
       <HeroBg />
       <span
         className=" font-serif6 z-30 font-semibold   bg-[linear-gradient(90deg,#F3D69C_0%,#B39D72_34%,#D9BF8C_68%,#E5CA95_91%)]
