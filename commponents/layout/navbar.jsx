@@ -164,7 +164,7 @@ export default function NavBar() {
 
       <div className="md:flex gap-3.5 mr-[5vw] hidden justify-between w-1/8  items-center flex-row h-full ">
         <button className=" cursor-pointer relative h-7 w-7 3xl:w-14!  3xl:h-14!">
-          <Image alt="globe" fill src={"/Globe.svg"} className="text-white" />
+          <Image alt="globe" fill src={"/globe.svg"} className="text-white" />
         </button>
 
         <button className=" flex justify-center items-center  cursor-pointer relative h-10 3xl:h-22!  p-2  3xl:p-5! border border-gray-500 text-[clamp(0.8cqw,2vw,1.1cqw)]  lg:text-[clamp(0.8cqw,2vw,1.1cqw)]  3xl:text-[clamp(0.8cqw,2vw,1.2cqw)] font-sans outline-3 outline-gray-300/85 w-auto text-black bg-gray-300/85 ">
