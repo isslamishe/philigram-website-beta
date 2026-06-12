@@ -23,9 +23,10 @@ const nav = [
 ];
 
 export default function SideBar({ isOpen, setIsOpen }) {
-  const { currentNav, setCurrentNav } = useMainContext();
+  const { currentNav, setCurrentNav, currentSubNav, setCurrentSubNav } =
+    useMainContext();
 
-  const [chowSubNav, setChowSubNav] = useState(false);
+  const [showSubNav, setShowSubNav] = useState(false);
   const navsRef = useRef([]);
   const navMaineRef = useRef(null);
 
@@ -58,28 +59,25 @@ export default function SideBar({ isOpen, setIsOpen }) {
               {navi.subNav && (
                 <button
                   onClick={() => {
-                    if (chowSubNav === navi.name) {
-                      setChowSubNav("");
-                    } else {
-                      setChowSubNav(true);
-                    }
+                    setShowSubNav(!showSubNav);
                   }}
-                  className={`right-[5%]  top-1/2 -translate-y-1/2 text-[clamp(0.8rem,5vw,1rem)] duration-300 transition-all absolute ml-auto ${chowSubNav === navi.name ? "rotate-180" : "rotate-0"}`}
+                  className={`right-[5%]  top-1/2 -translate-y-1/2 text-[clamp(0.8rem,5vw,1rem)] duration-300 transition-all absolute ml-auto ${showSubNav === navi.name ? "rotate-180" : "rotate-0"}`}
                 >
                   ▼
                 </button>
               )}
             </div>
             <div
-              className={`flex flex-col w-[75%] overflow-hidden duration-300 transition-h ${chowSubNav === navi.name ? "h-[30vh]" : "h-0"} `}
+              className={`flex flex-col w-[75%] overflow-hidden duration-300 transition-h ${showSubNav && navi.subNav ? "h-[30vh]" : "h-0"} `}
             >
               {navi.subNav &&
                 navi?.subNav?.map((s) => (
                   <Link
                     key={navi.name + s.name}
                     href={s.direction}
-                    className="w-[80%] text-white/70 gap-1 h-[5vh]"
+                    className={`w-[80%] text-white/70 ${currentSubNav === s.name ? "border-b" : "border-0"} text-[clamp(0.8rem,5vw,1.1rem)] gap-1 h-auto`}
                     onClick={() => {
+                      setCurrentSubNav(s.name);
                       setIsOpen(false);
                     }}
                   >

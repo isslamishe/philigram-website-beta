@@ -5,21 +5,40 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-export default function Decouvrir({ className }) {
-  const discovers = [
-    {
-      content: "Le Monde a Changé à Jamais",
-      hoverContent: "Explore",
-      image: "/history/banner.png",
-      direction: "/races",
-    },
-    {
-      content: "Les Lois du Monde",
-      hoverContent: "Explore",
-      image: "/home/Gallery.png",
-      direction: "/races",
-    },
-  ];
+export default function Decouvrir({ className, type }) {
+  const discoversTypes = {
+    races: [
+      {
+        content: "Le Monde a Changé à Jamais",
+        hoverContent: "Explore",
+        image: "/history/banner.png",
+        direction: "/histoire",
+      },
+      {
+        content: "Les Lois du Monde",
+        hoverContent: "Explore",
+        image: "/home/Gallery.png",
+        direction: "/",
+      },
+    ],
+
+    history: [
+      {
+        content: "LES PEUPLES D'ASCENDIA",
+        hoverContent: "Explore",
+        image: "/races/Hero-bg.png",
+        direction: "/races",
+      },
+      {
+        content: "Les Lois du Monde",
+        hoverContent: "Explore",
+        image: "/home/Gallery.png",
+        direction: "/",
+      },
+    ],
+  };
+
+  const discovers = discoversTypes[type];
 
   return (
     <div

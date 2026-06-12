@@ -57,7 +57,7 @@ export default function ESM() {
           {/*image icon */}
           <div className=" w-[80%]  md:w-[40%] h-[40%] flex justify-center items-center">
             <div className="h-[60vh] w-[40vh] z-20  relative">
-              <div className="bg-primary blur-3xl opacity-40 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[120%] h-[120%] " />
+              <div className="bg-primary blur-[100px] opacity-35 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[120%] h-[120%] " />
               <Image className="" alt="dda" fill src={p.bg} />{" "}
             </div>
           </div>

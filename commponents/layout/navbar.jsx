@@ -24,8 +24,15 @@ const nav = [
 ];
 
 export default function NavBar() {
-  const { currentNav, setCurrentNav, isOpen, setIsOpen } = useMainContext();
-  const [currentSubNav, setCurrentSubNav] = useState("");
+  const {
+    currentNav,
+    setCurrentNav,
+    isOpen,
+    setIsOpen,
+    currentSubNav,
+    setCurrentSubNav,
+  } = useMainContext();
+
   const [showSubNav, setShowSubNav] = useState(false);
 
   const navsRef = useRef([]);
@@ -50,6 +57,7 @@ export default function NavBar() {
         }
       }
     };
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -93,6 +101,10 @@ export default function NavBar() {
       window.removeEventListener("resize", checkScreenSize);
     };
   }, []);
+
+  useEffect(() => {
+    console.log(currentSubNav);
+  }, [currentSubNav]);
 
   return (
     <div
@@ -167,7 +179,7 @@ export default function NavBar() {
           <Image alt="globe" fill src={"/globe.svg"} className="text-white" />
         </button>
 
-        <button className=" flex justify-center items-center  cursor-pointer relative h-10 3xl:h-22!  p-2  3xl:p-5! border border-gray-500 text-[clamp(0.8cqw,2vw,1.1cqw)]  lg:text-[clamp(0.8cqw,2vw,1.1cqw)]  3xl:text-[clamp(0.8cqw,2vw,1.2cqw)] font-sans outline-3 outline-gray-300/85 w-auto text-black bg-gray-300/85 ">
+        <button className=" flex justify-center items-center  cursor-pointer relative h-10 3xl:h-22!  p-2  3xl:p-5! border border-gray-500 text-[clamp(0.8cqw,2vw,1cqw)]  lg:text-[clamp(0.8cqw,2vw,1.1cqw)]  3xl:text-[clamp(0.8cqw,2vw,1.2cqw)] font-sans outline-3 outline-gray-300/85 w-full text-black bg-gray-300/85 ">
           Pre-inscription
         </button>
       </div>

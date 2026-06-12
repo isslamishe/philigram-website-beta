@@ -7,10 +7,11 @@ import HistoireSections from "@/commponents/sections/histoire/histoire.sections.
 import { useMainContext } from "@/context/main.context";
 
 export default function Races() {
-  const { setCurrentNav } = useMainContext();
+  const { setCurrentNav, setCurrentSubNav } = useMainContext();
 
   useEffect(() => {
     setCurrentNav("L'Histoire");
+    setCurrentSubNav("");
   }, []);
 
   return (

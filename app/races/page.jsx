@@ -7,10 +7,11 @@ import ShowCase from "@/commponents/sections/races/races.showcase.jsx";
 import { useMainContext } from "@/context/main.context";
 
 export default function Races() {
-  const { setCurrentNav } = useMainContext();
+  const { setCurrentNav, setCurrentSubNav } = useMainContext();
 
   useEffect(() => {
     setCurrentNav("Les Races");
+    setCurrentSubNav("");
   }, []);
 
   return (

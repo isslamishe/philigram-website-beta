@@ -14,11 +14,11 @@ export default function Races({ content }) {
       {content.map((c) => (
         <div
           key={c.title}
-          className="w-[60%] gap-[6vh]   flex flex-col items-center justify-center min-h-[70vh] h-auto md:min-h-[75vh] z-30 "
+          className=" w-[85%] md:w-[60%] gap-[6vh]   flex flex-col items-center justify-center min-h-[70vh] h-auto md:min-h-[75vh] z-30 "
         >
-          <div className="font-serif72  h-[7vh] flex justify-center flex-col items-center  relative text-[clamp(0.9rem,3vw,1.9rem)]">
+          <div className="font-serif72  h-[7vh] flex justify-center flex-col items-center  relative  text-[clamp(0.9rem,5vw,3rem)] md:text-[clamp(0.9rem,3vw,1.9rem)]">
             <span>{c.title}</span>
-            <div className="relative  mx-auto h-1/4 w-2/3 ">
+            <div className="relative  mx-auto h-1/4 w-[40vw] md:w-[18vw] ">
               {" "}
               <Image
                 className="bottom-0"

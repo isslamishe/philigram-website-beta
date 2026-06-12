@@ -16,12 +16,12 @@ export default function Section2() {
       <div className="absolute inset-0 bg-gradient-to-b   from-[#000000]/75 to-black z-25" />
 
       {/* races image  */}
-      <div className="w-full scale-95 -bottom-[10%] max-h-[150vh] grayscale-100 z-20 absolute  h-[100%]">
+      <div className="w-full md:flex-row hidden scale-95 -bottom-[10%] max-h-[150vh] grayscale-100 z-20 absolute  h-[100%]">
         <Image fill alt="" src={"/races/bg-races.png"} />
       </div>
 
       {/* bg image  */}
-      <div className="w-full scale-130 grayscale-100 absolute z-10 max-h-[110vh]  h-[100%]">
+      <div className="w-full scale-130 grayscale-100 absolute z-10 max-h-full  lg:max-h-[110vh]  h-[100%]">
         <Image fill alt="" src={"/races/race-bg.png"} />
       </div>
 
@@ -61,12 +61,32 @@ export default function Section2() {
 
       {/*races cards */}
 
-      <div className="z-30 flex flex-col mb-[5vh] lg:flex-row p-[1vh]  bg-gradient-to-b   from-transparent to-black  justify-evenly items-center h-auto lg:h-[50vh] w-full">
+      <div className="z-30 hidden lg:flex  mb-[5vh] flex-row p-[1vh]  bg-gradient-to-b   from-transparent to-black  justify-evenly items-center h-auto lg:h-[50vh] w-full">
         {races.map((race) => (
           <Link
             href={race.diraction}
             key={race.name}
             className=" w-[50%] h-[40vh] lg:h-[95%] lg:w-[15%] race-card overflow-hidden relative flex justify-center items-end  bg-black border-3 border-primary"
+          >
+            <Image className="race-image" fill alt="" src={race.image} />
+
+            <span className=" w-full text-primary text-[clamp(1rem,3vw,1.4rem)] font-serif72 border-t-3 border-primary flex justify-center items-center z-20 bg-black/90 h-[20%] text-center">
+              {race.name.split("Les")[1]}
+            </span>
+          </Link>
+        ))}
+      </div>
+
+      <div className="z-30 grid grid-cols-2 gap-y-15 justify-items-center  gap-3 lg:hidden flex-col mb-[5vh] lg:flex-row p-[1vh]  bg-gradient-to-b   from-transparent to-black  justify-evenly items-center h-auto lg:h-[50vh] w-full">
+        {races.map((race, index) => (
+          <Link
+            href={race.diraction}
+            key={race.name}
+            className={` w-[45vw] md:w-[32vw] max-w-[45vw] h-[40vh] race-card overflow-hidden relative flex justify-center items-end bg-black border-3 border-primary ${
+              index === races.length - 1 && races.length % 2 !== 0
+                ? "col-span-2 justify-self-center"
+                : ""
+            }`}
           >
             <Image className="race-image" fill alt="" src={race.image} />
 

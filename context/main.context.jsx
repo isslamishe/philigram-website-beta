@@ -8,10 +8,18 @@ export function UserProvider({ children }) {
   const [name, setName] = useState("Guest");
   const [currentNav, setCurrentNav] = useState("Guest");
   const [isOpen, setIsOpen] = useState(false);
+  const [currentSubNav, setCurrentSubNav] = useState("");
 
   return (
     <UserContext.Provider
-      value={{ currentNav, setCurrentNav, isOpen, setIsOpen }}
+      value={{
+        currentNav,
+        setCurrentNav,
+        isOpen,
+        setIsOpen,
+        currentSubNav,
+        setCurrentSubNav,
+      }}
     >
       {children}
     </UserContext.Provider>

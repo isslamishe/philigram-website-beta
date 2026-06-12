@@ -13,10 +13,14 @@ import { useMainContext } from "@/context/main.context";
 import { useEffect } from "react";
 
 export default function Home() {
-  const { setCurrentNav, isOpen } = useMainContext();
+  const { setCurrentNav, isOpen, setCurrentSubNav } = useMainContext();
 
   useEffect(() => {
     setCurrentNav("Accueil");
+  }, []);
+
+  useEffect(() => {
+    setCurrentSubNav("");
   }, []);
 
   return (

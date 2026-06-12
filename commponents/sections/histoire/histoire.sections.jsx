@@ -193,6 +193,7 @@ Au moment où la Fracture engloutissait les villes, Manelle déploya une protect
       </div>
 
       <Decouvrir
+        type={"history"}
         className={
           "bg-linear-to-b from-transparent border-white/0 border mb-0 to-black"
         }
