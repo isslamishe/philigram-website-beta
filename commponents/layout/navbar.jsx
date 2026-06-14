@@ -109,7 +109,7 @@ export default function NavBar() {
   return (
     <div
       ref={navMaineRef}
-      className={`flex flex-row fixed z-50 h-[10vh] top-0 w-full items-center justify-center    ${isOpen ? "bg-[#403E37]" : "bg-transparent"}`}
+      className={`flex flex-row fixed z-50 duration-500 transition-colors h-[10vh] top-0 w-full items-center justify-center    ${isOpen ? "bg-[#403E37]" : "bg-transparent"}`}
     >
       <span
         className=" ml-[5vw] bg-[linear-gradient(90deg,#F3D69C_0%,#B39D72_34%,#D9BF8C_68%,#E5CA95_91%)]
@@ -179,7 +179,7 @@ export default function NavBar() {
           <Image alt="globe" fill src={"/globe.svg"} className="text-white" />
         </button>
 
-        <button className=" flex justify-center items-center  cursor-pointer relative h-10 3xl:h-22!  p-2  3xl:p-5! border border-gray-500 text-[clamp(0.8cqw,2vw,1cqw)]  lg:text-[clamp(0.8cqw,2vw,1.1cqw)]  3xl:text-[clamp(0.8cqw,2vw,1.2cqw)] font-sans outline-3 outline-gray-300/85 w-full text-black bg-gray-300/85 ">
+        <button className=" flex justify-center items-center  cursor-pointer relative h-10 3xl:h-22!  p-2  3xl:p-5! border hover:bg-gray-300/100 duration-300 transition-all border-gray-500 text-[clamp(0.8cqw,2vw,1cqw)]  lg:text-[clamp(0.8cqw,2vw,1.1cqw)]  3xl:text-[clamp(0.8cqw,2vw,1.2cqw)] font-sans outline-3 outline-gray-300/85 w-full text-black bg-gray-300/85 ">
           Pre-inscription
         </button>
       </div>

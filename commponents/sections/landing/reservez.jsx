@@ -18,7 +18,7 @@ export default function Reservez() {
         </div>
       </div>
       <div className=" w-[90%] md:w-1/2  h-full z-20  text-[#403E37]/90 gap-4 justify-center items-center md:items-start flex flex-col">
-        <span className="  text-center text-[clamp(1rem,10vw,2rem)] md:text-[clamp(1rem,3vw,3rem)] font-serif72 font-bold md:font-light">
+        <span className="  text-center text-[clamp(1rem,10vw,2rem)] md:text-[clamp(1rem,3vw,3rem)] font-serif72 font-bold md:font-bold">
           RÉSERVEZ VOTRE PLACE
         </span>
 
@@ -28,10 +28,14 @@ export default function Reservez() {
         </span>
 
         <Link
-          className="bg-primary mt-0 md:text-[#403E37]/90 text-white md:mt-[7vh] text-[clamp(1rem,2vw,1.3rem)] border border-white/30 outline-[0.5vw] outline-primary font-semibold flex justify-center text-center items-center px-[10vw] py-[2.5vh] md:px-[1.7vw] md:py-[1.2vw]"
-          href={"/"}
+          href={""}
+          className="relative border border-primary-dark outline-2 outline-primary cursor-pointer overflow-hidden p-5 bg-primary"
         >
-          PRÉ-INSCRIPTION
+          <span className="absolute inset-0 opacity-0 transition-opacity duration-500 hover:opacity-90 outline-2 outline-primary-light bg-[linear-gradient(90deg,#B39D72_0%,#F3D69C_44%,#D9BF8C_68%,#E5CA95_91%)]"></span>
+
+          <span className="relative z-10 pointer-events-none text-[#403E37] font-bold">
+            PRÉ-INSCRIPTION
+          </span>
         </Link>
       </div>
     </div>

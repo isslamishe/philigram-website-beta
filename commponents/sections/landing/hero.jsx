@@ -24,8 +24,12 @@ export default function hero() {
         </span>
       </div>
 
-      <button className="z-30 cursor-pointer text-[#403E37] 3xl:text-[clamp(1rem,10vw,2.5rem)]! 3xl:p-10  font-bold mt-10  p-5  bg-primary ">
-        PRÉ-INSCRIPTION
+      <button className="relative border border-primary-dark outline-2 outline-primary cursor-pointer overflow-hidden p-5 bg-primary">
+        <span className="absolute inset-0 opacity-0 transition-opacity duration-500 hover:opacity-90 outline-2 outline-primary-light bg-[linear-gradient(90deg,#B39D72_0%,#F3D69C_44%,#D9BF8C_68%,#E5CA95_91%)]"></span>
+
+        <span className="relative z-10 pointer-events-none text-[#403E37] font-bold">
+          PRÉ-INSCRIPTION
+        </span>
       </button>
 
       <Link
