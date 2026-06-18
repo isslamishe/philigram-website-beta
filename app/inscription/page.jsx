@@ -8,10 +8,17 @@ import { useMainContext } from "@/context/main.context";
 export default function Inscription() {
   const { setCurrentNav, setCurrentSubNav } = useMainContext();
   const [inscriptionConfirmed, setInscriptionConfirmed] = useState(false);
-
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     setCurrentNav("inscription");
     setCurrentSubNav("");
+  }, []);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
   }, []);
 
   return (
@@ -19,18 +26,12 @@ export default function Inscription() {
       {/*bg image */}
 
       <div className=" absolute scale-100 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 w-[100%] h-[100%]">
-        {" "}
         <Image
+          src={isMobile ? "/inscerption/bg-mobile.png" : "/inscerption/Bg.jpg"}
           fill
-          className="object-center md:flex hidden brightness-90 z-10 object-cover"
+          priority
+          className="object-cover"
           alt=""
-          src={"/inscerption/Bg.jpg"}
-        />
-        <Image
-          fill
-          className="object-center md:hidden flex brightness-90 z-10 object-fill"
-          alt=""
-          src={"/inscerption/bg-mobile.png"}
         />
       </div>
 
