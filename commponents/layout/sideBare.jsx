@@ -19,7 +19,7 @@ const nav = [
     ],
     direction: "/races",
   },
-  { name: "Gameplay", direction: "/" },
+  { name: "Gameplay", direction: "/gameplay" },
 ];
 
 export default function SideBar({ isOpen, setIsOpen }) {
@@ -90,9 +90,16 @@ export default function SideBar({ isOpen, setIsOpen }) {
       </div>
 
       <div className="flex    justify-between w-[90%]  items-center flex-row h-auto ">
-        <button className="  mt-auto mb-[5vh] flex justify-center items-center w-full cursor-pointer relative h-10 p-2 border border-gray-500 text-[clamp(0.8rem,5vw,2rem)] font-sans outline-3 outline-gray-300/85  text-black bg-gray-300/85 ">
+        <Link
+          onClick={() => {
+            setCurrentSubNav("inscerption");
+            setIsOpen(false);
+          }}
+          href={"/inscription"}
+          className="  mt-auto mb-[5vh] flex justify-center items-center w-full cursor-pointer relative h-10 p-2 border border-gray-500 text-[clamp(0.8rem,5vw,2rem)] font-sans outline-3 outline-gray-300/85  text-black bg-gray-300/85 "
+        >
           Pre-inscription
-        </button>
+        </Link>
       </div>
     </div>
   );

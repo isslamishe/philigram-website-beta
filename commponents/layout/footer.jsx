@@ -1,9 +1,9 @@
 "use client";
 import { icons } from "lucide-react";
 import Image from "next/image";
-
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const navs = [
@@ -20,6 +20,11 @@ export default function Footer() {
     { name: "Instagram", icon: "/contacts/Instagram.svg", direction: "/" },
     { name: "Facebook", icon: "/contacts/Facebook.svg", direction: "/" },
   ];
+
+  const pathname = usePathname();
+  const isInscription = pathname.includes("/inscription");
+
+  if (isInscription) return;
 
   return (
     <div className="flex flex-col bg-[#262522]   gap-0   bg-no-repeat bg-cover bg-center relative overflow-hidden  w-full h-[50vh]  items-start   justify-start ">

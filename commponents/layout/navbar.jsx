@@ -20,7 +20,7 @@ const nav = [
     ],
     direction: "/races",
   },
-  { name: "Gameplay", direction: "/" },
+  { name: "Gameplay", direction: "/gameplay" },
 ];
 
 export default function NavBar() {
@@ -179,9 +179,12 @@ export default function NavBar() {
           <Image alt="globe" fill src={"/globe.svg"} className="text-white" />
         </button>
 
-        <button className=" flex justify-center items-center  cursor-pointer relative h-10 3xl:h-22!  p-2  3xl:p-5! border hover:bg-gray-300/100 duration-300 transition-all border-gray-500 text-[clamp(0.8cqw,2vw,1cqw)]  lg:text-[clamp(0.8cqw,2vw,1.1cqw)]  3xl:text-[clamp(0.8cqw,2vw,1.2cqw)] font-sans outline-3 outline-gray-300/85 w-full text-black bg-gray-300/85 ">
+        <Link
+          href={"/inscription"}
+          className=" flex justify-center items-center  cursor-pointer relative h-10 3xl:h-22!  p-2  3xl:p-5! border hover:bg-gray-300/100 duration-300 transition-all border-gray-500 text-[clamp(0.8cqw,2vw,1cqw)]  lg:text-[clamp(0.8cqw,2vw,1.1cqw)]  3xl:text-[clamp(0.8cqw,2vw,1.2cqw)] font-sans outline-3 outline-gray-300/85 w-full text-black bg-gray-300/85 "
+        >
           Pre-inscription
-        </button>
+        </Link>
       </div>
 
       <button
