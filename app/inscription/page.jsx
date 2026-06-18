@@ -9,19 +9,20 @@ export default function Inscription() {
   const { setCurrentNav, setCurrentSubNav } = useMainContext();
   const [inscriptionConfirmed, setInscriptionConfirmed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     setCurrentNav("inscription");
     setCurrentSubNav("");
   }, []);
 
   return (
-    <div className="flex flex-col  bg-black gap-0 bg-no-repeat overflow-hidden bg-cover bg-center relative w-screen min-h-screen">
+    <div className="flex flex-col  bg-black gap-0 bg-no-repeat overflow-hidden bg-cover bg-center relative w-screen h-dvh">
       {/*bg image */}
 
       <div className=" absolute scale-100 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 w-[100%] h-[100%]">
-        <div className="absolute inset-0 z-10">
+        <div className="absolute h-dvh w-dvw inset-0 z-10">
           <Image
-            src="/inscerption/Bg.jpg"
+            src="/inscerption/Bg.png"
             fill
             priority
             sizes="100vw"
