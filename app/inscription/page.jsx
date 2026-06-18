@@ -14,25 +14,30 @@ export default function Inscription() {
     setCurrentSubNav("");
   }, []);
 
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-
   return (
     <div className="flex flex-col  bg-black gap-0 bg-no-repeat overflow-hidden bg-cover bg-center relative w-screen min-h-screen">
       {/*bg image */}
 
       <div className=" absolute scale-100 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 w-[100%] h-[100%]">
-        <Image
-          src={isMobile ? "/inscerption/bg-mobile.png" : "/inscerption/Bg.jpg"}
-          fill
-          priority
-          className="object-cover"
-          alt=""
-        />
+        <div className="absolute inset-0 z-10">
+          <Image
+            src="/inscerption/Bg.jpg"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover md:opacity-100 opacity-0"
+            alt=""
+          />
+
+          <Image
+            src="/inscerption/bg-mobile.png"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover md:opacity-0 opacity-100"
+            alt=""
+          />
+        </div>
       </div>
 
       {/*bg filter */}
