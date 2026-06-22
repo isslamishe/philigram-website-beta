@@ -18,7 +18,7 @@ export default function Decouvrir({ className, type }) {
         content: "Les Lois du Monde",
         hoverContent: "Explore",
         image: "/home/Gallery.png",
-        direction: "/",
+        direction: "/gameplay",
       },
     ],
 
@@ -33,7 +33,7 @@ export default function Decouvrir({ className, type }) {
         content: "Les Lois du Monde",
         hoverContent: "Explore",
         image: "/home/Gallery.png",
-        direction: "/",
+        direction: "/gameplay",
       },
     ],
   };

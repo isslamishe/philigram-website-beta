@@ -28,7 +28,7 @@ export default function Reservez() {
         </span>
 
         <Link
-          href={""}
+          href={"/inscription"}
           className="relative border border-primary-dark outline-2 outline-primary cursor-pointer overflow-hidden p-5 bg-primary"
         >
           <span className="absolute inset-0 opacity-0 transition-opacity duration-500 hover:opacity-90 outline-2 outline-primary-light bg-[linear-gradient(90deg,#B39D72_0%,#F3D69C_44%,#D9BF8C_68%,#E5CA95_91%)]"></span>

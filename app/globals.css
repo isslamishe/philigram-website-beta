@@ -13,16 +13,29 @@
 
 @font-face {
   font-family: "Serif72Beta-Black";
-  src: url("/fonts/Serif72Beta-Regular.otf") format("opentype");
+  src: url("/fonts/Serif72Beta-Regular.woff2") format("woff2");
 
   font-weight: 100;
+  font-style: normal;
   font-display: swap;
+}
+
+#preview-render {
+  font-family:
+    "Serif72Beta-Black",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 32px;
+  color: #373c44;
 }
 
 @theme {
   --color-primary: #b99a5d;
   --color-primary-light: #d2b47a;
-  --color-primary-dark: #927746;
+  --color-primary-dark: #a47b27;
 
   --color-secondary: #f3d69c;
   --color-secondary-dark: #d9bb7e;
@@ -47,6 +60,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .race-card .race-image {

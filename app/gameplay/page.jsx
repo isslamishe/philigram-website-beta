@@ -5,6 +5,9 @@ import { useEffect, useRef, useState } from "react";
 import Hero from "@/commponents/sections/gameplay/hero.jsx";
 import EMR from "@/commponents/sections/gameplay/exporation.movment.jsx";
 import MenuPrincipal from "@/commponents/sections/gameplay/menu.principal.jsx";
+import SystemeInventaire from "@/commponents/sections/gameplay/systeme.inventaire.jsx";
+import QuetesProgression from "@/commponents/sections/gameplay/quetes.progression.jsx";
+import AlchimieForge from "@/commponents/sections/gameplay/alchimie.forge.jsx";
 import { useMainContext } from "@/context/main.context";
 
 export default function Races() {
@@ -20,6 +23,9 @@ export default function Races() {
       <Hero />
       <EMR />
       <MenuPrincipal />
+      <SystemeInventaire />
+      <QuetesProgression />
+      <AlchimieForge />
     </div>
   );
 }
