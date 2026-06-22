@@ -12,11 +12,11 @@ export default function MenuPrincipal() {
   ];
 
   const icons = [
-    "/gameplay/alchemy.png",
-    "/gameplay/glossaire.png",
-    "/gameplay/forge.png",
+    "/gameplay/Alchemy.png",
+    "/gameplay/Glossaire.png",
+    "/gameplay/Forge.png",
     "/gameplay/inventoryIcon.png",
-    "/gameplay/store.png",
+    "/gameplay/Store.png",
   ];
 
   return (
