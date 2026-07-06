@@ -5,6 +5,7 @@ import { Outfit } from "next/font/google";
 import NavBar from "@/commponents/layout/navbar";
 import Footer from "@/commponents/layout/footer";
 import { UserProvider } from "@/context/main.context";
+import { Toaster } from "react-hot-toast";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -42,6 +43,17 @@ export default function RootLayout({
         <UserProvider>
           <NavBar />
           {children}
+          <Toaster
+            position="bottom-right"
+            toastOptions={{
+              duration: 4000,
+              style: {
+                background: "#1b1b1b",
+                color: "#fff",
+                border: "1px solid #B39D72",
+              },
+            }}
+          />
           <Footer />
         </UserProvider>
       </body>

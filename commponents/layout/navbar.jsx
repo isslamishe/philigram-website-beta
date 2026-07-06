@@ -37,6 +37,7 @@ export default function NavBar() {
 
   const navsRef = useRef([]);
   const navMaineRef = useRef(null);
+  const subNav = useRef([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,8 +104,24 @@ export default function NavBar() {
   }, []);
 
   useEffect(() => {
-    console.log(currentSubNav);
-  }, [currentSubNav]);
+    function handleClickOutside(event) {
+      if (!showSubNav) return;
+
+      const clickedInside = subNav.current.some(
+        (ref) => ref && ref.contains(event.target),
+      );
+
+      if (!clickedInside) {
+        setShowSubNav(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showSubNav]);
 
   return (
     <div
@@ -139,6 +156,7 @@ export default function NavBar() {
 
             {navi.subNav && (
               <button
+                ref={(el) => (subNav.current[0] = el)}
                 onClick={() => {
                   setShowSubNav(!showSubNav);
                 }}
@@ -149,7 +167,10 @@ export default function NavBar() {
             )}
 
             {navi.subNav && showSubNav && (
-              <div className="absolute top-[120%] w-[100%]  text-[clamp(0.7rem,5vw,0.9rem)] 3xl:text-[clamp(1rem,5vw,1.8rem)]! font-light bg-[#403E37] flex p-1.5 items-center text-start justify-evenly flex-col border-t-6 rounded-t-lg border-primary w-[10vw] left-0 h-[20vh]">
+              <div
+                ref={(el) => (subNav.current[1] = el)}
+                className="absolute top-[120%] w-[100%]  text-[clamp(0.7rem,5vw,0.9rem)] 3xl:text-[clamp(1rem,5vw,1.8rem)]! font-light bg-[#403E37] flex p-1.5 items-center text-start justify-evenly flex-col border-t-6 rounded-t-lg border-primary w-[10vw] left-0 h-[20vh]"
+              >
                 {navi.subNav.map((sn) => (
                   <Link
                     onClick={() => {

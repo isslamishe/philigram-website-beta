@@ -46,7 +46,7 @@ export default function Section2() {
 
       {/*titel */}
       <div className="w-full relative z-30 h-[10vh]">
-        <div className=" w-[35%] lg:w-[50%] left-0 absolute h-[50%] ">
+        <div className=" w-[35%] xl:w-[50%] lg:w-[30%] left-0 absolute h-[50%] ">
           <Image fill alt="" src={"/Mask group.svg"} />
         </div>
 
@@ -54,29 +54,49 @@ export default function Section2() {
           <span>Les Races</span>
         </div>
 
-        <div className="w-[35%] lg:w-[50%] right-0 rotate-180 absolute h-[50%] ">
+        <div className="w-[35%] xl:w-[50%] lg:w-[30%] right-0 rotate-180 absolute h-[50%] ">
           <Image fill alt="" src={"/Mask group.svg"} />
         </div>
       </div>
 
       {/*races cards */}
 
-      <div className="z-30 hidden lg:flex  mb-[5vh] flex-row p-[1vh]  bg-gradient-to-b   from-transparent to-black  justify-evenly items-center h-auto lg:h-[50vh] w-full">
+      <div className="z-30 hidden lg:flex flex-wrap justify-center gap-[2dvw] mb-[5vh] p-[1vh] bg-gradient-to-b from-transparent to-black w-full h-auto">
         {races.map((race) => (
           <Link
             href={race.diraction}
             key={race.name}
-            className=" w-[50%] h-[40vh] lg:h-[95%] lg:w-[15%] race-card overflow-hidden relative flex justify-center items-end  bg-black border-3 border-primary"
-          >
-            <Image className="race-image" fill alt="" src={race.image} />
+            className="
+        race-card
+        relative
+        flex justify-center items-end
+        overflow-hidden
+        bg-black
+        border-3 border-primary
 
-            <span className=" w-full text-primary text-[clamp(1rem,3vw,1.4rem)] font-serif72 border-t-3 border-primary flex justify-center items-center z-20 bg-black/90 h-[20%] text-center">
+        w-full
+        sm:w-[45%]
+        lg:w-[30%]
+        xl:w-[18%]
+
+        h-[50vh]
+      "
+          >
+            <Image
+              className="race-image object-center object-cover"
+              fill
+              alt=""
+              src={race.image}
+            />
+
+            <span className="z-20 flex h-[20%] w-full items-center justify-center border-t-3 border-primary bg-black/90 text-center font-serif72 text-primary text-[clamp(1rem,3vw,1.4rem)]">
               {race.name.split("Les")[1]}
             </span>
           </Link>
         ))}
       </div>
 
+      {/*mobile races  cards */}
       <div className="z-30 grid grid-cols-2 gap-y-15 justify-items-center  gap-3 lg:hidden flex-col mb-[5vh] lg:flex-row p-[1vh]  bg-gradient-to-b   from-transparent to-black  justify-evenly items-center h-auto lg:h-[50vh] w-full">
         {races.map((race, index) => (
           <Link
@@ -88,7 +108,12 @@ export default function Section2() {
                 : ""
             }`}
           >
-            <Image className="race-image" fill alt="" src={race.image} />
+            <Image
+              className="race-image object-top object-cover"
+              fill
+              alt=""
+              src={race.image}
+            />
 
             <span className=" w-full text-primary text-[clamp(1rem,3vw,1.4rem)] font-serif72 border-t-3 border-primary flex justify-center items-center z-20 bg-black/90 h-[20%] text-center">
               {race.name.split("Les")[1]}

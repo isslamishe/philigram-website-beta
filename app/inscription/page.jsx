@@ -2,8 +2,29 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-
+import toast from "react-hot-toast";
 import { useMainContext } from "@/context/main.context";
+
+const createPreInscription = async (data) => {
+  try {
+    const res = await fetch("https://api.ascendiarise.com/pre-inscription/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!res.ok) {
+      throw new Error(`Request failed: ${res.status}`);
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
 
 export default function Inscription() {
   const { setCurrentNav, setCurrentSubNav } = useMainContext();
@@ -82,13 +103,37 @@ function InscriptionForm({ confirmed, setConfirmed }) {
   const [canSubmit, setCanSubmit] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handelSubmit = () => {
-    if (!formData.email || !formData.name || !acceptTerms) return;
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async () => {
+    if (!formData.name.trim() || !formData.email.trim() || !acceptTerms) {
+      toast.error("Veuillez remplir tous les champs.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Adresse e-mail invalide.");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      await createPreInscription({
+        name: formData.name.trim(),
+        email: formData.email.trim().toLowerCase(),
+      });
+
+      toast.success("Préinscription réussie !");
+
       setConfirmed(true);
-    }, 3000); // Wait 2 seconds
+    } catch (err) {
+      toast.error(err.message || "Une erreur est survenue.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (confirmed) return null;
@@ -137,6 +182,7 @@ function InscriptionForm({ confirmed, setConfirmed }) {
           d’Ascendia Rise. Je pourrai me désinscrire à tout moment.
         </span>
       </div>
+      {error && <p className="w-[85%] text-sm text-red-500">{error}</p>}
       <button
         disabled={
           loading ||
@@ -144,7 +190,7 @@ function InscriptionForm({ confirmed, setConfirmed }) {
           !formData.name.trim() ||
           !acceptTerms
         }
-        onClick={handelSubmit}
+        onClick={handleSubmit}
         className="relative w-[50%] lg:w-[40%] h-[6.5dvh] shrink-0 text-[clamp(0.6rem,1vw,0.7rem)] text-center items-center justify-center flex border border-white/30 outline-2 outline-primary cursor-pointer disabled:cursor-not-allowed overflow-hidden disabled:opacity-70 duration-500 px-0 py-0 bg-primary"
       >
         <span
@@ -152,7 +198,7 @@ function InscriptionForm({ confirmed, setConfirmed }) {
         />
 
         <span className="relative z-10 pointer-events-none text-white font-medium">
-          PRÉ-INSCRIPTION
+          {loading ? "Envoi..." : "PRÉ-INSCRIPTION"}
         </span>
       </button>
     </div>
