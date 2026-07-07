@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HeroBg() {
   return (
-    <div className="flex pointer-events-none brightness-75  fixed bg-no-repeat bg-cover bg-center z-0 flex-col  top-0 flex-1 overflow-hidden  w-dvw h-dvh items-center   justify-center ">
+    <div className="flex pointer-events-none brightness-75  fixed bg-no-repeat bg-cover bg-center z-0 flex-col  top-0 flex-1 overflow-hidden min-h-screen w-dvw h-dvh items-center   justify-center ">
       <Image
         fill
         alt=""
