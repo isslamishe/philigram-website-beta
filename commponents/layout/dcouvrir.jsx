@@ -42,7 +42,7 @@ export default function Decouvrir({ className, type }) {
 
   return (
     <div
-      className={` flex flex-col z-20  gap-0 pt-[10vh]   mt-[10vh] bg-no-repeat border-[0.5px]  border-b-0 bg-cover bg-center relative overflow-hidden  w-screen h-screen lg:h-[75vh]  items-start   justify-start ${className}`}
+      className={` flex flex-col z-20  gap-0 pt-[10vh]   mt-[10vh] bg-no-repeat border-[0.5px]  border-b-0 bg-cover bg-center relative overflow-hidden  w-screen h-auto lg:h-[75vh]  items-start   justify-start ${className}`}
     >
       {/*titel */}
       <div className="w-full relative z-30 h-[10vh]">
@@ -64,7 +64,7 @@ export default function Decouvrir({ className, type }) {
           <Link
             href={d.direction}
             key={d.content}
-            className="h-full discover flex relative justify-center items-end border-2 border-primary w-[85%] md:w-[60%] lg:w-[40%]"
+            className="h-1/2 lg:h-full discover flex relative justify-center items-end border-2 border-primary w-[85%] md:w-[60%] lg:w-[40%]"
           >
             {" "}
             <Image className="z-10" fill alt="" src={d.image} />{" "}
