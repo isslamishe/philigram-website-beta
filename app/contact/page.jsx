@@ -7,7 +7,7 @@ import { useMainContext } from "@/lib/context/main.context";
 import { t } from "@/lib/i18n/translation";
 import emailjs from "@emailjs/browser";
 
-export default function Inscription() {
+export default function Contact() {
   const { setCurrentNav, setCurrentSubNav, language } = useMainContext();
   const [inscriptionConfirmed, setInscriptionConfirmed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -243,6 +243,7 @@ function Input({ placeholder, label, type, field, formData, setFormData }) {
 
 function TextArea({ placeholder, label, field, formData, setFormData }) {
   const TextriaRef = useRef(null);
+  const [textLength, setTextLength] = useState(0);
   return (
     <div className="w-full group h-[30%] md:h-[35%] gap-2 justify-center items-center flex flex-col">
       <label className="w-[85%] text-[clamp(0.7rem,1vw,0.9rem)] group-focus-within:text-primary transition-all duration-300 font-medium">
@@ -254,16 +255,7 @@ function TextArea({ placeholder, label, field, formData, setFormData }) {
           ref={TextriaRef}
           placeholder={placeholder}
           value={formData[field] || ""}
-          onChange={(e) => {
-            const words = e.target.value.trim();
-
-            if (words.length <= 500 || e.target.value === "") {
-              setFormData((prev) => ({
-                ...prev,
-                [field]: e.target.value,
-              }));
-            }
-          }}
+          onChange={(e) => setTextLength(e.target.value.length)}
           className="p-3 bg-[#F9F8F8] text-black/70 focus:outline-2
       text-[clamp(0.7rem,1vw,0.9rem)]
       outline-primary-light outline-0
@@ -273,7 +265,7 @@ function TextArea({ placeholder, label, field, formData, setFormData }) {
         />
 
         <span className="absolute bottom-2 right-10  text-[clamp(0.7rem,1vw,0.9rem)]  text-xs text-primary ">
-          {TextriaRef.current?.value.length} / 500
+          {textLength} / 500
         </span>
       </div>
     </div>

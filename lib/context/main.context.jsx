@@ -8,18 +8,14 @@ export function UserProvider({ children }) {
   const [currentNav, setCurrentNav] = useState("Accueil");
   const [isOpen, setIsOpen] = useState(false);
   const [currentSubNav, setCurrentSubNav] = useState("");
-  const [language, setLanguage] = useState("fr");
+  const [language, setLanguage] = useState(() => {
+    if (typeof window === "undefined") return "fr";
+    return window.localStorage.getItem("language") || "fr";
+  });
 
   useEffect(() => {
-    const storedLang = localStorage.getItem("language");
-
-    if (storedLang) {
-      setLanguage(storedLang);
-    } else {
-      localStorage.setItem("language", "fr");
-      setLanguage("fr");
-    }
-  }, []);
+    window.localStorage.setItem("language", language);
+  }, [language]);
 
   return (
     <UserContext.Provider
