@@ -4,9 +4,15 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Races from "../../../app/races/page";
 import Link from "next/link";
-import { races } from "@/data/races";
+import { getRaces } from "@/data/races.jsx";
+import { useMainContext } from "@/lib/context/main.context";
+import { t } from "@/lib/i18n/translation";
+
 export default function Section2() {
+  const { language } = useMainContext();
   const [currentPeuple, setCurrentPeuple] = useState(0);
+
+  const races = getRaces(language);
 
   const containerRef = useRef(null);
 
@@ -28,19 +34,11 @@ export default function Section2() {
       {/*content */}
       <div className="z-30 flex flex-col gap-[2vw] justify-center items-center h-[90vh] w-full">
         <span className=" w-[85%] md:w-[70%] h-[30%] font-serif72 text-center font-light text-[clamp(1rem,2vw,1.3rem)] md:text-[clamp(1rem,3vw,1.7rem)]">
-          Lorsque l'Innommable Cataclysme frappa leur monde, les cinq grandes
-          races d'Ascendia se rassemblèrent autour de leurs derniers bastions.
-          Unis dans le désespoir, ils cherchèrent refuge auprès de Manelle,
-          l'esprit de l'Arbre-Monde, qui les ancra à la Terre à travers la
-          Greffe.
+          {t("races.racesshowcase.paragraph1", language)}
         </span>
 
         <span className=" w-[85%] md:w-[70%] h-[30%] font-serif72 text-center font-light text-[clamp(1rem,2vw,1.3rem)] md:text-[clamp(1rem,3vw,1.7rem)]">
-          Aujourd'hui, ces peuples marchent parmi les ruines de l'ancienne
-          civilisation humaine, portant avec eux des millénaires de sagesse, de
-          pouvoir, et de mémoire. Chacun apporte ses dons uniques à ce nouveau
-          monde fusionné — mais aussi ses propres blessures, car le mana qui les
-          définissait autrefois se raréfie et devient instable.
+          {t("races.racesshowcase.paragraph2", language)}
         </span>
       </div>
 
@@ -51,7 +49,7 @@ export default function Section2() {
         </div>
 
         <div className="w-[50%] font-light text-[clamp(1rem,3vw,1.8rem)] font-serif72 text-primary flex justify-center items-center left-1/2 -translate-x-1/2 absolute h-[50%] ">
-          <span>Les Races</span>
+          <span>{t("races.racesshowcase.sectionTitle", language)}</span>
         </div>
 
         <div className="w-[35%] xl:w-[50%] lg:w-[30%] right-0 rotate-180 absolute h-[50%] ">
@@ -65,7 +63,7 @@ export default function Section2() {
         {races.map((race) => (
           <Link
             href={race.diraction}
-            key={race.name}
+            key={race.id ?? race.name}
             className="
         race-card
         relative
@@ -90,7 +88,7 @@ export default function Section2() {
             />
 
             <span className="z-20 flex h-[20%] w-full items-center justify-center border-t-3 border-primary bg-black/90 text-center font-serif72 text-primary text-[clamp(1rem,3vw,1.4rem)]">
-              {race.name.split("Les")[1]}
+              {race.name.split(" ")[1] || race.name}
             </span>
           </Link>
         ))}
@@ -101,7 +99,7 @@ export default function Section2() {
         {races.map((race, index) => (
           <Link
             href={race.diraction}
-            key={race.name}
+            key={race.id ?? race.name}
             className={` w-[45vw] md:w-[32vw] max-w-[45vw] h-[40vh] race-card overflow-hidden relative flex justify-center items-end bg-black border-3 border-primary ${
               index === races.length - 1 && races.length % 2 !== 0
                 ? "col-span-2 justify-self-center"

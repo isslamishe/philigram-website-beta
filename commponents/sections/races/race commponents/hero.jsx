@@ -4,10 +4,39 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Hero from "@/commponents/sections/races/hero.jsx";
 import ShowCase from "@/commponents/sections/races/races.showcase.jsx";
-import { useMainContext } from "@/context/main.context";
-
+import { useMainContext } from "@/lib/context/main.context";
 export default function Races({ race }) {
   const { setCurrentNav } = useMainContext();
+
+  const bgRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+      if (bgRef.current) {
+        if (scrollPercent > 50) {
+          bgRef.current.classList.add("opacity-0");
+          bgRef.current.classList.remove("opacity-100");
+        } else {
+          bgRef.current.classList.add("opacity-100");
+          bgRef.current.classList.remove("opacity-0");
+        }
+      }
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="flex flex-col overflow-hidden justify-end  bg-black gap-0 bg-no-repeat bg-cover bg-center relative w-screen min-h-screen">
@@ -16,8 +45,8 @@ export default function Races({ race }) {
 
       {/* bg image */}
       <div
-        style={{ backgroundImage: `url(${race.bg})` }}
-        className="flex absolute flex-col bg-fixed w-screen  brightness-100  bg-center scale-105 z-5  bg-black gap-0 bg-no-repeat bg-cover  top-0 -bottom-[20%]  min-h-screen"
+        ref={bgRef}
+        className="flex fixed flex-col left-1/2 -translate-x-1/2 bg-fixed w-screen  brightness-100  bg-center scale-105 z-5  bg-black gap-0 bg-no-repeat bg-cover  top-0 -bottom-[20%]  h-lvh"
       >
         <Image
           className="object-center object-cover"

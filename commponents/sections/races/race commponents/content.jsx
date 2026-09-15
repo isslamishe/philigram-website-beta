@@ -4,13 +4,12 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Hero from "@/commponents/sections/races/hero.jsx";
 import ShowCase from "@/commponents/sections/races/races.showcase.jsx";
-import { useMainContext } from "@/context/main.context";
-
+import { useMainContext } from "@/lib/context/main.context";
 export default function Races({ content }) {
   const { setCurrentNav } = useMainContext();
 
   return (
-    <div className="flex flex-col overflow-hidden pt-[10vh] justify-center items-center gap-[10vh]  bg-black  bg-no-repeat bg-cover bg-center relative w-screen min-h-screen">
+    <div className="flex flex-col z-30 overflow-hidden pt-[10vh] justify-center items-center gap-[10vh]  bg-black  bg-no-repeat bg-cover bg-center relative w-screen min-h-screen">
       {content.map((c) => (
         <div
           key={c.title}

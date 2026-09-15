@@ -3,66 +3,57 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Decouvrir from "@/commponents/layout/dcouvrir.jsx";
+import { useMainContext } from "@/lib/context/main.context";
+import { t } from "@/lib/i18n/translation";
 
-import { useMainContext } from "@/context/main.context";
-
-export default function Races() {
-  const { setCurrentNav } = useMainContext();
-
-  useEffect(() => {
-    setCurrentNav("Les Races");
-  }, []);
+export default function histoireSecios() {
+  const { setCurrentNav, language } = useMainContext();
 
   const epsodes = [
     {
-      titel: "L'Ascension de l'Arbre-Monde",
+      id: "episode1",
+      titel: t("histoire.histoiresections.episode1.title", language),
       description: [
-        `On racontait qu'Ascendia était un monde inépuisable : des vallées saturées de mana, des cités suspendues aux veines d'éther, des forêts où les saisons changeaient au rythme des chants, et des routes gardées par des créatures dont l'intelligence rivalisait avec celle des plus grands sages.
-Puis vint l'Innommable Cataclysme.
-`,
-        `Quelque chose — trop ancien, trop vaste, trop puissant — se dressa contre Ascendia. Personne n'en prononce le nom. Ceux qui l'ont vu n'en parlent qu'avec les yeux vides. En quelques cycles, des continents se fendirent, des océans bouillirent, et le mana lui-même commença à se corrompre, comme si le cœur du monde avait été blessé.`,
+        t("histoire.histoiresections.episode1.paragraph1", language),
+        t("histoire.histoiresections.episode1.paragraph2", language),
       ],
       image: "/history/sections/section1-img.png",
     },
     {
-      titel: "Les Derniers Bastions",
+      id: "episode2",
+      titel: t("histoire.histoiresections.episode2.title", language),
       description: [
-        `Dans le chaos, les peuples d'Ascendia se rassemblèrent autour de leurs derniers bastions : les Luminels, êtres de lumière pensante, tisseurs de runes et de lois invisibles ; les Varkhans, guerriers-corneilles au langage tranchant, archivistes des batailles et des serments ; les Sylvérides, gardiens des bois profonds, dont les racines portent mémoire ; les Aetherïns, navigateurs des courants de mana, capables de lire l'espace comme une carte vivante ; les Brumecrocs, créatures amphibies des marais, réputées pour leurs poisons et leurs diplomates étonnamment brillants.
-`,
-        `Mais même unis, ils n'avaient plus assez de force. Le mana se raréfiait là où il aurait dû abonder, et les créatures les plus nobles devenaient instables, comme si leur propre essence se retournait contre elles.`,
+        t("histoire.histoiresections.episode2.paragraph1", language),
+        t("histoire.histoiresections.episode2.paragraph2", language),
       ],
       image: "/history/sections/section2-img.png",
     },
     {
-      titel: "Le Dernier Refuge",
+      id: "episode3",
+      titel: t("histoire.histoiresections.episode3.title", language),
       description: [
-        `Alors, dans une ultime tentative, ils se tournèrent vers leur plus vieux refuge : l'Arbre-Monde. L'Arbre n'était pas seulement un arbre. C'était une conscience, une mémoire, un pilier entre les plans. Son esprit était vivant. Elle s'appelait Manelle.
-
-`,
-        `Lorsqu'on l'implora, Manelle répondit — non pas avec une voix ordinaire, mais avec une certitude gravée dans chaque esprit :
-« Je vous ancrerai à un monde voisin. Un monde vivant… mais vide de mana. La Terre. »`,
-        `La Terre était l'opposé d'Ascendia : stable, dense, matérielle, sans mana. Et c'est précisément ce manque qui en faisait un refuge possible… à condition que la greffe soit contrôlée.`,
+        t("histoire.histoiresections.episode3.paragraph1", language),
+        t("histoire.histoiresections.episode3.paragraph2", language),
+        t("histoire.histoiresections.episode3.paragraph3", language),
       ],
       image: "/history/sections/section3-img.png",
     },
     {
-      titel: "La Greffe",
+      id: "episode4",
+      titel: t("histoire.histoiresections.episode4.title", language),
       description: [
-        `La fusion ne fut ni un portail, ni une conquête. Elle fut une greffe.`,
-        `Guidée par Manelle, l'Arbre-Monde étendit ses racines au-delà des frontières du réel. Sur la Terre apparurent bientôt des pousses : dans des parcs, des friches, au pied des immeubles, le long des routes — parfois au cœur même des villes. Ces pousses commencèrent à diffuser le mana. Lentement d'abord. Puis de façon de plus en plus dense. Comme si la Terre apprenait à respirer une énergie qui n'avait jamais été la sienne.`,
-        ,
+        t("histoire.histoiresections.episode4.paragraph1", language),
+        t("histoire.histoiresections.episode4.paragraph2", language),
       ],
       image: "/history/sections/section4-img.png",
     },
     {
-      titel: "La Nuit de Fracture",
+      id: "episode5",
+      titel: t("histoire.histoiresections.episode5.title", language),
       description: [
-        `Lorsque la densité de mana atteignit un seuil critique, la Terre révéla sa fragilité. La majorité des bâtiments humains, conçus pour un monde sans magie, furent incapables de supporter cette nouvelle loi. Les structures se fissurèrent. Des quartiers s'effondrèrent. Les routes se déformèrent. Une destruction massive. Fulgurante.
-`,
-        `Pourtant… les vies furent toutes préservées.
-Au moment où la Fracture engloutissait les villes, Manelle déploya une protection impossible : elle enveloppa les êtres vivants, les écarta du chaos, les déplaça, les sauva. Le monde s'écroulait, mais personne ne mourait. Comme si l'esprit de l'Arbre-Monde avait choisi, en un seul geste, de sauver l'essentiel.
-`,
-        `Le prix fut immense : une civilisation brisée, et un monde qui ne reviendrait pas en arrière.`,
+        t("histoire.histoiresections.episode5.paragraph1", language),
+        t("histoire.histoiresections.episode5.paragraph2", language),
+        t("histoire.histoiresections.episode5.paragraph3", language),
       ],
       image: "/history/sections/section5-img.png",
     },
@@ -85,7 +76,7 @@ Au moment où la Fracture engloutissait les villes, Manelle déploya une protect
       {/* story sections */}
       {epsodes.map((epsode, idx) => (
         <div
-          key={epsode.titel}
+          key={epsode.id}
           className={`w-screen relative pt-[5vh]  flex justify-start items-center z-10 h-screen ${idx % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
         >
           <div className=" w-[100%] lg:w-[60%] gap-[2vh] flex flex-col justify-start items-center  h-[90%]">
@@ -99,8 +90,8 @@ Au moment où la Fracture engloutissait les villes, Manelle déploya une protect
               </div>
             </div>
             <div className=" w-[95%] md:w-[90%] font-light flex  flex-col justify-center gap-[2%] items-center text-center text-[clamp(1rem,5vw,1.2rem)] lg:text-[clamp(1rem,5vw,1.3rem)] 3xl:text-[clamp(1rem,5vw,2.2rem)]!">
-              {epsode.description.map((p) => (
-                <span key={p} className="  ">
+              {epsode.description.map((p, pIdx) => (
+                <span key={pIdx} className="  ">
                   {p}
                 </span>
               ))}
@@ -121,7 +112,7 @@ Au moment où la Fracture engloutissait les villes, Manelle déploya une protect
         <div className="w-full gap-[2vh] flex flex-col justify-start items-center  h-[90%]">
           <div className="relative flex justify-center  flex-col">
             <span className=" font-serif72 text-center text-[clamp(1rem,10vw,1.3rem)] md:text-[clamp(1rem,5vw,2rem)] lg:text-[clamp(1rem,5vw,2.2rem)] 3xl:text-[clamp(1rem,5vw,5rem)]!">
-              Un Jour, Un Seul Monde
+              {t("histoire.histoiresections.oneWorld.title", language)}
             </span>
 
             <div className="relative mx-auto  w-[40vw] md:w-[20vw] h-[2vh] md:h-[1vw]">
@@ -130,14 +121,7 @@ Au moment où la Fracture engloutissait les villes, Manelle déploya une protect
           </div>
           <div className="  w-[90%] font-light flex  flex-col justify-center gap-[2%] items-center text-center text-[clamp(1rem,5vw,1.2rem)] lg:text-[clamp(1rem,5vw,1.3rem)] 3xl:text-[clamp(1rem,5vw,2.2rem)]!">
             <span>
-              À partir de là, la fusion devint irréversible. Les poches
-              d'Ascendia se multiplièrent sur la Terre. Les frontières se
-              brouillèrent. Chaque pousse devint un point d'ancrage accélérant
-              le processus. Les deux mondes se superposèrent de plus en plus…
-              jusqu'à ce qu'un jour, il ne doive plus en rester qu'un. Mais si
-              Ascendia a fui quelque chose d'assez puissant pour presque le
-              détruire… la greffe n'est peut-être pas seulement une
-              échappatoire. Elle pourrait aussi être une trace.
+              {t("histoire.histoiresections.oneWorld.paragraph", language)}
             </span>
           </div>
         </div>
@@ -160,7 +144,7 @@ Au moment où la Fracture engloutissait les villes, Manelle déploya une protect
         <div className="w-full gap-[2vh] flex flex-col justify-start items-center  h-[90%]">
           <div className="relative flex justify-center  flex-col">
             <span className=" font-serif72 text-center text-[clamp(1rem,5vw,2.3rem)] 3xl:text-[clamp(1rem,5vw,5rem)]!">
-              Votre Éveil
+              {t("histoire.histoiresections.awakening.title", language)}
             </span>
 
             <div className="relative mx-auto  w-[40vw] md:w-[20vw] h-[2vh] md:h-[1vw]">
@@ -169,24 +153,7 @@ Au moment où la Fracture engloutissait les villes, Manelle déploya une protect
           </div>
           <div className="  w-[90%] font-light flex  flex-col justify-center gap-[2%] items-center text-center text-[clamp(1rem,5vw,1.2rem)] lg:text-[clamp(1rem,5vw,1.6rem)] 3xl:text-[clamp(1rem,5vw,2.2rem)]!">
             <span>
-              Vous incarnez un humain pris dans la Nuit de Fracture, sauvé —
-              comme tous les autres — par la volonté de Manelle. Mais lorsque
-              les pousses de l'Arbre-Monde commencent à diffuser le mana, une
-              réalité s'impose : les humains n'ont jamais été faits pour vivre
-              dans un monde magique… du moins, pas sans aide. Alors, Manelle met
-              en place un Système. Invisible. Instinctif. Presque naturel. Ce
-              Système guide les humains dans leur adaptation : il reconnaît
-              leurs actes, mesure leurs progrès, et transforme leur survie en
-              apprentissage. Chaque exploration, chaque affrontement, chaque
-              risque pris au contact du mana devient une source d'expérience. Et
-              à mesure que vous en accumulez, vous montez en niveau : votre
-              corps s'endurcit, vos réflexes s'affinent, votre résistance au
-              mana augmente. Guidé par les pousses de l'Arbre-Monde, attiré par
-              les zones où la fusion est la plus active, vous comprenez que vous
-              n'êtes pas seulement un survivant. Vous faites partie des premiers
-              humains capables de grandir dans ce nouveau monde… et peut-être,
-              d'influencer ce que deviendra la fusion lorsque la Terre et
-              Ascendia ne feront plus qu'un.
+              {t("histoire.histoiresections.awakening.paragraph", language)}
             </span>
           </div>
         </div>

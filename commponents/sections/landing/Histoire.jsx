@@ -1,8 +1,11 @@
 import Image from "next/image";
-
 import Link from "next/link";
+import { t } from "@/lib/i18n/translation"; // adjust path to your json file
+import { useMainContext } from "@/lib/context/main.context";
 
 export default function Section2() {
+  const { language } = useMainContext(); // replace with your actual languageuage source
+
   return (
     <div className="flex flex-col bg-white text-[#403E37] overflow-hidden gap-0  relative   w-screen h-[90vh] items-center   justify-center ">
       {/* bg images  */}
@@ -17,30 +20,24 @@ export default function Section2() {
       {/* content  */}
 
       <span className=" font-serif72 z-20 3xl:text-[clamp(1rem,10vw,5rem)]!  md:text-[clamp(1rem,5vw,4rem)]  text-[clamp(1rem,5vw,4rem)] ">
-        LA NUIT OU TOUT A CHANGÉ
+        {t("landing.histoire.title", language)}
       </span>
       <span className=" sm:w-[80%] md:w-[55%] mt-4 text-[#403E37]/90 z-20 text-center 3xl:text-[clamp(1rem,10vw,2.5rem)]! text-[clamp(1rem,2vw,1.3rem)]">
-        Ascendia était mourante—un monde magique au bord de l'annihilation. Dans
-        un acte désespéré de survie, l'Arbre-Monde Manelle a greffé son royaume
-        sur la Terre
+        {t("landing.histoire.paragraph1", language)}
       </span>
 
       <span className=" sm:w-[80%] md:w-[55%]  mt-7 text-[#403E37] z-20 text-center font-light 3xl:text-[clamp(1rem,10vw,2.3rem)]! text-[clamp(1rem,2vw,1.7rem)]">
-        La Nuit de Fracture a tout changé. Les villes se sont effondrées, mais
-        chaque vie a été sauvée. Maintenant, des pousses de Manelle se répandent
-        sur notre monde, libérant le mana—une énergie que la Terre n'a jamais
-        été destinée à contenir.
+        {t("landing.histoire.paragraph2", language)}
       </span>
       <span className=" sm:w-[80%] md:w-[55%] text-[#403E37] z-20 text-center font-light 3xl:text-[clamp(1rem,10vw,2.3rem)]! text-[clamp(1rem,2vw,1.7rem)]">
-        Deux mondes ne font plus qu'un. La question est : qu'émergera-t-il de
-        cette fusion ?
+        {t("landing.histoire.paragraph3", language)}
       </span>
 
       <Link
         className="text-[#403E37]/60 3xl:text-[clamp(1rem,10vw,2rem)]! border-b z-30 border-[#403E37]/60 mt-7"
         href={"/histoire"}
       >
-        LIRE L'HISTOIRE COMPLÈTE →
+        {t("landing.histoire.readMoreLink", language)}
       </Link>
     </div>
   );

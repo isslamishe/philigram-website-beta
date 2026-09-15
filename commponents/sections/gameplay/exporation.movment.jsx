@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-import { useMainContext } from "@/context/main.context";
-
+import { useMainContext } from "@/lib/context/main.context";
 export default function EMR() {
   const { setCurrentNav, setCurrentSubNav } = useMainContext();
 
@@ -17,7 +16,7 @@ export default function EMR() {
   ];
 
   return (
-    <div className="flex flex-row lg:justify-start justify-center overflow-hidden items-center bg-[#4C68D7] gap-0 bg-no-repeat bg-cover bg-center relative w-screen h-[60dvh] md:h-[70dvh] lg:h-[90dvh]">
+    <div className="flex flex-row lg:justify-start justify-center overflow-hidden items-center bg-[#403E37] gap-0 bg-no-repeat bg-cover bg-center relative w-screen h-[60svh] md:h-[70svh] lg:h-[90svh]">
       {/*side image */}
       <div className="w-[25dvw] lg:flex hidden xl:scale-100 scale-110 h-full relative ">
         <Image
@@ -30,9 +29,20 @@ export default function EMR() {
       {/*content */}
 
       <div className=" w-[95%] md:w-full  lg:w-[72dvw] flex flex-col text-center items-center lg:justify-between justify-around h-[85%]">
-        <span className="font-serif72 uppercase font-bold w-full md:w-[80%] text-[clamp(0.8rem,7vw,1.4rem)] md:text-[clamp(2rem,5vw,3.2rem)]">
-          Exploration en mouvement réel
-        </span>
+        <div className="w-full relative h-auto flex flex-col items-center">
+          {" "}
+          <span className="font-serif72 relative uppercase font-bold w-full md:w-[80%] text-[clamp(0.8rem,7vw,1.2rem)] md:text-[clamp(2rem,5vw,2rem)] lg:text-[clamp(2rem,5vw,2.8rem)]">
+            Exploration en mouvement réel
+          </span>
+          <div className="  relative w-[60%] md:w-2/5 lg:w-1/3 h-[5svh]">
+            <Image
+              src={"/Title Devider.png"}
+              className="object-center object-contain"
+              fill
+              alt=""
+            />
+          </div>
+        </div>
 
         <span className="  w-[90%] md:w-[70%] text-[clamp(0.8rem,7vw,0.9rem)] md:text-[clamp(0.8rem,5vw,1.2rem)]  lg:text-[clamp(0.8rem,5vw,2rem)]">
           Dans Ascendia Rise, l’exploration commence par vos déplacements dans
@@ -41,7 +51,7 @@ export default function EMR() {
           deviennent des points d’intérêt liés à l’univers d’Ascendia.
         </span>
 
-        <div className=" w-[85%] md:w-[60%] lg:w-[80%] flex flex-row items-center justify-evenly rounded-3xl h-[8dvh] md:h-[10dvh] lg:h-[15dvh] bg-black/8">
+        <div className=" w-[85%] md:w-[60%] lg:w-[80%] flex flex-row items-center justify-evenly rounded-3xl h-[8svh] md:h-[10svh] lg:h-[15svh] bg-black/8">
           {icons.map((icon) => (
             <div
               key={icon}

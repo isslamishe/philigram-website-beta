@@ -4,14 +4,11 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Hero from "@/commponents/sections/races/hero.jsx";
 import ShowCase from "@/commponents/sections/races/races.showcase.jsx";
-import { useMainContext } from "@/context/main.context";
+import { useMainContext } from "@/lib/context/main.context";
+import { t } from "@/lib/i18n/translation";
 
-export default function Races() {
-  const { setCurrentNav } = useMainContext();
-
-  useEffect(() => {
-    setCurrentNav("Les Races");
-  }, []);
+export default function HistoireHero() {
+  const { setCurrentNav, language } = useMainContext();
 
   return (
     <div
@@ -40,11 +37,10 @@ export default function Races() {
       {/*content */}
       <div className="w-full h-[60%] shrink-0  flex-col justify-start gap-[10%] items-center   flex z-20">
         <span className=" bg-clip-text shrink-0 w-[90%] text-transparent bg-[linear-gradient(90deg,#F3D69C_0%,#B39D72_34%,#D9BF8C_68%,#E5CA95_91%)] font-serif72  text-stro font-semibold text-[clamp(1.7rem,5vw,3rem)]  sm:text-[clamp(1.3rem,5vw,3rem)] lg:text-[clamp(1rem,5vw,3.5rem)] 3xl:text-[clamp(1rem,5vw,6rem)]!">
-          Le Monde a Changé à Jamais
+          {t("histoire.hero.title", language)}
         </span>
         <span className="   w-[90%] shrink-0 font-light text-[clamp(1rem,5vw,1.5rem)]! lg:text-[clamp(1rem,5vw,2.3rem)] 3xl:text-[clamp(1rem,5vw,2.8rem)]!">
-          Deux mondes entrent en collision. Une civilisation s'effondre.
-          L'humanité doit s'adapter ou périr.
+          {t("histoire.hero.description", language)}
         </span>
       </div>
     </div>

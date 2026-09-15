@@ -4,13 +4,12 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Hero from "@/commponents/sections/histoire/hero.jsx";
 import HistoireSections from "@/commponents/sections/histoire/histoire.sections.jsx";
-import { useMainContext } from "@/context/main.context";
-
+import { useMainContext } from "@/lib/context/main.context";
 export default function Races() {
   const { setCurrentNav, setCurrentSubNav } = useMainContext();
 
   useEffect(() => {
-    setCurrentNav("L'Histoire");
+    setCurrentNav("histoire");
     setCurrentSubNav("");
   }, []);
 

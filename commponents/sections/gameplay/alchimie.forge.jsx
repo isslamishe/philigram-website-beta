@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-import { useMainContext } from "@/context/main.context";
-
+import { useMainContext } from "@/lib/context/main.context";
 export default function AlchimieForge() {
   const parts = [
     {
@@ -20,15 +19,15 @@ export default function AlchimieForge() {
   ];
 
   return (
-    <div className="flex flex-col gap-[5dvh] justify-start py-[10dvh] overflow-hidden items-center bg-[#4C68D7] bg-no-repeat bg-cover bg-center relative w-screen h-auto  min-h-[90dvh]">
-      <span className="w-full h-[10dvh] text-[clamp(1rem,8vw,3.5rem)] md:text-[clamp(1rem,5dvw,3rem)] font-serif72 font-semibold text-center">
+    <div className="flex flex-col gap-[5svh] justify-start py-[10svh] overflow-hidden items-center bg-[#403E37] bg-no-repeat bg-cover bg-center relative w-screen h-auto  min-h-[90svh]">
+      <span className="w-full h-[10svh] text-[clamp(1rem,8vw,3.5rem)] md:text-[clamp(1rem,5dvw,3rem)] font-serif72 font-semibold text-center">
         Alchimie & Forge
       </span>
 
       {parts.map((part, idx) => (
         <div
           key={part.image}
-          className={`w-[90%] flex md:justify-start justify-center items-center md:items-center  h-[60dvh] flex-col  ${idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+          className={`w-[90%] flex md:justify-start justify-center items-center md:items-center  h-[60svh] flex-col  ${idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
         >
           <div className="w-[70%] md:w-[35%] h-full relative">
             <Image

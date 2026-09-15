@@ -3,8 +3,9 @@ import "./globals.css";
 import { Outfit } from "next/font/google";
 import NavBar from "@/commponents/layout/navbar";
 import Footer from "@/commponents/layout/footer";
-import { UserProvider } from "@/context/main.context";
+import { UserProvider } from "@/lib/context/main.context";
 import { Toaster } from "react-hot-toast";
+import LoadingScreen from "@/commponents/layout/loader";
 import type { Metadata, Viewport } from "next";
 
 // ============================================================
@@ -227,6 +228,7 @@ export default function RootLayout({
       <body
         className={`${outfit.className} min-h-full bg-black overflow-x-hidden flex flex-col`}
       >
+        <LoadingScreen />
         <UserProvider>
           <NavBar />
           {children}

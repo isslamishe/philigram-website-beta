@@ -9,14 +9,14 @@ import Histoire from "@/commponents/sections/landing/Histoire";
 import LPD from "@/commponents/sections/landing/peuples";
 import Gallery from "@/commponents/sections/landing/gallery";
 import Reservez from "@/commponents/sections/landing/reservez";
-import { useMainContext } from "@/context/main.context";
+import { useMainContext } from "@/lib/context/main.context";
 import { useEffect } from "react";
 
 export default function Home() {
   const { setCurrentNav, isOpen, setCurrentSubNav } = useMainContext();
 
   useEffect(() => {
-    setCurrentNav("Accueil");
+    setCurrentNav("accueil");
   }, []);
 
   useEffect(() => {

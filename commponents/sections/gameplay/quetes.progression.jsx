@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-import { useMainContext } from "@/context/main.context";
-import { title } from "node:process";
+import { useMainContext } from "@/lib/context/main.context";
 
 export default function QuetesProgression() {
   const icons = [
@@ -38,8 +37,8 @@ export default function QuetesProgression() {
   ];
 
   return (
-    <div className="flex flex-col py-[10dvh] md:py-0 pb-0 md:pb-[15dvh] justify-center gap-[3dvh] overflow-hidden items-center bg-white bg-no-repeat bg-cover bg-center relative w-screen h-auto  min-h-[90dvh]">
-      <div className="w-[90%]  h-[80dvh] justify-center items-center flex flex-col md:flex-row">
+    <div className="flex flex-col py-[10svh] md:py-0 pb-0 md:pb-[15svh] justify-center gap-[3svh] overflow-hidden items-center bg-white bg-no-repeat bg-cover bg-center relative w-screen h-auto  min-h-[90svh]">
+      <div className="w-[90%]  h-[80svh] justify-center items-center flex flex-col md:flex-row">
         <span className="w-[100%] text-[#403E37] justify-center  flex md:hidden xl:w-full uppercase font-semibold font-serif72 text-center  text-[clamp(1rem,7vw,2.8rem)] md:text-[clamp(1rem,5vw,2.2rem)] xl:text-[clamp(1rem,5vw,3.5rem)]">
           Quêtes et progression
         </span>
@@ -60,7 +59,7 @@ export default function QuetesProgression() {
           rares, des créatures à affronter ou des zones influencées par la mana.
         </span>
 
-        <div className="w-[60%] md:flex text-[#403E37] gap-[7dvh]  text-center h-full justify-center items-center hidden flex-col">
+        <div className="w-[60%] md:flex text-[#403E37] gap-[7svh]  text-center h-full justify-center items-center hidden flex-col">
           <span className="w-[110%] xl:w-full uppercase font-[900] font-serif72 lg:text-[clamp(1rem,5vw,2.8rem)] md:text-[clamp(1rem,5vw,2.2rem)] xl:text-[clamp(1rem,5vw,3.5rem)]">
             Quêtes et progression
           </span>
@@ -74,7 +73,7 @@ export default function QuetesProgression() {
         </div>
       </div>
 
-      <div className="w-[95%] flex  text-[#403E37] mt-[5dvh] text-[clamp(1rem,4.5vw,1.3rem)]  md:text-[clamp(1rem,3vw,2.3rem)] md:text-start text-center  h-full justify-center items-start  flex-col">
+      <div className="w-[95%] flex  text-[#403E37] mt-[5svh] text-[clamp(1rem,4.5vw,1.3rem)]  md:text-[clamp(1rem,3vw,2.3rem)] md:text-start text-center  h-full justify-center items-start  flex-col">
         {" "}
         <span>
           Chaque mission permet au joueur de mieux comprendre l’univers
@@ -86,7 +85,7 @@ export default function QuetesProgression() {
       {parts.map((part) => (
         <div
           key={part.title}
-          className="flex flex-col  w-[95%] h-[30dvh] gap-2 md:h-[25dvh] items-center justify-start relative "
+          className="flex flex-col  w-[95%] h-[30svh] gap-2 md:h-[25svh] items-center justify-start relative "
         >
           <div className="w-[5dvw] hidden md:flex h-full absolute left-[-2%] top-[10%]  ">
             <Image

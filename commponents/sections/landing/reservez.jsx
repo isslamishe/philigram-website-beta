@@ -1,10 +1,13 @@
 "use client";
 import Image from "next/image";
-
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { t } from "@/lib/i18n/translation"; // adjust path to your json file
+import { useMainContext } from "@/lib/context/main.context";
 
 export default function Reservez() {
+  const { language } = useMainContext();
+
   return (
     <div className="flex flex-col-reverse md:flex-row bg-white  overflow-hidden gap-0   bg-no-repeat bg-cover bg-center relative   w-screen h-[90vh]  items-center   justify-center ">
       <div className=" w-full md:w-1/2  relative  h-[50%]">
@@ -19,12 +22,11 @@ export default function Reservez() {
       </div>
       <div className=" w-[90%] md:w-1/2  h-full z-20  text-[#403E37]/90 gap-4 justify-center items-center md:items-start flex flex-col">
         <span className="  text-center text-[clamp(1rem,10vw,2rem)] md:text-[clamp(1rem,3vw,3rem)] font-serif72 font-bold md:font-bold">
-          RÉSERVEZ VOTRE PLACE
+          {t("landing.reservez.title", language)}
         </span>
 
         <span className=" mt-0 md:mt-[4vh] w-[90%] md:text-start text-center text-[clamp(1rem,2vw,1.5rem)]">
-          Pré-inscrivez-vous maintenant pour recevoir des récompenses exclusives
-          et rejoindre la communauté qui façonne le développement d'Ascendia.
+          {t("landing.reservez.description", language)}
         </span>
 
         <Link
@@ -34,7 +36,7 @@ export default function Reservez() {
           <span className="absolute inset-0 opacity-0 transition-opacity duration-500 hover:opacity-90 outline-2 outline-primary-light bg-[linear-gradient(90deg,#B39D72_0%,#F3D69C_44%,#D9BF8C_68%,#E5CA95_91%)]"></span>
 
           <span className="relative z-10 pointer-events-none text-[#403E37] font-bold">
-            PRÉ-INSCRIPTION
+            {t("landing.reservez.preRegisterBtn", language)}
           </span>
         </Link>
       </div>

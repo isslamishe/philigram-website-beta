@@ -8,13 +8,13 @@ import MenuPrincipal from "@/commponents/sections/gameplay/menu.principal.jsx";
 import SystemeInventaire from "@/commponents/sections/gameplay/systeme.inventaire.jsx";
 import QuetesProgression from "@/commponents/sections/gameplay/quetes.progression.jsx";
 import AlchimieForge from "@/commponents/sections/gameplay/alchimie.forge.jsx";
-import { useMainContext } from "@/context/main.context";
+import { useMainContext } from "@/lib/context/main.context";
 
 export default function Races() {
   const { setCurrentNav, setCurrentSubNav } = useMainContext();
 
   useEffect(() => {
-    setCurrentNav("Gameplay");
+    setCurrentNav("gameplay");
     setCurrentSubNav("");
   }, []);
 

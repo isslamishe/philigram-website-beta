@@ -40,7 +40,7 @@
   --color-secondary: #f3d69c;
   --color-secondary-dark: #d9bb7e;
 
-  --color-background: #1a1815;
+  --color-background: #403e37;
   --color-surface: #2a2621;
 
   --color-text: #f8f4ea;
@@ -79,4 +79,62 @@ body {
 }
 .discover:hover .content {
   min-height: 25vh;
+}
+
+@keyframes scalePulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+}
+
+@keyframes goldGlow {
+  0%,
+  100% {
+    text-shadow: 0px 2px 10px rgba(210, 180, 122, 0.3);
+  }
+  50% {
+    text-shadow: 0px -2px 20px rgba(210, 180, 122, 0.7);
+  }
+}
+
+.gold-glow {
+  animation: goldGlow 5s ease-in-out infinite;
+}
+
+.aura {
+  animation: scalePulse 5s ease-in-out infinite;
+}
+
+.left {
+  float: left;
+  width: 50%;
+  height: 70%;
+}
+
+.right {
+  width: 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #d9d9d9 25%, #eeeeee 50%, #d9d9d9 75%);
+
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+}
+html {
+  scroll-behavior: smooth;
 }

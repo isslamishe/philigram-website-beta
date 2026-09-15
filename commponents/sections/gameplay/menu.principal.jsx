@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-import { useMainContext } from "@/context/main.context";
-
+import { useMainContext } from "@/lib/context/main.context";
 export default function MenuPrincipal() {
   const boxesContent = [
     "La carte réelle devient une version vivante d’Ascendia, où les rues, zones et repères autour du joueur sont adaptés à l’exploration, aux quêtes et aux événements du jeu.",
@@ -20,8 +19,8 @@ export default function MenuPrincipal() {
   ];
 
   return (
-    <div className="flex flex-col  gap-[5dvw] justify-center overflow-hidden items-start bg-white  bg-no-repeat bg-cover bg-center relative w-screen min-h-[90dvh]">
-      <div className=" w-full h-[50dvh] flex flex-col mt-10 md md:flex-row text-[clamp(0.9rem,2vw,1.2rem)] md:text-[clamp(1rem,2vw,1.5rem)]  gap-[5dvw] justify-center items-center  ">
+    <div className="flex flex-col  gap-[5dvw] justify-center overflow-hidden items-start bg-white  bg-no-repeat bg-cover bg-center relative w-screen min-h-[90svh]">
+      <div className=" w-full h-[50svh] flex flex-col mt-10 md md:flex-row text-[clamp(0.9rem,2vw,1.2rem)] md:text-[clamp(1rem,2vw,1.5rem)]  gap-[5dvw] justify-center items-center  ">
         {boxesContent.map((content) => (
           <span
             key={content}
@@ -33,7 +32,7 @@ export default function MenuPrincipal() {
       </div>
 
       {/*pc menu prisipal  */}
-      <div className=" w-full md:flex hidden  h-[90dvh]   flex-row text-[clamp(1rem,2vw,1.5rem)]  gap-[5dvw] justify-center items-center  ">
+      <div className=" w-full md:flex hidden  h-[90svh]   flex-row text-[clamp(1rem,2vw,1.5rem)]  gap-[5dvw] justify-center items-center  ">
         <div className=" flex  flex-col  w-[90%] h-[90%]">
           <div className="w-full h-[80%] flex flex-row">
             <div className="flex text-[#403E37]/95 w-[60%] h-full  flex-col justify-center gap-[3vh] items-center ">
@@ -72,7 +71,7 @@ export default function MenuPrincipal() {
       </div>
 
       {/*mobile menu prisipal  */}
-      <div className=" w-full md:hidden flex  h-[90dvh]   flex-col text-[clamp(1rem,2vw,1.5rem)]  gap-[5dvw] justify-center items-center  ">
+      <div className=" w-full md:hidden flex  h-[90svh]   flex-col text-[clamp(1rem,2vw,1.5rem)]  gap-[5dvw] justify-center items-center  ">
         <div className=" flex  flex-col  w-[90%] h-[90%]">
           <div className="w-full h-[80%] justify-center items-center text-[#403E37]/95 flex flex-col">
             <span className="font-bold font-serif72 text-[clamp(1rem,8vw,3.5rem)] text-center uppercase w-[80%]">

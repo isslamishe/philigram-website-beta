@@ -7,7 +7,7 @@ export default function HeroBg() {
         fill
         alt=""
         className="object-center object-cover"
-        src={"/home/section-1-bg.svg"}
+        src={"/home/hero.bg.webp"}
       />
       <div className="bg-gradient-to-b z-30 absolute opacity-100 h-full w-full from-transparent to-[#101F3F]" />
     </div>

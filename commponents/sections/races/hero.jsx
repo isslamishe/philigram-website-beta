@@ -2,8 +2,12 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useMainContext } from "@/lib/context/main.context";
+import { t } from "@/lib/i18n/translation";
 
 export default function Section2() {
+  const { language } = useMainContext();
+
   const [currentPeuple, setCurrentPeuple] = useState(0);
 
   const containerRef = useRef(null);
@@ -48,22 +52,25 @@ export default function Section2() {
   return (
     <div className="flex flex-col overflow-hidden justify-end  bg-white gap-0 bg-no-repeat bg-cover bg-center relative w-screen min-h-screen">
       {/* Blue Filter */}
-      <div className="absolute inset-0 bg-gradient-to-b  from-transparent to-[#000000]/80 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b  from-transparent to-[#000000]/60 z-10" />
 
-      {/* bg image */}
-      <div
-        style={{ backgroundImage: `url(/races/Hero-bg.png)` }}
-        className="flex flex-col brightness-100 absolute bg-center scale-105 z-5  bg-white gap-0 bg-no-repeat bg-cover  top-0 -bottom-[20%] w-screen min-h-screen"
-      />
+      <div className="absolute top-0 -bottom-[20%] w-screen min-h-screen z-5 overflow-hidden">
+        <Image
+          src="/races/Hero-bg.webp"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center scale-105 brightness-100"
+        />
+      </div>
 
       <div className="w-full flex flex-col items-center h-[50vh] md:h-[37vh] z-30 ">
         <span className=" font-serif72 text-[clamp(1rem,10vw,1.8rem)] text-center  md:text-[clamp(1rem,5vw,3.5rem)] font-light">
-          LES PEUPLES D'ASCENDIA
+          {t("races.hero.title", language)}
         </span>
 
         <span className=" w-[80%] md:w-[65%] text-center text-[clamp(1rem,2vw,1.5rem)] font-light">
-          Cinq civilisations anciennes ont fui vers la Terre, chacune apportant
-          pouvoir, sagesse et secrets.
+          {t("races.hero.subtitle", language)}
         </span>
       </div>
     </div>

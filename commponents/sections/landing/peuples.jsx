@@ -2,34 +2,35 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { t } from "@/lib/i18n/translation"; // adjust path to your json file
+import { useMainContext } from "@/lib/context/main.context";
 
 export default function Peuples() {
+  const { language } = useMainContext(); // replace with your actual languageuage source
+
   const [currentPeuple, setCurrentPeuple] = useState(0);
 
   const containerRef = useRef(null);
 
   const Peuples = [
     {
-      name: "VARKHANS",
-      description: "Guerriers-Corneilles de la Mémoire",
+      name: t("landing.peuples.varkhans.name", language),
+      description: t("landing.peuples.varkhans.description", language),
       image: "/home/peuples images/varkhans.png",
     },
     {
-      name: "Sylvéride",
-      description:
-        "gardiens des bois profonds, dont les racines portent mémoire",
+      name: t("landing.peuples.sylveride.name", language),
+      description: t("landing.peuples.sylveride.description", language),
       image: "/home/peuples images/Sylvéride.png",
     },
     {
-      name: "Luminels",
-      description:
-        "êtres de lumière pensante, tisseurs de runes et de lois invisibles",
+      name: t("landing.peuples.luminels.name", language),
+      description: t("landing.peuples.luminels.description", language),
       image: "/home/peuples images/Luminels.png",
     },
     {
-      name: "Aetherïn",
-      description:
-        "navigateurs des courants de mana, capables de “lire” l’espace comme une carte vivante",
+      name: t("landing.peuples.aetherin.name", language),
+      description: t("landing.peuples.aetherin.description", language),
       image: "/home/peuples images/Aetherïn.png",
     },
   ];
@@ -50,9 +51,9 @@ export default function Peuples() {
       <div className="absolute hidden bottom-0 left-1/2 md:flex  -translate-x-1/2 w-[100%] z-30 h-[100%] ">
         <Image
           fill
-          className="object-center object-cover"
+          className="object-bottom object-cover"
           alt=""
-          src="/home/race-bg.png"
+          src="/home/race-bg.webp"
         />
       </div>
 
@@ -65,18 +66,14 @@ export default function Peuples() {
         />
       </div>
 
-      {/* Blue Filter */}
-      <div className="absolute inset-0 bg-gradient-to-b pointer-events-none from-transparent to-[#19275E] z-10" />
-
       {/* Header */}
       <div className="h-[20vh] w-full mt-[3%] flex flex-col justify-center items-center z-30">
         <span className="text-[clamp(1rem,7vw,4.5rem)] md:text-[clamp(1rem,5vw,3.5rem)] text-center font-serif72 text-white">
-          LES PEUPLES D'ASCENDIA
+          {t("landing.peuples.title", language)}
         </span>
 
         <span className="text-[clamp(1rem,2vw,1.3rem)] w-[90%] md:w-[55%] text-center font-light text-white">
-          Cinq civilisations anciennes ont fui vers la Terre, chacune apportant
-          pouvoir, sagesse et secrets.
+          {t("landing.peuples.subtitle", language)}
         </span>
       </div>
 
@@ -123,7 +120,7 @@ export default function Peuples() {
               </span>
 
               <div className="absolute  inset-x-0 z-5 h-full w-full -translate-x-1/2 left-1/2   -bottom-[15%]">
-                <div className="absolute inset-0 bg-gradient-to-b  from-transparent to-[#19275E]/50 z-10" />
+                <div className="absolute inset-0 bg-gradient-to-b  from-transparent from-0% to-100% md:to-70% to-[#19275E]/50 z-10" />
                 <Image
                   fill
                   src={peuple.image}

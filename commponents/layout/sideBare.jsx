@@ -3,7 +3,7 @@ import { Globe, Menu, X } from "lucide-react";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { useMainContext } from "@/context/main.context";
+import { useMainContext } from "@/lib/context/main.context";
 
 const nav = [
   { name: "Accueil", direction: "/" },

@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
-import { useMainContext } from "@/context/main.context";
+import { useMainContext } from "@/lib/context/main.context";
+import { t } from "@/lib/i18n/translation";
 
 const createPreInscription = async (data) => {
   try {
@@ -27,7 +28,7 @@ const createPreInscription = async (data) => {
 };
 
 export default function Inscription() {
-  const { setCurrentNav, setCurrentSubNav } = useMainContext();
+  const { setCurrentNav, setCurrentSubNav, language } = useMainContext();
   const [inscriptionConfirmed, setInscriptionConfirmed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -70,17 +71,8 @@ export default function Inscription() {
         <div className=" w-[90%] lg:w-2/5 xl:w-1/2 h-1/8 lg:h-1/3 flex justify-center lg:justify-center items-center flex-col">
           <div className="w-full text-[clamp(0.4rem,5vw,0.6rem)] mt-auto mb-[10dvh] md:text-[clamp(0.4rem,5vw,0.6rem)] lg:text-[clamp(0.7rem,5vw,0.8rem)] xl:text-[clamp(0.7rem,5vw,0.9rem)] p-[5%] px-[3%] gap-2.5 lg:gap-0 flex flex-col justify-center lg:justify-between h-[100%]">
             {" "}
-            <span>
-              Ascendia Rise est actuellement en cours de développement. En vous
-              préinscrivant dès aujourd’hui, vous serez parmi les premiers à
-              recevoir les actualités, annonces importantes, aperçus exclusifs
-              et informations concernant l’avancement du projet.
-            </span>
-            <span>
-              Les joueurs préinscrits bénéficieront également d’une récompense
-              exclusive lors du lancement officiel du jeu, en remerciement de
-              leur soutien durant le développement.
-            </span>
+            <span>{t("inscription.info.paragraph1", language)}</span>
+            <span>{t("inscription.info.paragraph2", language)}</span>
           </div>
         </div>
 
@@ -98,6 +90,7 @@ export default function Inscription() {
 }
 
 function InscriptionForm({ confirmed, setConfirmed }) {
+  const { language } = useMainContext();
   const [formData, setFormData] = useState({ email: "", name: "" });
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [canSubmit, setCanSubmit] = useState(false);
@@ -107,14 +100,14 @@ function InscriptionForm({ confirmed, setConfirmed }) {
 
   const handleSubmit = async () => {
     if (!formData.name.trim() || !formData.email.trim() || !acceptTerms) {
-      toast.error("Veuillez remplir tous les champs.");
+      toast.error(t("inscription.form.errors.missingFields", language));
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(formData.email)) {
-      toast.error("Adresse e-mail invalide.");
+      toast.error(t("inscription.form.errors.invalidEmail", language));
       return;
     }
 
@@ -126,11 +119,13 @@ function InscriptionForm({ confirmed, setConfirmed }) {
         email: formData.email.trim().toLowerCase(),
       });
 
-      toast.success("Préinscription réussie !");
+      toast.success(t("inscription.form.success", language));
 
       setConfirmed(true);
     } catch (err) {
-      toast.error(err.message || "Une erreur est survenue.");
+      toast.error(
+        err.message || t("inscription.form.errors.generic", language),
+      );
     } finally {
       setLoading(false);
     }
@@ -143,28 +138,27 @@ function InscriptionForm({ confirmed, setConfirmed }) {
       {" "}
       <span className="flex flex-col justify-center gap-2 w-full items-center">
         <span className="font-serif72 font-semibold text-[clamp(1rem,2vw,1.8rem)] ">
-          Rejoignez les premiers explorateurs
+          {t("inscription.form.title", language)}
         </span>
         <span className=" text-center w-[85%] text-[#403E37] text-[clamp(0.4rem,2vw,0.65rem)] lg:text-[clamp(0.8rem,5vw,0.8rem)]">
-          Préinscrivez-vous pour suivre le développement du jeu et recevoir une
-          récompense exclusive lors du lancement.
+          {t("inscription.form.subtitle", language)}
         </span>
       </span>
       <Input
         type={"text"}
         field={"name"}
-        placeholder={"Votre nom"}
+        placeholder={t("inscription.form.namePlaceholder", language)}
         setFormData={setFormData}
         formData={formData}
-        label={"Nom d’aventurier"}
+        label={t("inscription.form.nameLabel", language)}
       />
       <Input
         type="email"
         field={"email"}
-        placeholder={"vous@exemple.com"}
+        placeholder={t("inscription.form.emailPlaceholder", language)}
         setFormData={setFormData}
         formData={formData}
-        label={"Adresse e-mail"}
+        label={t("inscription.form.emailLabel", language)}
       />
       <div className=" w-[90%] flex flex-row items-center gap-2.5 justify-start h-[10%] ">
         <button
@@ -178,8 +172,7 @@ function InscriptionForm({ confirmed, setConfirmed }) {
           />
         </button>
         <span className=" text-[clamp(0.5rem,2vw,0.7rem)]">
-          J’accepte de recevoir des actualitéss concernant le développement
-          d’Ascendia Rise. Je pourrai me désinscrire à tout moment.
+          {t("inscription.form.consentText", language)}
         </span>
       </div>
       {error && <p className="w-[85%] text-sm text-red-500">{error}</p>}
@@ -198,7 +191,9 @@ function InscriptionForm({ confirmed, setConfirmed }) {
         />
 
         <span className="relative z-10 pointer-events-none text-white font-medium">
-          {loading ? "Envoi..." : "PRÉ-INSCRIPTION"}
+          {loading
+            ? t("inscription.form.submitBtnLoading", language)
+            : t("inscription.form.submitBtn", language)}
         </span>
       </button>
     </div>
@@ -206,6 +201,7 @@ function InscriptionForm({ confirmed, setConfirmed }) {
 }
 
 function InscriptionConfirmed({ confirmed }) {
+  const { language } = useMainContext();
   const [formData, setFormData] = useState({ email: "", name: "" });
   const [acceptTerms, setAcceptTerms] = useState(false);
 
@@ -215,11 +211,10 @@ function InscriptionConfirmed({ confirmed }) {
     <div className="flex justify-start flex-col gap-[7%] items-center w-[95%] h-[80%]">
       {" "}
       <span className="font-serif72 font-semibold text-[clamp(1rem,2vw,1.8rem)] ">
-        Bienvenue dans l’aventure !
+        {t("inscription.confirmed.title", language)}
       </span>
       <span className=" text-center w-[85%] text-[#403E37] text-[clamp(0.8rem,5vw,0.8rem)]">
-        Votre préinscription a été enregistrée. Nous vous tiendrons informé des
-        prochaines étapes du développement d’Ascendia Rise.
+        {t("inscription.confirmed.description", language)}
       </span>
       <div className="w-full h-full justify-center flex  z-40  relative ">
         <Image

@@ -4,14 +4,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import { t } from "@/lib/i18n/translation"; // adjust path to your json file
+import { useMainContext } from "@/lib/context/main.context";
 
 export default function Footer() {
+  const { language } = useMainContext();
+
   const navs = [
-    { name: "À Propos", direction: "/" },
-    { name: "Blog & Actualités", direction: "/" },
-    { name: "Projets & Jeux", direction: "/" },
-    { name: "Kit Presse", direction: "/" },
-    { name: "Contact & Support", direction: "/" },
+    { id: "about", name: t("footer.nav.about", language), direction: "/about" },
+    { id: "blog", name: t("footer.nav.blog", language), direction: "/blog" },
+
+    {
+      id: "contact",
+      name: t("footer.nav.contact", language),
+      direction: "/contact",
+    },
   ];
 
   const contacts = [
@@ -27,12 +34,12 @@ export default function Footer() {
   if (isInscription) return null;
 
   return (
-    <div className="flex flex-col bg-[#262522] gap-0 bg-no-repeat bg-cover bg-center relative w-full min-h-[50vh] items-start justify-start pb-10">
+    <div className="flex flex-col bg-[#262522] z-20 gap-0 bg-no-repeat bg-cover bg-center relative w-full min-h-[50vh] items-start justify-start pb-10">
       <div className="hidden md:flex bg-[#403E37] flex-row justify-evenly w-full h-[11vh]">
         {navs.map((n) => (
           <Link
             className="h-full flex text-[clamp(1rem,2vw,1.3rem)] justify-center items-center"
-            key={n.name}
+            key={n.id}
             href={n.direction}
           >
             {n.name}
@@ -43,7 +50,7 @@ export default function Footer() {
       <div className="grid grid-cols-2 md:hidden bg-[#262522] w-full flex-1">
         {navs.map((n, index) => (
           <Link
-            key={n.name}
+            key={n.id}
             href={n.direction}
             className={`flex justify-center items-center py-6 text-[clamp(1rem,2vw,1.3rem)]
           ${index === navs.length - 1 ? "col-span-2" : ""}`}
@@ -71,7 +78,7 @@ export default function Footer() {
       </div>
 
       <span className="w-full text-center font-light py-2">
-        ©2026 PHILIGRAM
+        {t("footer.copyright", language)}
       </span>
     </div>
   );
