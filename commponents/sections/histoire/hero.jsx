@@ -31,7 +31,7 @@ export default function HistoireHero() {
 
       {/*bottom devider */}
       <div className="absolute z-15 bottom-0 h-[10vh] w-full">
-        <Image fill alt="" src={"/history/Devider.svg"} />
+        <Image unoptimized fill alt="" src={"/history/Devider.svg"} />
       </div>
 
       {/*content */}

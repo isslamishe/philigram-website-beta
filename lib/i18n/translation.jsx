@@ -33,6 +33,9 @@ export const translations = {
     "landing.peuples.aetherin.name": "Aetherïn",
     "landing.peuples.aetherin.description":
       'navigators of the mana currents, able to "read" space like a living map',
+    "landing.peuples.brumecrocs.name": "brumecrocs",
+    "landing.peuples.brumecrocs.description":
+      "Master of alchemy, poisons, and magical mists.",
 
     "landing.section2.title": "A NEW REALITY AWAITS YOU",
     "landing.section2.description":
@@ -638,6 +641,187 @@ export const translations = {
     "decouvrir.history.worldLaws.content": "The Laws of the World",
 
     "decouvrir.hoverContent": "Explore",
+    "gameplay.hero.titleLine1": "the real world becomes",
+    "gameplay.hero.titleHighlight": "Ascendia",
+    "gameplay.hero.description":
+      "Explore your city like never before. Fight creatures, gather resources, and discover a fantasy world merging with reality.",
+
+    "gameplay.menuPrincipal.boxesContent.0":
+      "The real map becomes a living version of Ascendia, where the streets, zones, and landmarks around the player are adapted for exploration, quests, and in-game events.",
+    "gameplay.menuPrincipal.boxesContent.1":
+      "Real buildings can take on a new function within Ascendia: shop, inn, bank, forge, watchtower, or another interactive location useful for progression.",
+    "gameplay.menuPrincipal.title": "main menu",
+    "gameplay.menuPrincipal.description":
+      "The menu lets the player manage their progression, resources, and interactions with the game's various systems. It brings together the essential tools needed for exploration, combat, crafting, and understanding the world.",
+
+    "gameplay.emr.title": "Exploration in Real-World Movement",
+    "gameplay.emr.description":
+      "In Ascendia Rise, exploration begins with your movements in the real world. As the player walks, they discover a transformed version of their environment, where real streets, buildings, and places become points of interest tied to the world of Ascendia.",
+
+    "gameplay.systemeInventaire.title": "Inventory System",
+    "gameplay.systemeInventaire.description":
+      "The inventory is at the heart of item management. Every resource found in the world can have a use: healing, crafting, upgrading equipment, completing a quest, or being sold to a merchant.",
+
+    "gameplay.quetesProgression.title": "Quests and Progression",
+    "gameplay.quetesProgression.description":
+      "Quests guide the player through the story of Ascendia Rise and encourage them to explore the world around them. They can lead to points of interest, reimagined buildings, rare resources, creatures to face, or zones influenced by mana.",
+    "gameplay.quetesProgression.summary":
+      "Each mission lets the player better understand the world of Ascendia, discover new characters, earn rewards, and progress through their adventure.",
+
+    "gameplay.quetesProgression.parts.0.title": "Main Quests",
+    "gameplay.quetesProgression.parts.0.content":
+      "They follow Ascendia's central story, the Fracture, mana, and the world's great mysteries. They let the player unlock new features, zones, systems, or important progression milestones.",
+
+    "gameplay.quetesProgression.parts.1.title": "Side Quests",
+    "gameplay.quetesProgression.parts.1.content":
+      "They enrich exploration by offering objectives tied to inhabitants, factions, resources, monsters, or specific locations. They add more depth to the world and reward curious players.",
+
+    "gameplay.quetesProgression.parts.2.title": "Map Objectives",
+    "gameplay.quetesProgression.parts.2.content":
+      "Quests can appear as markers on the map, guiding the player toward a real-world location transformed into a point of interest in Ascendia.",
+
+    "gameplay.quetesProgression.parts.3.title": "Rewards",
+    "gameplay.quetesProgression.parts.3.content":
+      "Missions can offer experience, currencies, materials, rare items, alchemy recipes, upgrades, or new entries in the glossary.",
+
+    "gameplay.alchimieForge.title": "Alchemy & Forge",
+
+    "gameplay.alchimieForge.parts.0.content":
+      "Alchemy lets the player transform resources gathered during exploration into potions, remedies, and elixirs useful for their progression. This system gives real value to herbs, rare components, and materials discovered on the map.",
+
+    "gameplay.alchimieForge.parts.1.content":
+      "The forge lets the player transform resources obtained during their adventures into more powerful equipment. By collecting ores, fragments, rare components, and materials from creatures encountered, it's possible to craft or upgrade their gear.",
+    "about.construire.label": "Building the future",
+    "about.construire.heading": "Building Ascendia, together",
+    "about.construire.status": "Ascendia Rise is currently in development.",
+    "about.construire.description":
+      "We are progressively building a world where technology, real-world exploration, and fantasy meet. The project will evolve as its development continues and the world of Ascendia expands.",
+    "about.construire.discoverBtn": "Discover Ascendia",
+    "about.construire.preRegisterLink": "Pre-register",
+    "about.landing.aboutLabel": "About",
+    "about.landing.brand": "PHILIGRAM",
+    "about.landing.tagline": "Innovation serving new experiences",
+    "about.landing.paragraph1":
+      "Founded in 2011 and based in Reims, PHILIGRAM is a company specializing in IT services and consulting. We support technology projects through the development of software solutions, applications, and technologies tailored to our clients' needs.",
+    "about.landing.paragraph2":
+      "Our expertise spans software and application development to new technologies, with a constant drive to explore new ways of using technology to create useful, innovative, and engaging experiences.",
+    "about.landing.discoverBtn": "Discover Ascendia",
+    "about.landing.preRegisterLink": "Pre-register",
+
+    "about.notreVision.title": "Our vision",
+    "about.notreVision.heading": "Turning reality into an adventure playground",
+    "about.notreVision.description":
+      "In Ascendia Rise, the real world becomes the playground. Explore your surroundings, discover resources, fight creatures, and take part in the fusion of worlds.",
+
+    "about.notreVision.icons.0": "Reality as a playground",
+    "about.notreVision.icons.1": "A world that evolves",
+    "about.notreVision.icons.2": "Gameplay above all",
+    "about.notreVision.icons.3": "An accessible experience",
+
+    "about.equipe.title": "our team",
+    "about.equipe.heading": "The creators of Ascendia Rise",
+    "about.equipe.description":
+      "A passionate team with complementary skills works every day to bring Ascendia to life.",
+
+    "about.equipe.team.0.role": "CEO - PHILIGRAM",
+    "about.equipe.team.0.description":
+      "He leads PHILIGRAM and oversees the project's overall vision, development, and strategic direction.",
+
+    "about.equipe.team.1.role": "Game developer",
+    "about.equipe.team.1.description":
+      "He develops the systems and mechanics that bring Ascendia Rise's gameplay to life, from exploration to interactions and player progression.",
+
+    "about.equipe.team.2.role": "UI/UX Designer",
+    "about.equipe.team.2.description":
+      "He designs the user experience and game interfaces to make Ascendia's many systems — map, quests, inventory, alchemy, forge, and progression — intuitive and consistent.",
+
+    "about.equipe.team.3.role": "Rig Artist",
+    "about.equipe.team.3.description":
+      "He works on rigging characters and creatures to give them natural movement and help bring the world of Ascendia to life.",
+
+    "about.equipe.team.4.role": "Game developer",
+    "about.equipe.team.4.description":
+      "He develops the systems and mechanics that bring Ascendia Rise's gameplay to life, from exploration to interactions and player progression.",
+    "contact.form.title": "Assistance & Contact",
+    "contact.form.subtitle": "How can we help you?",
+    "contact.form.nameLabel": "Name",
+    "contact.form.messageLabel": "Message",
+    "contact.form.messagePlaceholder": "Describe your request or your issue...",
+    "contact.form.submitBtn": "Send",
+    "contact.form.successToast":
+      "Your message has been sent successfully. Thank you for contacting us!",
+    "contact.form.errorToast": "An error occurred while sending your message.",
+    "blog.section.newBadge": "New",
+    "blog.section.exploreLabel": "EXPLORE",
+    "blog.section.categoriesLabel": "Categories",
+    "blog.section.allCategories": "All news",
+    "blog.section.topicLabel": "TOPIC",
+    "blog.section.allTopics": "All topics",
+    "blog.section.showMore": "Show more",
+    "blog.section.showLess": "Show less",
+
+    "blog.categories.announcement": "Announcement",
+    "blog.categories.presentation": "Presentation",
+    "blog.categories.gameplay": "Gameplay",
+
+    "blog.topics.exploration": "Exploration",
+    "blog.topics.gameplay": "Gameplay",
+    "blog.topics.ascendia": "Ascendia",
+    "blog.topics.news": "News",
+
+    "blog.articles.0.title": "PRE-REGISTRATION OPEN",
+    "blog.articles.0.subTitel": "The adventure begins now.",
+    "blog.articles.0.description":
+      "PRE-REGISTRATION FOR ASCENDIA RISE IS NOW OFFICIALLY OPEN. JOIN THE FIRST ADVENTURERS AND GET READY TO DISCOVER A WORLD WHERE EVERY STEP CAN BECOME A NEW ADVENTURE.",
+    "blog.articles.0.buttonText": "DISCOVER",
+
+    "blog.articles.1.title": "THE WORLD OF ASCENDIA",
+    "blog.articles.1.subTitel": "The adventure begins now.",
+    "blog.articles.1.description":
+      "DISCOVER THE FOUNDATIONS OF THE WORLD OF ASCENDIA RISE AND HOW EXPLORING THE REAL WORLD BECOMES THE HEART OF YOUR ADVENTURE.",
+    "blog.articles.1.buttonText": "READ THE ARTICLE",
+
+    "blog.articles.2.title": "THE FIRST DISCOVERIES",
+    "blog.articles.2.subTitel": "The adventure begins now.",
+    "blog.articles.2.description":
+      "IN ASCENDIA RISE, THE WORLD AROUND YOU BECOMES YOUR EXPLORATION GROUND. DISCOVER HOW YOUR MOVEMENTS CAN LEAD YOU TO NEW RESOURCES, ENCOUNTERS, AND DISCOVERIES.",
+    "blog.articles.2.buttonText": "DISCOVER",
+
+    "blog.articles.3.title": "PRE-REGISTRATION OPEN",
+    "blog.articles.3.subTitel": "The adventure begins now.",
+    "blog.articles.3.description":
+      "PRE-REGISTRATION FOR ASCENDIA RISE IS NOW OFFICIALLY OPEN. JOIN THE FIRST ADVENTURERS AND GET READY TO DISCOVER A WORLD WHERE EVERY STEP CAN BECOME A NEW ADVENTURE.",
+    "blog.articles.3.buttonText": "DISCOVER",
+    "blog.articles.buttonText": "DISCOVER",
+    "blog.breadcrumb.news": "News",
+    "blog.breadcrumb.announcements": "Announcements",
+
+    "blog.content.titlesLabel": "Headings",
+
+    "blog.article.readingTimeLabel": "Reading time:",
+    "blog.state.loading": "Loading articles",
+    "blog.state.emptyTitle": "No articles found",
+    "blog.state.emptyText":
+      "Nothing has been published here yet. Come back soon, new stories are on their way.",
+    "blog.state.showAll": "Show all articles",
+    "blog.state.notFoundTitle": "Article not found",
+    "blog.state.notFoundText":
+      "This article doesn't exist or is no longer available. It may have been moved or removed.",
+    "blog.state.backToBlog": "Back to blog",
+    "blog.state.errorTitle": "Something went wrong",
+    "blog.state.errorText":
+      "We couldn't load the articles. Check your connection and try again.",
+    "blog.state.retry": "Try again",
+    "blog.content.titlesLabel": "Contents",
+    "inscription.form.errors.emailExists": "This email is already registered.",
+    "inscription.form.errors.network":
+      "No connection. Check your internet and try again.",
+    "inscription.form.errors.tooManyRequests":
+      "Too many attempts. Please wait a moment and try again.",
+    "inscription.form.errors.server":
+      "Our server is having trouble. Please try again in a few minutes.",
+    "inscription.form.errors.invalidData":
+      "Some of the information you entered is not valid.",
   },
 
   fr: {
@@ -675,6 +859,9 @@ export const translations = {
     "landing.peuples.aetherin.name": "Aetherïn",
     "landing.peuples.aetherin.description":
       'navigateurs des courants de mana, capables de "lire" l\'espace comme une carte vivante',
+    "landing.peuples.brumecrocs.name": "brumecrocs",
+    "landing.peuples.brumecrocs.description":
+      "Maître de l’alchimie, des poisons et des brumes magiques.",
 
     "landing.section2.title": "UNE NOUVELLE RÉALITÉ VOUS ATTEND",
     "landing.section2.description":
@@ -1289,6 +1476,208 @@ export const translations = {
     "decouvrir.history.worldLaws.content": "Les Lois du Monde",
 
     "decouvrir.hoverContent": "Explore",
+
+    "gameplay.hero.titleLine1": "le monde réel devient",
+    "gameplay.hero.titleHighlight": "Ascendia",
+    "gameplay.hero.description":
+      "Explorez votre ville comme jamais auparavant. Combattez des créatures, récoltez des ressources et découvrez un monde fantasy qui fusionne avec la réalité.",
+    "gameplay.menuPrincipal.boxesContent.0":
+      "La carte réelle devient une version vivante d'Ascendia, où les rues, zones et repères autour du joueur sont adaptés à l'exploration, aux quêtes et aux événements du jeu.",
+    "gameplay.menuPrincipal.boxesContent.1":
+      "Les bâtiments réels peuvent prendre une nouvelle fonction dans Ascendia : boutique, auberge, banque, forge, tour de garde ou autre lieu interactif utile à la progression.",
+    "gameplay.menuPrincipal.title": "menu principal",
+    "gameplay.menuPrincipal.description":
+      "Le menu permet au joueur de gérer sa progression, ses ressources et ses interactions avec les différents systèmes du jeu. Il regroupe les outils essentiels nécessaires à l'exploration, au combat, à l'artisanat et à la compréhension du monde.",
+    "gameplay.emr.title": "Exploration en mouvement réel",
+    "gameplay.emr.description":
+      "Dans Ascendia Rise, l'exploration commence par vos déplacements dans le monde réel. En marchant, le joueur découvre une version transformée de son environnement, où les rues, les bâtiments et les lieux réels deviennent des points d'intérêt liés à l'univers d'Ascendia.",
+    "gameplay.systemeInventaire.title": "Système d'inventaire",
+    "gameplay.systemeInventaire.description":
+      "L'inventaire est le cœur de la gestion des objets. Chaque ressource trouvée dans le monde peut avoir une utilité : se soigner, fabriquer, améliorer un équipement, accomplir une quête ou être vendue à un marchand.",
+    "gameplay.quetesProgression.title": "Quêtes et progression",
+    "gameplay.quetesProgression.description":
+      "Les quêtes guident le joueur à travers l'histoire d'Ascendia Rise et l'encouragent à explorer le monde qui l'entoure. Elles peuvent mener vers des points d'intérêt, des bâtiments réinventés, des ressources rares, des créatures à affronter ou des zones influencées par la mana.",
+    "gameplay.quetesProgression.summary":
+      "Chaque mission permet au joueur de mieux comprendre l'univers d'Ascendia, de découvrir de nouveaux personnages, d'obtenir des récompenses et de progresser dans son aventure.",
+
+    "gameplay.quetesProgression.parts.0.title": "Quêtes principales",
+    "gameplay.quetesProgression.parts.0.content":
+      "Elles suivent l'histoire centrale d'Ascendia, la Fracture, la mana et les grands mystères du monde. Elles permettent au joueur de débloquer de nouvelles fonctionnalités, zones, systèmes ou étapes importantes de progression.",
+
+    "gameplay.quetesProgression.parts.1.title": "Quêtes secondaires",
+    "gameplay.quetesProgression.parts.1.content":
+      "Elles enrichissent l'exploration en proposant des objectifs liés aux habitants, factions, ressources, monstres ou lieux spécifiques. Elles donnent plus de profondeur au monde et récompensent les joueurs curieux.",
+
+    "gameplay.quetesProgression.parts.2.title": "Objectifs sur la carte",
+    "gameplay.quetesProgression.parts.2.content":
+      "Les quêtes peuvent apparaître sous forme de marqueurs sur la carte, guidant le joueur vers un lieu réel transformé en point d'intérêt d'Ascendia.",
+
+    "gameplay.quetesProgression.parts.3.title": "Récompenses",
+    "gameplay.quetesProgression.parts.3.content":
+      "Les missions peuvent offrir de l'expérience, des monnaies, des matériaux, des objets rares, des recettes d'alchimie, des améliorations ou de nouvelles informations dans le glossaire.",
+    "gameplay.alchimieForge.title": "Alchimie & Forge",
+
+    "gameplay.alchimieForge.parts.0.content":
+      "L'alchimie permet au joueur de transformer les ressources collectées pendant l'exploration en potions, remèdes et élixirs utiles à sa progression. Ce système donne une vraie valeur aux herbes, composants rares et matériaux découverts sur la carte.",
+
+    "gameplay.alchimieForge.parts.1.content":
+      "La forge permet au joueur de transformer les ressources obtenues durant ses aventures en équipements plus puissants. En collectant des minerais, des fragments, des composants rares et des matériaux issus des créatures rencontrées, il est possible de fabriquer ou d'améliorer son équipement.",
+    "switcher.articles.0.title": "PRÉ-INSCRIPTIONS OUVERTES",
+    "switcher.articles.0.subTitel": "L'aventure commence maintenant.",
+    "switcher.articles.0.description":
+      "LES PRÉ-INSCRIPTIONS POUR ASCENDIA RISE SONT OFFICIELLEMENT OUVERTES. REJOIGNEZ LES PREMIERS AVENTURIERS ET PRÉPAREZ-VOUS À DÉCOUVRIR UN MONDE OÙ CHAQUE DÉPLACEMENT PEUT DEVENIR UNE NOUVELLE AVENTURE.",
+    "switcher.articles.0.category": "ANNONCE",
+    "switcher.articles.0.buttonText": "DÉCOUVRIR",
+
+    "switcher.articles.1.title": "LE MONDE D'ASCENDIA",
+    "switcher.articles.1.subTitel": "L'aventure commence maintenant.",
+    "switcher.articles.1.description":
+      "DÉCOUVREZ LES FONDATIONS DU MONDE D'ASCENDIA RISE ET COMMENT L'EXPLORATION DU MONDE RÉEL DEVIENT LE CŒUR DE VOTRE AVENTURE.",
+    "switcher.articles.1.category": "PRÉSENTATION",
+    "switcher.articles.1.buttonText": "LIRE L'ARTICLE",
+
+    "switcher.articles.2.title": "LES PREMIÈRES DÉCOUVERTES",
+    "switcher.articles.2.subTitel": "L'aventure commence maintenant.",
+    "switcher.articles.2.description":
+      "DANS ASCENDIA RISE, LE MONDE QUI VOUS ENTOURE DEVIENT VOTRE TERRAIN D'EXPLORATION. DÉCOUVREZ COMMENT VOS DÉPLACEMENTS PEUVENT VOUS MENER VERS DE NOUVELLES RESSOURCES, RENCONTRES ET DÉCOUVERTES.",
+    "switcher.articles.2.category": "GAMEPLAY",
+    "switcher.articles.2.buttonText": "DÉCOUVRIR",
+
+    "switcher.articles.3.title": "PRÉ-INSCRIPTIONS OUVERTES",
+    "switcher.articles.3.subTitel": "L'aventure commence maintenant.",
+    "switcher.articles.3.description":
+      "LES PRÉ-INSCRIPTIONS POUR ASCENDIA RISE SONT OFFICIELLEMENT OUVERTES. REJOIGNEZ LES PREMIERS AVENTURIERS ET PRÉPAREZ-VOUS À DÉCOUVRIR UN MONDE OÙ CHAQUE DÉPLACEMENT PEUT DEVENIR UNE NOUVELLE AVENTURE.",
+    "switcher.articles.3.category": "ANNONCE",
+    "switcher.articles.3.buttonText": "DÉCOUVRIR",
+    "about.landing.aboutLabel": "À propos de",
+    "about.landing.brand": "PHILIGRAM",
+    "about.landing.tagline": "L'innovation au service de nouvelles expériences",
+    "about.landing.paragraph1":
+      "Fondée en 2011 et basée à Reims, PHILIGRAM est une entreprise spécialisée dans les services et le conseil en informatique. Nous accompagnons les projets technologiques à travers le développement de solutions logicielles, d'applications et de technologies adaptées aux besoins de nos clients.",
+    "about.landing.paragraph2":
+      "Notre expertise s'étend du développement logiciel et applicatif aux nouvelles technologies, avec une volonté constante d'explorer de nouvelles façons d'utiliser la technologie pour créer des expériences utiles, innovantes et engageantes.",
+    "about.landing.discoverBtn": "Découvrez Ascendia",
+    "about.landing.preRegisterLink": "Je me préinscris",
+    "about.notreVision.title": "Notre vision",
+    "about.notreVision.heading": "Transformer le réel en terrain d'aventure",
+    "about.notreVision.description":
+      "Dans Ascendia Rise, le monde réel devient le terrain de jeu. Explorez votre environnement, découvrez des ressources, combattez des créatures et participez à la fusion des mondes.",
+
+    "about.notreVision.icons.0": "Le réel comme terrain de jeu",
+    "about.notreVision.icons.1": "Un monde qui évolue",
+    "about.notreVision.icons.2": "Le gameplay avant tout",
+    "about.notreVision.icons.3": "Une expérience accessible",
+    "about.equipe.title": "notre équipe",
+    "about.equipe.heading": "Les créateurs d'Ascendia Rise",
+    "about.equipe.description":
+      "Une équipe passionnée aux compétences complémentaires travaille chaque jour à donner vie à Ascendia.",
+
+    "about.equipe.team.0.role": "CEO - PHILIGRAM",
+    "about.equipe.team.0.description":
+      "Il assure la direction de PHILIGRAM et supervise la vision globale du projet, son développement et ses orientations stratégiques.",
+
+    "about.equipe.team.1.role": "Game developer",
+    "about.equipe.team.1.description":
+      "Il développe les systèmes et mécaniques qui donnent vie au gameplay d'Ascendia Rise, de l'exploration aux interactions et à la progression du joueur.",
+
+    "about.equipe.team.2.role": "UI/UX Designer",
+    "about.equipe.team.2.description":
+      "Il conçoit l'expérience utilisateur et les interfaces du jeu afin de rendre les nombreux systèmes d'Ascendia — carte, quêtes, inventaire, alchimie, forge et progression — intuitifs et cohérents.",
+
+    "about.equipe.team.3.role": "Rig Artist",
+    "about.equipe.team.3.description":
+      "Il travaille sur le rigging des personnages et des créatures afin de leur donner des mouvements naturels et de contribuer à donner vie à l'univers d'Ascendia.",
+
+    "about.equipe.team.4.role": "Game developer",
+    "about.equipe.team.4.description":
+      "Il développe les systèmes et mécaniques qui donnent vie au gameplay d'Ascendia Rise, de l'exploration aux interactions et à la progression du joueur.",
+    "about.construire.label": "Construire l'avenir",
+    "about.construire.heading": "Construire Ascendia, ensemble",
+    "about.construire.status":
+      "Ascendia Rise est actuellement en développement.",
+    "about.construire.description":
+      "Nous construisons progressivement un monde dans lequel la technologie, l'exploration réelle et la fantasy se rencontrent. Le projet évoluera au fil de son développement et de l'enrichissement de l'univers d'Ascendia.",
+    "about.construire.discoverBtn": "Découvrez Ascendia",
+    "about.construire.preRegisterLink": "Je me préinscris",
+    "contact.form.title": "Assistance & Contact",
+    "contact.form.subtitle": "Comment pouvons-nous vous aider ?",
+    "contact.form.nameLabel": "Nom",
+    "contact.form.messageLabel": "Message",
+    "contact.form.messagePlaceholder":
+      "Décrivez votre demande ou votre problème...",
+    "contact.form.submitBtn": "Envoyer",
+    "contact.form.successToast":
+      "Votre message a été envoyé avec succès. Merci de nous avoir contactés !",
+    "contact.form.errorToast": "Une erreur est survenue lors de l'envoi.",
+    "blog.section.newBadge": "Nouveautés",
+    "blog.section.exploreLabel": "EXPLORER",
+    "blog.section.categoriesLabel": "Catégories",
+    "blog.section.allCategories": "Toutes les actualités",
+    "blog.section.topicLabel": "SUJET",
+    "blog.section.allTopics": "Toutes les sujets",
+    "blog.section.showMore": "Voir plus",
+    "blog.section.showLess": "Voir moins",
+
+    "blog.categories.announcement": "Annonce",
+    "blog.categories.presentation": "Présentation",
+    "blog.categories.gameplay": "Gameplay",
+
+    "blog.topics.exploration": "Exploration",
+    "blog.topics.gameplay": "Gameplay",
+    "blog.topics.ascendia": "Ascendia",
+    "blog.topics.news": "Actualités",
+
+    "blog.articles.0.title": "PRÉ-INSCRIPTIONS OUVERTES",
+    "blog.articles.0.subTitel": "L'aventure commence maintenant.",
+    "blog.articles.0.description":
+      "LES PRÉ-INSCRIPTIONS POUR ASCENDIA RISE SONT OFFICIELLEMENT OUVERTES. REJOIGNEZ LES PREMIERS AVENTURIERS ET PRÉPAREZ-VOUS À DÉCOUVRIR UN MONDE OÙ CHAQUE DÉPLACEMENT PEUT DEVENIR UNE NOUVELLE AVENTURE.",
+    "blog.articles.0.buttonText": "DÉCOUVRIR",
+
+    "blog.articles.1.title": "LE MONDE D'ASCENDIA",
+    "blog.articles.1.subTitel": "L'aventure commence maintenant.",
+    "blog.articles.1.description":
+      "DÉCOUVREZ LES FONDATIONS DU MONDE D'ASCENDIA RISE ET COMMENT L'EXPLORATION DU MONDE RÉEL DEVIENT LE CŒUR DE VOTRE AVENTURE.",
+    "blog.articles.1.buttonText": "LIRE L'ARTICLE",
+
+    "blog.articles.2.title": "LES PREMIÈRES DÉCOUVERTES",
+    "blog.articles.2.subTitel": "L'aventure commence maintenant.",
+    "blog.articles.2.description":
+      "DANS ASCENDIA RISE, LE MONDE QUI VOUS ENTOURE DEVIENT VOTRE TERRAIN D'EXPLORATION. DÉCOUVREZ COMMENT VOS DÉPLACEMENTS PEUVENT VOUS MENER VERS DE NOUVELLES RESSOURCES, RENCONTRES ET DÉCOUVERTES.",
+    "blog.articles.2.buttonText": "DÉCOUVRIR",
+
+    "blog.articles.3.title": "PRÉ-INSCRIPTIONS OUVERTES",
+    "blog.articles.3.subTitel": "L'aventure commence maintenant.",
+    "blog.articles.3.description":
+      "LES PRÉ-INSCRIPTIONS POUR ASCENDIA RISE SONT OFFICIELLEMENT OUVERTES. REJOIGNEZ LES PREMIERS AVENTURIERS ET PRÉPAREZ-VOUS À DÉCOUVRIR UN MONDE OÙ CHAQUE DÉPLACEMENT PEUT DEVENIR UNE NOUVELLE AVENTURE.",
+    "blog.articles.3.buttonText": "DÉCOUVRIR",
+    "blog.articles.buttonText": "DÉCOUVRIR",
+    "blog.breadcrumb.news": "Actualités",
+    "blog.breadcrumb.announcements": "Annonces",
+    "blog.content.titlesLabel": "Les Titres",
+    "blog.article.readingTimeLabel": "Temps de lecture :",
+    "blog.state.loading": "Chargement des articles",
+    "blog.state.emptyTitle": "Aucun article trouvé",
+    "blog.state.emptyText":
+      "Rien n'a encore été publié ici. Revenez bientôt, de nouvelles histoires arrivent.",
+    "blog.state.showAll": "Afficher tous les articles",
+    "blog.state.notFoundTitle": "Article introuvable",
+    "blog.state.notFoundText":
+      "Cet article n'existe pas ou n'est plus disponible. Il a peut-être été déplacé ou supprimé.",
+    "blog.state.backToBlog": "Retour au blog",
+    "blog.state.errorTitle": "Une erreur s'est produite",
+    "blog.state.errorText":
+      "Nous n'avons pas pu charger les articles. Vérifiez votre connexion et réessayez.",
+    "blog.state.retry": "Réessayer",
+    "blog.content.titlesLabel": "Sommaire",
+    "inscription.form.errors.emailExists": "Cet e-mail est déjà inscrit.",
+    "inscription.form.errors.network":
+      "Pas de connexion. Vérifiez votre internet et réessayez.",
+    "inscription.form.errors.tooManyRequests":
+      "Trop de tentatives. Patientez un instant puis réessayez.",
+    "inscription.form.errors.server":
+      "Notre serveur rencontre un problème. Réessayez dans quelques minutes.",
+    "inscription.form.errors.invalidData":
+      "Certaines informations saisies ne sont pas valides.",
   },
 
   ar: {
@@ -1325,6 +1714,9 @@ export const translations = {
     "landing.peuples.aetherin.name": "إيثيرين",
     "landing.peuples.aetherin.description":
       "ملاحو تيارات المانا، القادرون على «قراءة» الفضاء كخريطة حية",
+    "landing.peuples.brumecrocs.name": "برومكروكس",
+    "landing.peuples.brumecrocs.description":
+      "سيّد الخيمياء والسموم والضباب السحري.",
 
     "landing.section2.title": "واقع جديد ينتظرك",
     "landing.section2.description":
@@ -1918,6 +2310,185 @@ export const translations = {
     "decouvrir.history.worldLaws.content": "قوانين العالم",
 
     "decouvrir.hoverContent": "استكشف",
+    "gameplay.hero.titleLine1": "العالم الحقيقي يصبح",
+    "gameplay.hero.titleHighlight": "أسينديا",
+    "gameplay.hero.description":
+      "استكشف مدينتك كما لم يحدث من قبل. حارب المخلوقات، اجمع الموارد، واكتشف عالمًا خياليًا يندمج مع الواقع.",
+
+    "gameplay.menuPrincipal.boxesContent.0":
+      "تتحول الخريطة الحقيقية إلى نسخة حية من أسينديا، حيث تتكيف الشوارع والمناطق والمعالم المحيطة باللاعب مع الاستكشاف والمهام وأحداث اللعبة.",
+    "gameplay.menuPrincipal.boxesContent.1":
+      "يمكن للمباني الحقيقية أن تكتسب وظيفة جديدة في أسينديا: متجر، نزل، بنك، ورشة حدادة، برج حراسة أو أي مكان تفاعلي آخر مفيد للتقدم.",
+    "gameplay.menuPrincipal.title": "القائمة الرئيسية",
+    "gameplay.menuPrincipal.description":
+      "تتيح القائمة للاعب إدارة تقدمه وموارده وتفاعلاته مع مختلف أنظمة اللعبة. وهي تجمع الأدوات الأساسية اللازمة للاستكشاف والقتال والحرفية وفهم العالم.",
+
+    "gameplay.emr.title": "الاستكشاف في الحركة الواقعية",
+    "gameplay.emr.description":
+      "في أسينديا رايز، يبدأ الاستكشاف بتنقلاتك في العالم الحقيقي. أثناء المشي، يكتشف اللاعب نسخة مُحوَّلة من محيطه، حيث تصبح الشوارع والمباني والأماكن الحقيقية نقاط اهتمام مرتبطة بعالم أسينديا.",
+
+    "gameplay.systemeInventaire.title": "نظام المخزون",
+    "gameplay.systemeInventaire.description":
+      "المخزون هو جوهر إدارة الأغراض. لكل مورد يُعثر عليه في العالم فائدة محتملة: الشفاء، الصنع، تحسين معدة، إتمام مهمة أو البيع لتاجر.",
+
+    "gameplay.quetesProgression.title": "المهام والتقدم",
+    "gameplay.quetesProgression.description":
+      "توجّه المهام اللاعب عبر قصة أسينديا رايز وتشجعه على استكشاف العالم من حوله. يمكن أن تقوده نحو نقاط اهتمام، مبانٍ أُعيد تصورها، موارد نادرة، مخلوقات يجب مواجهتها أو مناطق متأثرة بالمانا.",
+    "gameplay.quetesProgression.summary":
+      "تتيح كل مهمة للاعب فهم عالم أسينديا بشكل أعمق، اكتشاف شخصيات جديدة، الحصول على مكافآت والتقدم في مغامرته.",
+
+    "gameplay.quetesProgression.parts.0.title": "المهام الرئيسية",
+    "gameplay.quetesProgression.parts.0.content":
+      "تتبع القصة المركزية لأسينديا، الانشقاق، المانا وأسرار العالم الكبرى. تتيح للاعب فتح ميزات ومناطق وأنظمة جديدة أو مراحل مهمة في التقدم.",
+
+    "gameplay.quetesProgression.parts.1.title": "المهام الثانوية",
+    "gameplay.quetesProgression.parts.1.content":
+      "تُثري الاستكشاف من خلال تقديم أهداف مرتبطة بالسكان، الفصائل، الموارد، الوحوش أو أماكن محددة. تمنح العالم عمقًا أكبر وتكافئ اللاعبين الفضوليين.",
+
+    "gameplay.quetesProgression.parts.2.title": "أهداف على الخريطة",
+    "gameplay.quetesProgression.parts.2.content":
+      "يمكن أن تظهر المهام على شكل علامات على الخريطة، توجّه اللاعب نحو مكان حقيقي تحوّل إلى نقطة اهتمام في أسينديا.",
+
+    "gameplay.quetesProgression.parts.3.title": "المكافآت",
+    "gameplay.quetesProgression.parts.3.content":
+      "يمكن أن تمنح المهام خبرة، عملات، مواد، أغراضًا نادرة، وصفات كيميائية، تحسينات أو معلومات جديدة في المسرد.",
+
+    "gameplay.alchimieForge.title": "الكيمياء والحدادة",
+
+    "gameplay.alchimieForge.parts.0.content":
+      "تتيح الكيمياء للاعب تحويل الموارد التي جمعها أثناء الاستكشاف إلى جرعات وعلاجات وإكسيرات مفيدة لتقدمه. يمنح هذا النظام قيمة حقيقية للأعشاب والمكونات النادرة والمواد المكتشفة على الخريطة.",
+
+    "gameplay.alchimieForge.parts.1.content":
+      "تتيح الحدادة للاعب تحويل الموارد التي حصل عليها خلال مغامراته إلى معدات أقوى. بجمع الخامات والشظايا والمكونات النادرة والمواد المستخرجة من المخلوقات التي واجهها، يصبح ممكنًا صنع المعدات أو تحسينها.",
+    "about.construire.label": "بناء المستقبل",
+    "about.construire.heading": "بناء أسينديا، معًا",
+    "about.construire.status": "أسينديا رايز قيد التطوير حاليًا.",
+    "about.construire.description":
+      "نحن نبني تدريجيًا عالمًا تلتقي فيه التقنية، والاستكشاف الحقيقي، والخيال. سيتطور المشروع مع استمرار تطويره وإثراء عالم أسينديا.",
+    "about.construire.discoverBtn": "اكتشف أسينديا",
+    "about.construire.preRegisterLink": "سجّل مسبقًا",
+    "about.landing.aboutLabel": "نبذة عن",
+    "about.landing.brand": "PHILIGRAM",
+    "about.landing.tagline": "الابتكار في خدمة تجارب جديدة",
+    "about.landing.paragraph1":
+      "تأسست شركة PHILIGRAM عام 2011 ومقرها مدينة رانس، وهي متخصصة في خدمات واستشارات تكنولوجيا المعلومات. نرافق المشاريع التقنية من خلال تطوير حلول برمجية وتطبيقات وتقنيات تلبي احتياجات عملائنا.",
+    "about.landing.paragraph2":
+      "تمتد خبرتنا من تطوير البرمجيات والتطبيقات إلى التقنيات الجديدة، مع رغبة دائمة في استكشاف طرق جديدة لاستخدام التكنولوجيا لخلق تجارب مفيدة ومبتكرة وجذابة.",
+    "about.landing.discoverBtn": "اكتشف أسينديا",
+    "about.landing.preRegisterLink": "سجّل مسبقًا",
+
+    "about.notreVision.title": "رؤيتنا",
+    "about.notreVision.heading": "تحويل الواقع إلى ساحة مغامرة",
+    "about.notreVision.description":
+      "في أسينديا رايز، يصبح العالم الحقيقي ساحة اللعب. استكشف محيطك، اكتشف الموارد، حارب المخلوقات، وشارك في اندماج العالمين.",
+
+    "about.notreVision.icons.0": "الواقع كساحة لعب",
+    "about.notreVision.icons.1": "عالم يتطور",
+    "about.notreVision.icons.2": "أسلوب اللعب أولاً",
+    "about.notreVision.icons.3": "تجربة سهلة الوصول",
+
+    "about.equipe.title": "فريقنا",
+    "about.equipe.heading": "صنّاع أسينديا رايز",
+    "about.equipe.description":
+      "فريق متحمس بمهارات متكاملة يعمل كل يوم على إحياء أسينديا.",
+
+    "about.equipe.team.0.role": "الرئيس التنفيذي - PHILIGRAM",
+    "about.equipe.team.0.description":
+      "يتولى قيادة PHILIGRAM ويشرف على الرؤية العامة للمشروع وتطويره وتوجهاته الاستراتيجية.",
+
+    "about.equipe.team.1.role": "مطوّر ألعاب",
+    "about.equipe.team.1.description":
+      "يطوّر الأنظمة والآليات التي تُحيي أسلوب لعب أسينديا رايز، من الاستكشاف إلى التفاعلات وتقدم اللاعب.",
+
+    "about.equipe.team.2.role": "مصمم واجهات وتجربة المستخدم",
+    "about.equipe.team.2.description":
+      "يصمم تجربة المستخدم وواجهات اللعبة لجعل أنظمة أسينديا العديدة — الخريطة، المهام، المخزون، الكيمياء، الحدادة والتقدم — بديهية ومتسقة.",
+
+    "about.equipe.team.3.role": "فنان ريغ (Rig Artist)",
+    "about.equipe.team.3.description":
+      "يعمل على تجهيز هياكل حركة الشخصيات والمخلوقات لمنحها حركة طبيعية والمساهمة في إحياء عالم أسينديا.",
+
+    "about.equipe.team.4.role": "مطوّر ألعاب",
+    "about.equipe.team.4.description":
+      "يطوّر الأنظمة والآليات التي تُحيي أسلوب لعب أسينديا رايز، من الاستكشاف إلى التفاعلات وتقدم اللاعب.",
+    "contact.form.title": "المساعدة والتواصل",
+    "contact.form.subtitle": "كيف يمكننا مساعدتك؟",
+    "contact.form.nameLabel": "الاسم",
+    "contact.form.messageLabel": "الرسالة",
+    "contact.form.messagePlaceholder": "صف طلبك أو مشكلتك...",
+    "contact.form.submitBtn": "إرسال",
+    "contact.form.successToast": "تم إرسال رسالتك بنجاح. شكرًا لتواصلك معنا!",
+    "contact.form.errorToast": "حدث خطأ أثناء إرسال رسالتك.",
+    "blog.section.newBadge": "جديد",
+    "blog.section.exploreLabel": "استكشف",
+    "blog.section.categoriesLabel": "التصنيفات",
+    "blog.section.allCategories": "كل الأخبار",
+    "blog.section.topicLabel": "الموضوع",
+    "blog.section.allTopics": "كل المواضيع",
+    "blog.section.showMore": "عرض المزيد",
+    "blog.section.showLess": "عرض أقل",
+
+    "blog.categories.announcement": "إعلان",
+    "blog.categories.presentation": "تقديم",
+    "blog.categories.gameplay": "أسلوب اللعب",
+
+    "blog.topics.exploration": "استكشاف",
+    "blog.topics.gameplay": "أسلوب اللعب",
+    "blog.topics.ascendia": "أسينديا",
+    "blog.topics.news": "أخبار",
+    "blog.articles.buttonText": "اكتشف",
+    "blog.articles.0.title": "التسجيل المسبق مفتوح",
+    "blog.articles.0.subTitel": "المغامرة تبدأ الآن.",
+    "blog.articles.0.description":
+      "التسجيل المسبق لأسينديا رايز مفتوح رسميًا. انضم إلى أوائل المغامرين واستعد لاكتشاف عالم حيث يمكن لكل خطوة أن تصبح مغامرة جديدة.",
+    "blog.articles.0.buttonText": "اكتشف",
+
+    "blog.articles.1.title": "عالم أسينديا",
+    "blog.articles.1.subTitel": "المغامرة تبدأ الآن.",
+    "blog.articles.1.description":
+      "اكتشف أسس عالم أسينديا رايز وكيف يصبح استكشاف العالم الحقيقي جوهر مغامرتك.",
+    "blog.articles.1.buttonText": "اقرأ المقال",
+
+    "blog.articles.2.title": "الاكتشافات الأولى",
+    "blog.articles.2.subTitel": "المغامرة تبدأ الآن.",
+    "blog.articles.2.description":
+      "في أسينديا رايز، يصبح العالم من حولك ساحة استكشافك. اكتشف كيف يمكن لتنقلاتك أن تقودك نحو موارد ولقاءات واكتشافات جديدة.",
+    "blog.articles.2.buttonText": "اكتشف",
+
+    "blog.articles.3.title": "التسجيل المسبق مفتوح",
+    "blog.articles.3.subTitel": "المغامرة تبدأ الآن.",
+    "blog.articles.3.description":
+      "التسجيل المسبق لأسينديا رايز مفتوح رسميًا. انضم إلى أوائل المغامرين واستعد لاكتشاف عالم حيث يمكن لكل خطوة أن تصبح مغامرة جديدة.",
+    "blog.articles.3.buttonText": "اكتشف",
+    "blog.breadcrumb.news": "الأخبار",
+    "blog.breadcrumb.announcements": "الإعلانات",
+
+    "blog.content.titlesLabel": "العناوين",
+
+    "blog.article.readingTimeLabel": "وقت القراءة:",
+    "blog.state.loading": "جارٍ تحميل المقالات",
+    "blog.state.emptyTitle": "لا توجد مقالات",
+    "blog.state.emptyText":
+      "لم يتم نشر أي شيء هنا بعد. عد قريبًا، فقصص جديدة في الطريق.",
+    "blog.state.showAll": "عرض جميع المقالات",
+    "blog.state.notFoundTitle": "المقال غير موجود",
+    "blog.state.notFoundText":
+      "هذا المقال غير موجود أو لم يعد متاحًا. ربما تم نقله أو حذفه.",
+    "blog.state.backToBlog": "العودة إلى المدونة",
+    "blog.state.errorTitle": "حدث خطأ ما",
+    "blog.state.errorText":
+      "تعذّر تحميل المقالات. تحقق من اتصالك بالإنترنت وحاول مرة أخرى.",
+    "blog.state.retry": "حاول مرة أخرى",
+    "blog.content.titlesLabel": "المحتويات",
+    "inscription.form.errors.emailExists":
+      "هذا البريد الإلكتروني مسجّل بالفعل.",
+    "inscription.form.errors.network":
+      "لا يوجد اتصال. تحقق من الإنترنت وحاول مرة أخرى.",
+    "inscription.form.errors.tooManyRequests":
+      "محاولات كثيرة. يرجى الانتظار قليلًا ثم المحاولة مرة أخرى.",
+    "inscription.form.errors.server":
+      "يواجه الخادم مشكلة. يرجى المحاولة بعد بضع دقائق.",
+    "inscription.form.errors.invalidData": "بعض المعلومات المُدخلة غير صالحة.",
   },
 };
 

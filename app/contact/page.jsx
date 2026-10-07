@@ -10,10 +10,11 @@ import emailjs from "@emailjs/browser";
 export default function Contact() {
   const { setCurrentNav, setCurrentSubNav, language } = useMainContext();
   const [inscriptionConfirmed, setInscriptionConfirmed] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+
+  const isRTL = language === "ar";
 
   useEffect(() => {
-    setCurrentNav("inscription");
+    setCurrentNav("");
     setCurrentSubNav("");
   }, []);
 
@@ -24,7 +25,8 @@ export default function Contact() {
       <div className=" absolute scale-100 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 w-[100%] h-[100%]">
         <div className="absolute h-dvh w-dvw inset-0 z-10">
           <Image
-            src="/contact/Bg.svg"
+            unoptimized
+            src="/contact/bg.jpg"
             fill
             priority
             sizes="100vw"
@@ -33,7 +35,8 @@ export default function Contact() {
           />
 
           <Image
-            src="/contact/Bg.svg"
+            unoptimized
+            src="/contact/bg.jpg"
             fill
             priority
             sizes="100vw"
@@ -43,12 +46,18 @@ export default function Contact() {
         </div>
       </div>
 
-      {/*content */}
-      <div className=" relative w-full mt-auto gap-0 lg:gap-[1.5dvw]  justify-center items-center lg:items-end h-[90dvh] flex flex-col-reverse  lg:flex-row  z-30">
+      {/*content — locked to LTR so the panel always stays on the right on desktop, regardless of language */}
+      <div
+        dir="ltr"
+        className=" relative w-full mt-auto gap-0 lg:gap-[1.5dvw]  justify-center items-center lg:items-end h-[90dvh] flex flex-col-reverse  lg:flex-row  z-30"
+      >
         <div className=" w-[90%] lg:w-2/5 xl:w-1/2 h-1/8 lg:h-1/3 flex justify-center lg:justify-center items-center flex-col" />
 
         {/*inscerption form */}
-        <div className=" w-[90dvw] md:w-[55dvw] lg:w-[45dvw] xl:w-[35dvw] shrink-0 flex text-black gap-5  justify-center items-center flex-col my-auto h-[70dvh] md:h-[70%] lg:h-[80%] bg-white">
+        <div
+          dir={isRTL ? "rtl" : "ltr"}
+          className=" w-[90dvw] md:w-[55dvw] lg:w-[45dvw] xl:w-[35dvw] shrink-0 flex text-black gap-5  justify-center items-center flex-col my-auto h-[70dvh] md:h-[70%] lg:h-[80%] bg-white"
+        >
           <InscriptionForm
             setConfirmed={setInscriptionConfirmed}
             confirmed={inscriptionConfirmed}
@@ -109,12 +118,10 @@ function InscriptionForm({ confirmed, setConfirmed }) {
 
       setSuccess(true);
       setFormData(defaultFormData);
-      toast.success(
-        "your message has been sent successfully \n  thank you for contacting us!.",
-      );
+      toast.success(t("contact.form.successToast", language));
     } catch (error) {
-      toast.error("Une erreur est survenue lors de l'envoi.");
-      setError("Une erreur est survenue lors de l'envoi.");
+      toast.error(t("contact.form.errorToast", language));
+      setError(t("contact.form.errorToast", language));
     } finally {
       setLoading(false);
     }
@@ -127,10 +134,10 @@ function InscriptionForm({ confirmed, setConfirmed }) {
       {" "}
       <span className="flex flex-col px-[6%] justify-center gap-2 w-full items-start">
         <span className="font-serif72 font-semibold text-[clamp(1rem,2vw,1.8rem)] ">
-          Assistance & Contact
+          {t("contact.form.title", language)}
         </span>
         <span className=" text-start w-[85%] text-[#403E37] text-[clamp(0.4rem,2vw,0.65rem)] lg:text-[clamp(0.8rem,5vw,0.8rem)]">
-          Comment pouvons-nous vous aider ?
+          {t("contact.form.subtitle", language)}
         </span>
       </span>
       <Input
@@ -139,7 +146,7 @@ function InscriptionForm({ confirmed, setConfirmed }) {
         placeholder={t("inscription.form.namePlaceholder", language)}
         setFormData={setFormData}
         formData={formData}
-        label={"Nom"}
+        label={t("contact.form.nameLabel", language)}
       />
       <Input
         type="email"
@@ -152,10 +159,10 @@ function InscriptionForm({ confirmed, setConfirmed }) {
       <TextArea
         type="message"
         field={"message"}
-        placeholder={"Décrivez votre demande ou votre problème..."}
+        placeholder={t("contact.form.messagePlaceholder", language)}
         setFormData={setFormData}
         formData={formData}
-        label={"Message"}
+        label={t("contact.form.messageLabel", language)}
       />
       {error && <p className="w-[85%] text-sm text-red-500">{error}</p>}
       <button
@@ -175,7 +182,7 @@ function InscriptionForm({ confirmed, setConfirmed }) {
         <span className="relative z-10 pointer-events-none text-white font-medium">
           {loading
             ? t("inscription.form.submitBtnLoading", language)
-            : "Envoyer"}
+            : t("contact.form.submitBtn", language)}
         </span>
       </button>
     </div>
@@ -200,6 +207,7 @@ function InscriptionConfirmed({ confirmed }) {
       </span>
       <div className="w-full h-full justify-center flex  z-40  relative ">
         <Image
+          unoptimized
           src="/inscerption/valid.png"
           width={200}
           height={200}
@@ -208,6 +216,7 @@ function InscriptionConfirmed({ confirmed }) {
         />
 
         <Image
+          unoptimized
           src="/inscerption/valid.png"
           width={300}
           height={300}
@@ -244,6 +253,7 @@ function Input({ placeholder, label, type, field, formData, setFormData }) {
 function TextArea({ placeholder, label, field, formData, setFormData }) {
   const TextriaRef = useRef(null);
   const [textLength, setTextLength] = useState(0);
+
   return (
     <div className="w-full group h-[30%] md:h-[35%] gap-2 justify-center items-center flex flex-col">
       <label className="w-[85%] text-[clamp(0.7rem,1vw,0.9rem)] group-focus-within:text-primary transition-all duration-300 font-medium">
@@ -255,16 +265,26 @@ function TextArea({ placeholder, label, field, formData, setFormData }) {
           ref={TextriaRef}
           placeholder={placeholder}
           value={formData[field] || ""}
-          onChange={(e) => setTextLength(e.target.value.length)}
+          onChange={(e) => {
+            const value = e.target.value;
+
+            setFormData((prev) => ({
+              ...prev,
+              [field]: value,
+            }));
+
+            setTextLength(value.length);
+          }}
+          maxLength={500}
           className="p-3 bg-[#F9F8F8] text-black/70 focus:outline-2
-      text-[clamp(0.7rem,1vw,0.9rem)]
-      outline-primary-light outline-0
-      border-b-2 border-primary-light
-      w-full h-full resize-none"
-          rows={6}
+          text-[clamp(0.7rem,1vw,0.9rem)]
+          outline-primary-light outline-0
+          border-b-2 border-primary-light
+          w-full h-full resize-none"
+          rows={7}
         />
 
-        <span className="absolute bottom-2 right-10  text-[clamp(0.7rem,1vw,0.9rem)]  text-xs text-primary ">
+        <span className="absolute bottom-2 end-10 text-[clamp(0.7rem,1vw,0.9rem)] text-xs text-primary">
           {textLength} / 500
         </span>
       </div>

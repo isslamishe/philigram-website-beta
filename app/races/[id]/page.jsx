@@ -7,7 +7,7 @@ import SwitchButtons from "@/commponents/sections/races/race commponents/switch.
 import { useMainContext } from "@/lib/context/main.context";
 import { getRaces } from "@/data/races.jsx";
 import { useParams } from "next/navigation";
-
+import RaceNotFound from "@/commponents/sections/races/race commponents/not.found.race";
 export default function Races() {
   const { language } = useMainContext();
   const { id } = useParams();
@@ -21,9 +21,7 @@ export default function Races() {
   }, [id, language]);
 
   if (!race) {
-    return (
-      <div className="flex flex-col overflow-hidden justify-end bg-black gap-0 bg-no-repeat bg-cover bg-center relative w-screen min-h-screen"></div>
-    );
+    return <RaceNotFound />;
   }
 
   return (

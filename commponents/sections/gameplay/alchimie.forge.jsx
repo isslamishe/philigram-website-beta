@@ -4,16 +4,18 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 import { useMainContext } from "@/lib/context/main.context";
+import { t } from "@/lib/i18n/translation";
+
 export default function AlchimieForge() {
+  const { language } = useMainContext();
+
   const parts = [
     {
-      content:
-        "L’alchimie permet au joueur de transformer les ressources collectées pendant l’exploration en potions, remèdes et élixirs utiles à sa progression. Ce système donne une vraie valeur aux herbes, composants rares et matériaux découverts sur la carte.",
+      content: t("gameplay.alchimieForge.parts.0.content", language),
       image: "/gameplay/magic-potion_9267937 1.png",
     },
     {
-      content:
-        "La forge permet au joueur de transformer les ressources obtenues durant ses aventures en équipements plus puissants. En collectant des minerais, des fragments, des composants rares et des matériaux issus des créatures rencontrées, il est possible de fabriquer ou d’améliorer son équipement.",
+      content: t("gameplay.alchimieForge.parts.1.content", language),
       image: "/gameplay/blacksmith_8903504 1.png",
     },
   ];
@@ -21,7 +23,7 @@ export default function AlchimieForge() {
   return (
     <div className="flex flex-col gap-[5svh] justify-start py-[10svh] overflow-hidden items-center bg-[#403E37] bg-no-repeat bg-cover bg-center relative w-screen h-auto  min-h-[90svh]">
       <span className="w-full h-[10svh] text-[clamp(1rem,8vw,3.5rem)] md:text-[clamp(1rem,5dvw,3rem)] font-serif72 font-semibold text-center">
-        Alchimie & Forge
+        {t("gameplay.alchimieForge.title", language)}
       </span>
 
       {parts.map((part, idx) => (
@@ -31,6 +33,7 @@ export default function AlchimieForge() {
         >
           <div className="w-[70%] md:w-[35%] h-full relative">
             <Image
+              unoptimized
               src={part.image}
               className="object-center object-contain"
               fill

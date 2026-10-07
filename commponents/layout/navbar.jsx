@@ -8,7 +8,7 @@ import SideBar from "@/commponents/layout/sideBare";
 import { t } from "@/lib/i18n/translation";
 import { translations } from "@/lib/i18n/translation";
 import { usePathname } from "next/navigation";
-
+import { getRaces } from "@/data/races";
 export default function NavBar() {
   const {
     currentNav,
@@ -21,6 +21,14 @@ export default function NavBar() {
     setLanguage,
   } = useMainContext();
 
+  const races = getRaces();
+
+  const racesSubNavs = races.map((race) => ({
+    id: race.id,
+    name: t(`nav.races.${race.id}`, language),
+    direction: `/races/${race.id}`,
+  }));
+
   const nav = [
     { id: "accueil", name: t("nav.links.accueil", language), direction: "/" },
     {
@@ -31,33 +39,7 @@ export default function NavBar() {
     {
       id: "races",
       name: t("nav.links.races", language),
-      subNav: [
-        {
-          id: "luminels",
-          name: t("nav.races.luminels", language),
-          direction: "/races/Luminels",
-        },
-        {
-          id: "varkhans",
-          name: t("nav.races.varkhans", language),
-          direction: "/races/Varkhans",
-        },
-        {
-          id: "sylverides",
-          name: t("nav.races.sylverides", language),
-          direction: "/races/Sylvérides",
-        },
-        {
-          id: "aetherins",
-          name: t("nav.races.aetherins", language),
-          direction: "/races/Aetherïns",
-        },
-        {
-          id: "brumecrocs",
-          name: t("nav.races.brumecrocs", language),
-          direction: "/races/Brumecrocs",
-        },
-      ],
+      subNav: racesSubNavs,
       direction: "/races",
     },
     {
@@ -73,13 +55,14 @@ export default function NavBar() {
   const navMaineRef = useRef(null);
   const subNav = useRef([]);
   const PagesNeedColoredNav = ["/about"];
-  const LanguageButton = useRef(null);
+  const desktopLangBtnRef = useRef(null);
+  const mobileLangBtnRef = useRef(null);
   const langages = Object.keys(translations);
   const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (isOpen) return; // ✅ already there, good
+      if (isOpen) return;
 
       const scrollTop = window.scrollY;
       const docHeight =
@@ -87,7 +70,6 @@ export default function NavBar() {
       const scrollPercent = (scrollTop / docHeight) * 100;
 
       if (navMaineRef.current) {
-        console.log(pathname);
         if (
           scrollPercent > 5 ||
           PagesNeedColoredNav.includes(pathname) ||
@@ -101,33 +83,30 @@ export default function NavBar() {
         }
       }
     };
-    console.log(pathname);
+
     handleScroll();
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isOpen, pathname]);
 
+  // ✅ FIXED: lock scroll with overflow:hidden instead of position:fixed,
+  // so the scroll position never changes and there's nothing to restore.
   useEffect(() => {
     if (!isOpen) return;
 
-    const scrollY = window.scrollY;
+    const html = document.documentElement;
     const body = document.body;
 
-    body.style.position = "fixed";
-    body.style.top = `-${scrollY}px`;
-    body.style.left = "0";
-    body.style.right = "0";
-    body.style.width = "100%";
+    const prevHtmlOverflow = html.style.overflow;
+    const prevBodyOverflow = body.style.overflow;
+
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
 
     return () => {
-      body.style.position = "";
-      body.style.top = "";
-      body.style.left = "";
-      body.style.right = "";
-      body.style.width = "";
-
-      window.scrollTo(0, scrollY); // ← restores exact position
+      html.style.overflow = prevHtmlOverflow;
+      body.style.overflow = prevBodyOverflow;
     };
   }, [isOpen]);
 
@@ -171,21 +150,20 @@ export default function NavBar() {
     function handleClickOutside(event) {
       if (!showLanguages) return;
 
-      const clickedInside = LanguageButton.current.contains(event.target);
+      const clickedDesktop = desktopLangBtnRef.current?.contains(event.target);
+      const clickedMobile = mobileLangBtnRef.current?.contains(event.target);
 
-      if (!clickedInside) {
+      if (!clickedDesktop && !clickedMobile) {
         setShowLanguages(false);
       }
     }
 
     document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [showLanguages]);
 
   const handleChangeLanguage = (lang) => {
+    document.cookie = `lang=${lang}; path=/; max-age=31536000`;
     setLanguage(lang.toString());
     localStorage.setItem("language", lang.toString());
     setShowLanguages(false);
@@ -194,6 +172,7 @@ export default function NavBar() {
   return (
     <div
       ref={navMaineRef}
+      dir="ltr"
       className={`flex flex-row fixed z-50 duration-500 transition-colors h-[10vh] top-0 w-full items-center justify-center    ${isOpen ? "bg-[#403E37]" : "bg-transparent"}`}
     >
       <Link
@@ -264,12 +243,13 @@ export default function NavBar() {
         ))}
       </div>
 
-      <div className="md:flex gap-3.5 mr-[5vw] hidden justify-between w-1/8  items-center flex-row h-full ">
+      <div className="md:flex z-60 gap-3.5 mr-[5vw] hidden justify-between w-1/8  items-center flex-row h-full ">
         <button
-          ref={LanguageButton}
+          ref={desktopLangBtnRef}
           className=" cursor-pointer relative h-10 w-10  3xl:w-14!  3xl:h-14!"
         >
           <Image
+            unoptimized
             onClick={() => {
               setShowLanguages(!showLanguages);
             }}
@@ -314,22 +294,70 @@ export default function NavBar() {
         </Link>
       </div>
 
-      <button
-        onClick={() => {
-          setIsOpen(true);
-        }}
-        className={`ml-auto flex md:hidden mr-[5vw] ${isOpen ? "hidden" : "flex"}`}
-      >
-        <Menu className={``} />
-      </button>
-      <button
-        onClick={() => {
-          setIsOpen(false);
-        }}
-        className={`ml-auto flex md:hidden mr-[5vw] ${isOpen ? "flex" : "hidden"}`}
-      >
-        <X />
-      </button>
+      <div className=" z-60 flex ml-auto gap-3 flex-row md:hidden  justify-end items-center ">
+        {/*translation  button */}
+        <button
+          ref={mobileLangBtnRef}
+          className=" cursor-pointer relative h-7 w-7  3xl:w-14!  3xl:h-14!"
+        >
+          <Image
+            unoptimized
+            onClick={() => {
+              setShowLanguages(!showLanguages);
+            }}
+            alt="globe"
+            fill
+            src={"/globe.svg"}
+            className=" z-20 text-white"
+          />
+          <div
+            className={`absolute top-0 flex justify-end z-10 w-full bg-[#403E37] overflow-hidden ${
+              showLanguages ? "h-[20dvh] opacity-100" : "h-[5dvh] opacity-0"
+            }`}
+            style={{
+              transition: `
+      height 700ms ease 50ms,
+      ${showLanguages ? "opacity 100ms ease 0ms" : "opacity 200ms ease 500ms"}
+    `,
+            }}
+          >
+            <div className="h-auto overflow-hidden shrink-0 flex flex-col justify-end  w-full mt-[6dvh]">
+              {" "}
+              {langages.map((lang) => (
+                <span
+                  onClick={() => {
+                    handleChangeLanguage(lang.toString());
+                  }}
+                  className={`w-full shrink-0 h-[4dvh] flex justify-center items-center ${lang.toString() === language.toString() ? "bg-white/20" : "bg-transparent"}`}
+                  key={lang}
+                >
+                  {lang.toString().toUpperCase()}
+                </span>
+              ))}
+            </div>
+          </div>
+        </button>
+
+        {/*menu button */}
+        <button
+          onClick={() => {
+            setIsOpen(true);
+          }}
+          className={`ml-auto flex md:hidden mr-[5vw] ${isOpen ? "hidden" : "flex"}`}
+        >
+          <Menu className={``} />
+        </button>
+
+        {/*cancel menu button */}
+        <button
+          onClick={() => {
+            setIsOpen(false);
+          }}
+          className={`ml-auto flex md:hidden mr-[5vw] ${isOpen ? "flex" : "hidden"}`}
+        >
+          <X />
+        </button>
+      </div>
 
       <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>

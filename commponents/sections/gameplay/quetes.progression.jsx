@@ -4,8 +4,13 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 import { useMainContext } from "@/lib/context/main.context";
+import { t } from "@/lib/i18n/translation";
 
 export default function QuetesProgression() {
+  const { language } = useMainContext();
+
+  const isRTL = language === "ar";
+
   const icons = [
     "/gameplay/Sword.png",
     "/gameplay/Mana.png",
@@ -15,36 +20,37 @@ export default function QuetesProgression() {
 
   const parts = [
     {
-      title: "Quêtes principales",
-      content:
-        "Elles suivent l’histoire centrale d’Ascendia, la Fracture, la mana et les grands mystères du monde. Elles permettent au joueur de débloquer de nouvelles fonctionnalités, zones, systèmes ou étapes importantes de progression.",
+      title: t("gameplay.quetesProgression.parts.0.title", language),
+      content: t("gameplay.quetesProgression.parts.0.content", language),
     },
     {
-      title: "Quêtes secondaires",
-      content:
-        "Elles enrichissent l’exploration en proposant des objectifs liés aux habitants, factions, ressources, monstres ou lieux spécifiques. Elles donnent plus de profondeur au monde et récompensent les joueurs curieux.",
+      title: t("gameplay.quetesProgression.parts.1.title", language),
+      content: t("gameplay.quetesProgression.parts.1.content", language),
     },
     {
-      title: "Objectifs sur la carte",
-      content:
-        "Les quêtes peuvent apparaître sous forme de marqueurs sur la carte, guidant le joueur vers un lieu réel transformé en point d’intérêt d’Ascendia.",
+      title: t("gameplay.quetesProgression.parts.2.title", language),
+      content: t("gameplay.quetesProgression.parts.2.content", language),
     },
     {
-      title: "Récompenses",
-      content:
-        "Les missions peuvent offrir de l’expérience, des monnaies, des matériaux, des objets rares, des recettes d’alchimie, des améliorations ou de nouvelles informations dans le glossaire.",
+      title: t("gameplay.quetesProgression.parts.3.title", language),
+      content: t("gameplay.quetesProgression.parts.3.content", language),
     },
   ];
 
   return (
-    <div className="flex flex-col py-[10svh] md:py-0 pb-0 md:pb-[15svh] justify-center gap-[3svh] overflow-hidden items-center bg-white bg-no-repeat bg-cover bg-center relative w-screen h-auto  min-h-[90svh]">
+    <div
+      dir={isRTL ? "rtl" : "ltr"}
+      className="flex flex-col py-[10svh] md:py-0 pb-0 md:pb-[15svh] justify-center gap-[3svh] overflow-hidden items-center bg-white bg-no-repeat bg-cover bg-center relative w-screen h-auto  min-h-[90svh]"
+    >
       <div className="w-[90%]  h-[80svh] justify-center items-center flex flex-col md:flex-row">
         <span className="w-[100%] text-[#403E37] justify-center  flex md:hidden xl:w-full uppercase font-semibold font-serif72 text-center  text-[clamp(1rem,7vw,2.8rem)] md:text-[clamp(1rem,5vw,2.2rem)] xl:text-[clamp(1rem,5vw,3.5rem)]">
-          Quêtes et progression
+          {t("gameplay.quetesProgression.title", language)}
         </span>
 
         <div className=" w-[80%] md:w-[40%] relative h-full">
           <Image
+            unoptimized
+            unoptimized
             fill
             className="object-center object-contain"
             src={"/gameplay/ICO_QUEST_Target.png"}
@@ -53,42 +59,33 @@ export default function QuetesProgression() {
         </div>
 
         <span className="w-[100%] text-[#403E37] justify-center  flex md:hidden xl:w-full  text-center  text-[clamp(1rem,4.5vw,1.3rem)] md:text-[clamp(1rem,5vw,2.2rem)] xl:text-[clamp(1rem,5vw,3.5rem)]">
-          Les quêtes guident le joueur à travers l’histoire d’Ascendia Rise et
-          l’encouragent à explorer le monde qui l’entoure. Elles peuvent mener
-          vers des points d’intérêt, des bâtiments réinventés, des ressources
-          rares, des créatures à affronter ou des zones influencées par la mana.
+          {t("gameplay.quetesProgression.description", language)}
         </span>
 
         <div className="w-[60%] md:flex text-[#403E37] gap-[7svh]  text-center h-full justify-center items-center hidden flex-col">
           <span className="w-[110%] xl:w-full uppercase font-[900] font-serif72 lg:text-[clamp(1rem,5vw,2.8rem)] md:text-[clamp(1rem,5vw,2.2rem)] xl:text-[clamp(1rem,5vw,3.5rem)]">
-            Quêtes et progression
+            {t("gameplay.quetesProgression.title", language)}
           </span>
           <span className=" md:w-full lg:w-[95%] text-[clamp(1rem,3vw,1.3rem)]   lg:text-[clamp(1rem,3vw,1.8rem)]">
-            Les quêtes guident le joueur à travers l’histoire d’Ascendia Rise et
-            l’encouragent à explorer le monde qui l’entoure. Elles peuvent mener
-            vers des points d’intérêt, des bâtiments réinventés, des ressources
-            rares, des créatures à affronter ou des zones influencées par la
-            mana.
+            {t("gameplay.quetesProgression.description", language)}
           </span>
         </div>
       </div>
 
       <div className="w-[95%] flex  text-[#403E37] mt-[5svh] text-[clamp(1rem,4.5vw,1.3rem)]  md:text-[clamp(1rem,3vw,2.3rem)] md:text-start text-center  h-full justify-center items-start  flex-col">
         {" "}
-        <span>
-          Chaque mission permet au joueur de mieux comprendre l’univers
-          d’Ascendia, de découvrir de nouveaux personnages, d’obtenir des
-          récompenses et de progresser dans son aventure.
-        </span>
+        <span>{t("gameplay.quetesProgression.summary", language)}</span>
       </div>
 
-      {parts.map((part) => (
+      {parts.map((part, index) => (
         <div
-          key={part.title}
+          key={index}
           className="flex flex-col  w-[95%] h-[30svh] gap-2 md:h-[25svh] items-center justify-start relative "
         >
-          <div className="w-[5dvw] hidden md:flex h-full absolute left-[-2%] top-[10%]  ">
+          <div className="w-[5dvw] hidden md:flex h-full absolute start-[-2%] top-[10%]  ">
             <Image
+              unoptimized
+              unoptimized
               fill
               className=" object-top object-contain"
               alt=""

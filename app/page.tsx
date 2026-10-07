@@ -13,10 +13,11 @@ import { useMainContext } from "@/lib/context/main.context";
 import { useEffect } from "react";
 
 export default function Home() {
-  const { setCurrentNav, isOpen, setCurrentSubNav } = useMainContext();
+  const { setCurrentNav, setCurrentSubNav } = useMainContext();
 
   useEffect(() => {
     setCurrentNav("accueil");
+    setCurrentSubNav("");
   }, []);
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`flex flex-col overflow-hidden h-auto  bg-white`}>
+    <div className={`flex flex-col overflow-hidden h-auto  `}>
       <Hero />
       <Section2 />
       <ESM />

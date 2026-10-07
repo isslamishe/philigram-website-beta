@@ -1,23 +1,10 @@
-// ============================================================
-// @/data/races.js  (translated version)
-//
-// IMPORTANT CHANGES from the original file:
-// 1. 'races' (a static array) is now 'getRaces(language)' — a FUNCTION
-//    that returns the array, because the text now depends on the
-//    current language. Any component importing { races } needs to
-//    switch to importing { getRaces } and calling getRaces(language).
-// 2. Added a stable 'id' field per race (e.g. "luminels") since the
-//    original used race.name (translated text) as a React key and
-//    inside .split("Les")[1]) logic in races.showcase.jsx — both
-//    would break once name is translated. Use race.id for keys.
-// ============================================================
-
 import { t } from "@/lib/i18n/translation";
 
 export function getRaces(language) {
   return [
     {
       id: "luminels",
+      bg_mobile: "/races/reces-banners/mobile/Luminels_Mobile.webp",
       bg: "/races/reces-banners/Luminels.webp",
       name: t("races.data.luminels.name", language),
       diraction: "/races/luminels",
@@ -150,6 +137,7 @@ export function getRaces(language) {
     },
     {
       id: "varkhans",
+      bg_mobile: "/races/reces-banners/mobile/Varkhans_Mobile.webp",
       bg: "/races/reces-banners/varkhans.webp",
       name: t("races.data.varkhans.name", language),
       diraction: "/races/varkhans",
@@ -329,10 +317,11 @@ export function getRaces(language) {
       ],
     },
     {
-      id: "sylvérides",
+      id: "sylverides",
+      bg_mobile: "/races/reces-banners/mobile/Sylvérides_Mobile.webp",
       bg: "/races/reces-banners/Sylvérides.webp",
       name: t("races.data.sylverides.name", language),
-      diraction: "/races/sylvérides",
+      diraction: "/races/sylverides",
       image: "/races/races-icons/Sylvérides.png",
       describtion: t("races.data.sylverides.description", language),
       subDescribtion: t("races.data.sylverides.subDescription", language),
@@ -547,10 +536,11 @@ export function getRaces(language) {
       ],
     },
     {
-      id: "aetherïns",
+      id: "aetherins",
+      bg_mobile: "/races/reces-banners/mobile/Aetherins_Mobile.webp",
       bg: "/races/reces-banners/Aetherïns.webp",
       name: t("races.data.aetherins.name", language),
-      diraction: "/races/aetherïns",
+      diraction: "/races/aetherins",
       image: "/races/races-icons/Aetherïns.png",
       describtion: t("races.data.aetherins.description", language),
       subDescribtion: t("races.data.aetherins.subDescription", language),
@@ -765,6 +755,7 @@ export function getRaces(language) {
     },
     {
       id: "brumecrocs",
+      bg_mobile: "/races/reces-banners/mobile/Brumecrocs_Mobile.webp",
       bg: "/races/reces-banners/Brumecrocs.webp",
       name: t("races.data.brumecrocs.name", language),
       diraction: "/races/brumecrocs",

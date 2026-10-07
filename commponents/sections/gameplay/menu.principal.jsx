@@ -4,10 +4,14 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 import { useMainContext } from "@/lib/context/main.context";
+import { t } from "@/lib/i18n/translation";
+
 export default function MenuPrincipal() {
+  const { language } = useMainContext();
+
   const boxesContent = [
-    "La carte réelle devient une version vivante d’Ascendia, où les rues, zones et repères autour du joueur sont adaptés à l’exploration, aux quêtes et aux événements du jeu.",
-    "Les bâtiments réels peuvent prendre une nouvelle fonction dans Ascendia : boutique, auberge, banque, forge, tour de garde ou autre lieu interactif utile à la progression.",
+    t("gameplay.menuPrincipal.boxesContent.0", language),
+    t("gameplay.menuPrincipal.boxesContent.1", language),
   ];
 
   const icons = [
@@ -38,17 +42,15 @@ export default function MenuPrincipal() {
             <div className="flex text-[#403E37]/95 w-[60%] h-full  flex-col justify-center gap-[3vh] items-center ">
               {" "}
               <span className="font-bold font-serif72 text-[clamp(1rem,5vw,3.5rem)] text-center uppercase w-[80%]">
-                menu principal
+                {t("gameplay.menuPrincipal.title", language)}
               </span>
               <span className="font-medium lg:text-[clamp(1rem,3vw,1.7rem)]  xl:text-[clamp(1rem,3vw,1.9rem)] text-center  w-[90%]">
-                Le menu permet au joueur de gérer sa progression, ses ressources
-                et ses interactions avec les différents systèmes du jeu. Il
-                regroupe les outils essentiels nécessaires à l’exploration, au
-                combat, à l’artisanat et à la compréhension du monde.
+                {t("gameplay.menuPrincipal.description", language)}
               </span>
             </div>
             <div className="w-[35%] aspect-square relative ">
               <Image
+                unoptimized
                 src={"/gameplay/main-btn.png"}
                 className="object-center object-contain"
                 alt=""
@@ -63,7 +65,13 @@ export default function MenuPrincipal() {
                 key={icon}
                 className=" w-[13%] lg:w-[13%] xl:w-[10%] aspect-square relative  "
               >
-                <Image src={icon} alt="" className="object-contain" fill />
+                <Image
+                  unoptimized
+                  src={icon}
+                  alt=""
+                  className="object-contain"
+                  fill
+                />
               </div>
             ))}
           </div>
@@ -75,11 +83,12 @@ export default function MenuPrincipal() {
         <div className=" flex  flex-col  w-[90%] h-[90%]">
           <div className="w-full h-[80%] justify-center items-center text-[#403E37]/95 flex flex-col">
             <span className="font-bold font-serif72 text-[clamp(1rem,8vw,3.5rem)] text-center uppercase w-[80%]">
-              menu principal
+              {t("gameplay.menuPrincipal.title", language)}
             </span>
 
             <div className="w-[65%] aspect-square relative ">
               <Image
+                unoptimized
                 src={"/gameplay/main-btn.png"}
                 className="object-center object-contain"
                 alt=""
@@ -88,10 +97,7 @@ export default function MenuPrincipal() {
             </div>
 
             <span className="font-medium lg:text-[clamp(1rem,3vw,1.7rem)]  xl:text-[clamp(1rem,3vw,1.9rem)] text-center  w-[90%]">
-              Le menu permet au joueur de gérer sa progression, ses ressources
-              et ses interactions avec les différents systèmes du jeu. Il
-              regroupe les outils essentiels nécessaires à l’exploration, au
-              combat, à l’artisanat et à la compréhension du monde.
+              {t("gameplay.menuPrincipal.description", language)}
             </span>
           </div>
 
@@ -101,7 +107,13 @@ export default function MenuPrincipal() {
                 key={icon}
                 className=" w-[15%] lg:w-[13%] xl:w-[10%] aspect-square relative  "
               >
-                <Image src={icon} alt="" className="object-contain" fill />
+                <Image
+                  unoptimized
+                  src={icon}
+                  alt=""
+                  className="object-contain"
+                  fill
+                />
               </div>
             ))}
           </div>

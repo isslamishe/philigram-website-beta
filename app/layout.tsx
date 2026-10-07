@@ -7,7 +7,7 @@ import { UserProvider } from "@/lib/context/main.context";
 import { Toaster } from "react-hot-toast";
 import LoadingScreen from "@/commponents/layout/loader";
 import type { Metadata, Viewport } from "next";
-
+import { cookies } from "next/headers";
 // ============================================================
 // 1) VIEWPORT — controls mobile rendering & browser UI color
 //    (separate export required since Next.js 14)
@@ -220,6 +220,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const lang = cookies().get("lang")?.value || "fr";
   return (
     <html
       lang="en"
@@ -228,8 +229,8 @@ export default function RootLayout({
       <body
         className={`${outfit.className} min-h-full bg-black overflow-x-hidden flex flex-col`}
       >
-        <LoadingScreen />
-        <UserProvider>
+        <UserProvider initialLanguage={lang}>
+          <LoadingScreen />
           <NavBar />
           {children}
           <Toaster

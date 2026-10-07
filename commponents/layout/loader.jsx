@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useMainContext } from "@/lib/context/main.context";
 
 export default function LoadingScreen() {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
-
+  const { setIsAppLoading } = useMainContext();
   useEffect(() => {
     const scrollY = window.scrollY;
 
@@ -63,6 +64,7 @@ export default function LoadingScreen() {
       setTimeout(() => {
         setLoading(false);
         unlockScroll();
+        setIsAppLoading(false);
       }, 400);
     }, MIN_DURATION);
 

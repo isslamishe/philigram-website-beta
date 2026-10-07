@@ -20,6 +20,7 @@ export default function Races({ content }) {
             <div className="relative  mx-auto h-1/4 w-[40vw] md:w-[18vw] ">
               {" "}
               <Image
+                unoptimized
                 className="bottom-0"
                 fill
                 alt=""

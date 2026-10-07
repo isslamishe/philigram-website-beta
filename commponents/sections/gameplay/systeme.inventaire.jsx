@@ -4,7 +4,11 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 import { useMainContext } from "@/lib/context/main.context";
+import { t } from "@/lib/i18n/translation";
+
 export default function SystemeInventaire() {
+  const { language } = useMainContext();
+
   const icons = [
     "/gameplay/sword_unselected 2.svg",
     "/gameplay/Armor_unselected 2.svg",
@@ -27,10 +31,11 @@ export default function SystemeInventaire() {
         <div className="w-full relative flex flex-col items-center">
           {" "}
           <span className=" font-serif72  font-semibold text-[clamp(1rem,5vw,3.5rem)] uppercase">
-            Système d’inventaire
+            {t("gameplay.systemeInventaire.title", language)}
           </span>
           <div className=" top-full  absolute  w-[60%] md:w-2/5 lg:w-1/3 h-[5svh]">
             <Image
+              unoptimized
               src={"/Title Devider.png"}
               className="object-center object-contain"
               fill
@@ -39,15 +44,13 @@ export default function SystemeInventaire() {
           </div>
         </div>{" "}
         <span className=" text-[clamp(1rem,5vw,1.5rem)]   lg:text-[clamp(1rem,5vw,2rem)] w-full xl:w-[80%]">
-          L’inventaire est le cœur de la gestion des objets. Chaque ressource
-          trouvée dans le monde peut avoir une utilité : se soigner, fabriquer,
-          améliorer un équipement, accomplir une quête ou être vendue à un
-          marchand.
+          {t("gameplay.systemeInventaire.description", language)}
         </span>
         <div className=" w-[95%] xl:w-[80%] rounded-2xl border border-[#C8AA6E] px-[5%] flex justify-between items-center flex-row bg-[#302F2C] h-[17%]">
           {icons.map((icon) => (
             <div key={icon} className="w-[12%] h-full   relative ">
               <Image
+                unoptimized
                 fill
                 src={icon}
                 alt=""
@@ -62,10 +65,11 @@ export default function SystemeInventaire() {
 
       <div className="flex w-full  sm:hidden flex-col items-center  h-auto relative">
         <span className="  flex font-serif72 text-center font-semibold text-[clamp(1rem,7.5vw,3.5rem)] uppercase">
-          Système d’inventaire
+          {t("gameplay.systemeInventaire.title", language)}
         </span>
         <div className=" -bottom-5  absolute  w-[60%] md:w-2/5 lg:w-1/3 h-[5svh]">
           <Image
+            unoptimized
             src={"/Title Devider.png"}
             className="object-center object-contain"
             fill
@@ -78,8 +82,9 @@ export default function SystemeInventaire() {
 
       <div className=" w-0 xl:w-[40%] hidden xl:flex  h-[80svh]   sm:h-full relative ">
         <Image
+          unoptimized
           alt=""
-          src={"/gameplay/New inventory (5)-left 1 pc.svg"}
+          src={"/gameplay/New inventory (5)-left 1.svg"}
           className="  scale-100 bottom-0 object-bottom  object-contain"
           fill
         />
@@ -89,6 +94,7 @@ export default function SystemeInventaire() {
 
       <div className="  w-[100%] my-[5svh]  md:w-[35%] xl:w-0 xl:hidden flex  h-[70svh]  sm:h-full relative ">
         <Image
+          unoptimized
           alt=""
           src={"/gameplay/New inventory (5)-left 1.svg"}
           className=" scale-125 xl:scale-120 z-20  object-contain"
@@ -98,16 +104,14 @@ export default function SystemeInventaire() {
       </div>
 
       <span className=" sm:hidden flex text-[clamp(1rem,5vw,1.1rem)] text-center  lg:text-[clamp(1rem,5vw,2rem)] w-[90%] xl:w-[80%]">
-        L’inventaire est le cœur de la gestion des objets. Chaque ressource
-        trouvée dans le monde peut avoir une utilité : se soigner, fabriquer,
-        améliorer un équipement, accomplir une quête ou être vendue à un
-        marchand.
+        {t("gameplay.systemeInventaire.description", language)}
       </span>
 
       <div className=" w-[95%] sm:hidden xl:w-[80%] rounded-2xl border border-[#C8AA6E] px-[5%] flex justify-between items-center flex-row bg-[#302F2C] h-[8svh]">
         {icons.map((icon) => (
           <div key={icon} className="w-[12%] aspect-square  relative ">
             <Image
+              unoptimized
               fill
               src={icon}
               alt=""

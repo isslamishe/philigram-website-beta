@@ -23,12 +23,12 @@ export default function Section2() {
 
       {/* races image  */}
       <div className="w-full md:flex-row hidden scale-95 -bottom-[10%] max-h-[150vh] grayscale-100 z-20 absolute  h-[100%]">
-        <Image fill alt="" src={"/races/bg-races.png"} />
+        <Image unoptimized fill alt="" src={"/races/bg-races.png"} />
       </div>
 
       {/* bg image  */}
       <div className="w-full scale-130 grayscale-100 absolute z-10 max-h-full  lg:max-h-[110vh]  h-[100%]">
-        <Image fill alt="" src={"/races/race-bg.png"} />
+        <Image unoptimized fill alt="" src={"/races/race-bg.png"} />
       </div>
 
       {/*content */}
@@ -45,7 +45,7 @@ export default function Section2() {
       {/*titel */}
       <div className="w-full relative z-30 h-[10vh]">
         <div className=" w-[35%] xl:w-[50%] lg:w-[30%] left-0 absolute h-[50%] ">
-          <Image fill alt="" src={"/Mask group.svg"} />
+          <Image unoptimized fill alt="" src={"/Mask group.svg"} />
         </div>
 
         <div className="w-[50%] font-light text-[clamp(1rem,3vw,1.8rem)] font-serif72 text-primary flex justify-center items-center left-1/2 -translate-x-1/2 absolute h-[50%] ">
@@ -53,7 +53,7 @@ export default function Section2() {
         </div>
 
         <div className="w-[35%] xl:w-[50%] lg:w-[30%] right-0 rotate-180 absolute h-[50%] ">
-          <Image fill alt="" src={"/Mask group.svg"} />
+          <Image unoptimized fill alt="" src={"/Mask group.svg"} />
         </div>
       </div>
 
@@ -81,6 +81,8 @@ export default function Section2() {
       "
           >
             <Image
+              unoptimized
+              unoptimized
               className="race-image object-center object-cover"
               fill
               alt=""
@@ -107,6 +109,8 @@ export default function Section2() {
             }`}
           >
             <Image
+              unoptimized
+              unoptimized
               className="race-image object-top object-cover"
               fill
               alt=""
@@ -114,7 +118,7 @@ export default function Section2() {
             />
 
             <span className=" w-full text-primary text-[clamp(1rem,3vw,1.4rem)] font-serif72 border-t-3 border-primary flex justify-center items-center z-20 bg-black/90 h-[20%] text-center">
-              {race.name.split("Les")[1]}
+              {race.name.split(" ")[1] || race.name}
             </span>
           </Link>
         ))}

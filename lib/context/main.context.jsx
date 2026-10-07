@@ -4,17 +4,19 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const UserContext = createContext();
 
-export function UserProvider({ children }) {
+export function UserProvider({ initialLanguage, children }) {
   const [currentNav, setCurrentNav] = useState("Accueil");
   const [isOpen, setIsOpen] = useState(false);
   const [currentSubNav, setCurrentSubNav] = useState("");
-  const [language, setLanguage] = useState(() => {
-    if (typeof window === "undefined") return "fr";
-    return window.localStorage.getItem("language") || "fr";
-  });
-
+  const [language, setLanguage] = useState(initialLanguage);
+  const [isAppLoading, setIsAppLoading] = useState(true);
   useEffect(() => {
     window.localStorage.setItem("language", language);
+  }, [language]);
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+    document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
   }, [language]);
 
   return (
@@ -28,6 +30,8 @@ export function UserProvider({ children }) {
         setIsOpen,
         currentSubNav,
         setCurrentSubNav,
+        isAppLoading,
+        setIsAppLoading,
       }}
     >
       {children}

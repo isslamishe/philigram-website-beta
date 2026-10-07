@@ -32,7 +32,7 @@ export default function Decouvrir({ className, type }) {
         id: "peoples",
         content: t("decouvrir.history.peoples.content", language),
         hoverContent: t("decouvrir.hoverContent", language),
-        image: "/races/Hero-bg.png",
+        image: "/races/Hero-bg.webp",
         direction: "/races",
       },
       {
@@ -54,7 +54,7 @@ export default function Decouvrir({ className, type }) {
       {/*titel */}
       <div className="w-full relative z-30 h-[10vh]">
         <div className=" w-[30%] lg:w-[40%] left-0 absolute h-[50%] ">
-          <Image fill alt="" src={"/Mask group.svg"} />
+          <Image unoptimized fill alt="" src={"/Mask group.svg"} />
         </div>
 
         <div className="w-[50%] font-light text-[clamp(0.8rem,2vw,1.3rem)]  md:text-[clamp(1rem,3vw,1.8rem)] font-serif72 text-primary flex justify-center items-center left-1/2 -translate-x-1/2 absolute h-[50%] ">
@@ -64,7 +64,7 @@ export default function Decouvrir({ className, type }) {
         </div>
 
         <div className="w-[30%] lg:w-[40%] right-0 rotate-180 absolute h-[50%] ">
-          <Image fill alt="" src={"/Mask group.svg"} />
+          <Image unoptimized fill alt="" src={"/Mask group.svg"} />
         </div>
       </div>
 
@@ -77,6 +77,7 @@ export default function Decouvrir({ className, type }) {
           >
             {" "}
             <Image
+              unoptimized
               className="z-10 object-cover object-center"
               fill
               alt=""

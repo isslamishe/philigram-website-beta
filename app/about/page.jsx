@@ -11,6 +11,10 @@ import { useMainContext } from "@/lib/context/main.context";
 export default function Races() {
   const { setCurrentNav, setCurrentSubNav } = useMainContext();
 
+  useEffect(() => {
+    setCurrentNav("");
+    setCurrentSubNav("");
+  }, []);
   return (
     <div className="flex flex-col  bg-white gap-0 relative w-screen min-h-screen">
       <Landing />

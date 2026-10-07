@@ -138,3 +138,22 @@ body {
 html {
   scroll-behavior: smooth;
 }
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #403e37;
+  width: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b99a5d;
+  border-radius: 9999px;
+  width: 1px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}

@@ -31,6 +31,7 @@ export default function ESM() {
     <div className="flex flex-col md:py-0 py-[20vh]  gap-[20vh] md:gap-0 overflow-hidden  bg-no-repeat bg-cover bg-center relative   w-screen h-auto items-start   justify-center ">
       <div className=" w-[150%] brightness-40  md:w-full h-full z-10  top-0 left-1/2 -translate-x-1/2 absolute">
         <Image
+          unoptimized
           fill
           className="object-fill object-center scale-100"
           src={"/home/apercu-bg.webp"}
@@ -61,7 +62,7 @@ export default function ESM() {
           <div className=" w-[80%]  md:w-[40%] h-[40%] flex justify-center items-center">
             <div className="h-[60vh] w-[40vh] z-20  relative">
               <div className="bg-primary blur-[100px] opacity-35 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[120%] h-[120%] " />
-              <Image className="" alt="dda" fill src={p.bg} />{" "}
+              <Image unoptimized className="" alt="dda" fill src={p.bg} />{" "}
             </div>
           </div>
         </div>

@@ -5,27 +5,35 @@ import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { useMainContext } from "@/lib/context/main.context";
 import { t } from "@/lib/i18n/translation";
+import { getErrorKey } from "@/lib/errors";
+export class ApiError extends Error {
+  constructor(code, status) {
+    super(code);
+    this.code = code;
+    this.status = status;
+  }
+}
 
-const createPreInscription = async (data) => {
+export async function createPreInscription(data) {
+  let res;
   try {
-    const res = await fetch("https://api.ascendiarise.com/pre-inscription/", {
+    res = await fetch("/api/pre-inscription", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
-
-    if (!res.ok) {
-      throw new Error(`Request failed: ${res.status}`);
-    }
-
-    return await res.json();
-  } catch (error) {
-    console.error(error);
-    throw error;
+  } catch {
+    // fetch itself failed: offline, DNS, server down
+    throw new ApiError("NETWORK", 0);
   }
-};
+
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    throw new ApiError(body.code || "UNKNOWN", res.status);
+  }
+
+  return res.json();
+}
 
 export default function Inscription() {
   const { setCurrentNav, setCurrentSubNav, language } = useMainContext();
@@ -44,7 +52,8 @@ export default function Inscription() {
       <div className=" absolute scale-100 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 w-[100%] h-[100%]">
         <div className="absolute h-dvh w-dvw inset-0 z-10">
           <Image
-            src="/inscerption/Bg.png"
+            unoptimized
+            src="/inscerption/Bg.webp"
             fill
             priority
             sizes="100vw"
@@ -53,6 +62,7 @@ export default function Inscription() {
           />
 
           <Image
+            unoptimized
             src="/inscerption/bg-mobile.png"
             fill
             priority
@@ -123,9 +133,7 @@ function InscriptionForm({ confirmed, setConfirmed }) {
 
       setConfirmed(true);
     } catch (err) {
-      toast.error(
-        err.message || t("inscription.form.errors.generic", language),
-      );
+      toast.error(t(getErrorKey(err), language));
     } finally {
       setLoading(false);
     }
@@ -218,6 +226,7 @@ function InscriptionConfirmed({ confirmed }) {
       </span>
       <div className="w-full h-full justify-center flex  z-40  relative ">
         <Image
+          unoptimized
           src="/inscerption/valid.png"
           width={200}
           height={200}
@@ -226,6 +235,7 @@ function InscriptionConfirmed({ confirmed }) {
         />
 
         <Image
+          unoptimized
           src="/inscerption/valid.png"
           width={300}
           height={300}

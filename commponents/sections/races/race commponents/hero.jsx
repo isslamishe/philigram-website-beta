@@ -6,9 +6,12 @@ import Hero from "@/commponents/sections/races/hero.jsx";
 import ShowCase from "@/commponents/sections/races/races.showcase.jsx";
 import { useMainContext } from "@/lib/context/main.context";
 export default function Races({ race }) {
-  const { setCurrentNav } = useMainContext();
+  const { setCurrentNav, language } = useMainContext();
 
-  const bgRef = useRef(null);
+  const isRTL = language === "ar";
+
+  const bgMbRef = useRef(null);
+  const bgPcRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,13 +21,23 @@ export default function Races({ race }) {
 
       const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
 
-      if (bgRef.current) {
+      if (bgMbRef.current) {
         if (scrollPercent > 50) {
-          bgRef.current.classList.add("opacity-0");
-          bgRef.current.classList.remove("opacity-100");
+          bgMbRef.current.classList.add("opacity-0");
+          bgMbRef.current.classList.remove("opacity-100");
         } else {
-          bgRef.current.classList.add("opacity-100");
-          bgRef.current.classList.remove("opacity-0");
+          bgMbRef.current.classList.add("opacity-100");
+          bgMbRef.current.classList.remove("opacity-0");
+        }
+      }
+
+      if (bgPcRef.current) {
+        if (scrollPercent > 50) {
+          bgPcRef.current.classList.add("opacity-0");
+          bgPcRef.current.classList.remove("opacity-100");
+        } else {
+          bgPcRef.current.classList.add("opacity-100");
+          bgPcRef.current.classList.remove("opacity-0");
         }
       }
     };
@@ -39,24 +52,42 @@ export default function Races({ race }) {
   }, []);
 
   return (
-    <div className="flex flex-col overflow-hidden justify-end  bg-black gap-0 bg-no-repeat bg-cover bg-center relative w-screen min-h-screen">
+    <div
+      dir={isRTL ? "rtl" : "ltr"}
+      className="flex flex-col overflow-hidden justify-end  bg-black gap-0 bg-no-repeat bg-cover bg-center relative w-screen min-h-screen"
+    >
       {/* Blue Filter */}
-      <div className="absolute inset-0 bg-gradient-to-b  from-[#000000]/20 to-[#000000]/40 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b  from-[#000000]/10 to-[#000000]/40 z-7" />
 
-      {/* bg image */}
+      {/* bg mobile image */}
       <div
-        ref={bgRef}
-        className="flex fixed flex-col left-1/2 -translate-x-1/2 bg-fixed w-screen  brightness-100  bg-center scale-105 z-5  bg-black gap-0 bg-no-repeat bg-cover  top-0 -bottom-[20%]  h-lvh"
+        ref={bgMbRef}
+        className="flex md:hidden fixed flex-col left-1/2 object-center -translate-x-1/2  w-svw  brightness-100  bg-center scale-105 z-5  bg-black gap-0 bg-no-repeat bg-cover  top-0 -bottom-[20%]  h-lvh"
       >
         <Image
-          className="object-center object-cover"
-          src={race.bg}
+          className="object-center z-5 object-cover"
+          src={race.bg_mobile}
           alt=""
           fill
+          unoptimized
         />
       </div>
 
-      <div className="w-[96%] ml-auto flex flex-col items-start h-[50vh] md:h-[45vh] z-30 ">
+      {/* bg pc image */}
+      <div
+        ref={bgPcRef}
+        className=" hidden md:flex fixed flex-col left-1/2 object-center -translate-x-1/2  w-svw  brightness-100  bg-center scale-105 z-5  bg-black gap-0 bg-no-repeat bg-cover  top-0 -bottom-[20%]  h-lvh"
+      >
+        <Image
+          className="object-center z-5 object-cover"
+          src={race.bg}
+          alt=""
+          fill
+          unoptimized
+        />
+      </div>
+
+      <div className="w-[96%]  ms-auto flex flex-col items-start h-[50vh] md:h-[45vh] z-30 ">
         <span className=" font-serif72 text-[clamp(1rem,10vw,10rem)] text-center  md:text-[clamp(1rem,7vw,15rem)] font-light">
           {race.name}
         </span>
@@ -64,7 +95,7 @@ export default function Races({ race }) {
         <span className=" w-[100%] md:w-[100%] text-start text-[clamp(1rem,2vw,1.5rem)] font-light">
           {race.describtion}
         </span>
-        <span className=" my-auto w-[100%] md:w-[100%] pl-[1vh] border-l border-white font-serif72 text-start text-[clamp(1rem,2vw,1.5rem)] font-light">
+        <span className=" my-auto w-[100%] md:w-[100%] ps-[1vh] border-s border-white font-serif72 text-start text-[clamp(1rem,2vw,1.5rem)] font-light">
           {race.subDescribtion}
         </span>
       </div>

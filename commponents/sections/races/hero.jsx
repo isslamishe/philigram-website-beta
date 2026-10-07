@@ -12,6 +12,8 @@ export default function Section2() {
 
   const containerRef = useRef(null);
 
+  const bgRef = useRef(null);
+
   const Peuples = [
     {
       name: "VARKHANS",
@@ -39,6 +41,34 @@ export default function Section2() {
   ];
 
   useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+      if (bgRef.current) {
+        if (scrollPercent > 50) {
+          bgRef.current.classList.add("opacity-0");
+          bgRef.current.classList.remove("opacity-100");
+        } else {
+          bgRef.current.classList.add("opacity-100");
+          bgRef.current.classList.remove("opacity-0");
+        }
+      }
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
     const container = containerRef.current;
 
     if (!container) return;
@@ -54,8 +84,13 @@ export default function Section2() {
       {/* Blue Filter */}
       <div className="absolute inset-0 bg-gradient-to-b  from-transparent to-[#000000]/60 z-10" />
 
-      <div className="absolute top-0 -bottom-[20%] w-screen min-h-screen z-5 overflow-hidden">
+      <div
+        ref={bgRef}
+        className="fixed top-0 -bottom-[20%] w-screen min-h-screen z-5 overflow-hidden"
+      >
         <Image
+          unoptimized
+          unoptimized
           src="/races/Hero-bg.webp"
           alt=""
           fill

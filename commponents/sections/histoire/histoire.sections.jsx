@@ -65,7 +65,13 @@ export default function histoireSecios() {
     >
       {/*bg image */}
       <div className="absolute opacity-70 brightness-12 top-0 w-full h-full z-5">
-        <Image fill alt="" src="/history/main-bg.jpg" className="object-fill" />
+        <Image
+          unoptimized
+          fill
+          alt=""
+          src="/history/main-bg.jpg"
+          className="object-fill"
+        />
       </div>
 
       {/*bg black filter */}
@@ -86,7 +92,7 @@ export default function histoireSecios() {
               </span>
 
               <div className="relative mx-auto  w-[40vw] md:w-[20vw] h-[2vh] md:h-[1vw]">
-                <Image alt="" fill src={"/Title Devider.png"} />
+                <Image unoptimized alt="" fill src={"/Title Devider.png"} />
               </div>
             </div>
             <div className=" w-[95%] md:w-[90%] font-light flex  flex-col justify-center gap-[2%] items-center text-center text-[clamp(1rem,5vw,1.2rem)] lg:text-[clamp(1rem,5vw,1.3rem)] 3xl:text-[clamp(1rem,5vw,2.2rem)]!">
@@ -101,7 +107,13 @@ export default function histoireSecios() {
           <div
             className={` w-[100%] md:w-[65vw] top-1/2 mt- brightness-50 opacity-70 scale-120 -translate-y-1/2 absolute h-[90vh] md:h-[110vh] ${idx % 2 ? "sm:-left-[10%] left-0 " : " right-0 md:-right-[5%]"}`}
           >
-            <Image className="z-10" alt="" fill src={epsode.image} />
+            <Image
+              unoptimized
+              className="z-10"
+              alt=""
+              fill
+              src={epsode.image}
+            />
           </div>
         </div>
       ))}
@@ -116,7 +128,7 @@ export default function histoireSecios() {
             </span>
 
             <div className="relative mx-auto  w-[40vw] md:w-[20vw] h-[2vh] md:h-[1vw]">
-              <Image alt="" fill src={"/Title Devider.png"} />
+              <Image unoptimized alt="" fill src={"/Title Devider.png"} />
             </div>
           </div>
           <div className="  w-[90%] font-light flex  flex-col justify-center gap-[2%] items-center text-center text-[clamp(1rem,5vw,1.2rem)] lg:text-[clamp(1rem,5vw,1.3rem)] 3xl:text-[clamp(1rem,5vw,2.2rem)]!">
@@ -130,6 +142,7 @@ export default function histoireSecios() {
           className={`w-[80%] left-1/2 -translate-x-1/2 bottom-0 translate-y-[10%] brightness-50 opacity-70 scale-120  absolute h-[90vh]`}
         >
           <Image
+            unoptimized
             className="z-10"
             alt=""
             fill
@@ -148,7 +161,7 @@ export default function histoireSecios() {
             </span>
 
             <div className="relative mx-auto  w-[40vw] md:w-[20vw] h-[2vh] md:h-[1vw]">
-              <Image alt="" fill src={"/Title Devider.png"} />
+              <Image unoptimized alt="" fill src={"/Title Devider.png"} />
             </div>
           </div>
           <div className="  w-[90%] font-light flex  flex-col justify-center gap-[2%] items-center text-center text-[clamp(1rem,5vw,1.2rem)] lg:text-[clamp(1rem,5vw,1.6rem)] 3xl:text-[clamp(1rem,5vw,2.2rem)]!">

@@ -13,6 +13,7 @@ export default function Reservez() {
       <div className=" w-full md:w-1/2  relative  h-[50%]">
         <div className="w-full z-10 scale-220 md:scale-250 absolute left-[-30%] md:left-0 top-[20%] md:top-[10%] h-full">
           <Image
+            unoptimized
             fill
             alt="dada"
             className="object-center  object-contain"
