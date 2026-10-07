@@ -82,7 +82,6 @@ export default function Section2() {
           >
             <Image
               unoptimized
-              unoptimized
               className="race-image object-center object-cover"
               fill
               alt=""
@@ -109,7 +108,6 @@ export default function Section2() {
             }`}
           >
             <Image
-              unoptimized
               unoptimized
               className="race-image object-top object-cover"
               fill

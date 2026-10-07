@@ -50,7 +50,6 @@ export default function QuetesProgression() {
         <div className=" w-[80%] md:w-[40%] relative h-full">
           <Image
             unoptimized
-            unoptimized
             fill
             className="object-center object-contain"
             src={"/gameplay/ICO_QUEST_Target.png"}
@@ -84,7 +83,6 @@ export default function QuetesProgression() {
         >
           <div className="w-[5dvw] hidden md:flex h-full absolute start-[-2%] top-[10%]  ">
             <Image
-              unoptimized
               unoptimized
               fill
               className=" object-top object-contain"

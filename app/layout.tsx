@@ -215,12 +215,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const lang = cookies().get("lang")?.value || "fr";
+  const lang = (await cookies()).get("lang")?.value || "fr";
   return (
     <html
       lang="en"

@@ -90,7 +90,6 @@ export default function Section2() {
       >
         <Image
           unoptimized
-          unoptimized
           src="/races/Hero-bg.webp"
           alt=""
           fill
