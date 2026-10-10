@@ -20,7 +20,7 @@ export default function Inscription() {
   }, []);
 
   return (
-    <div className="flex flex-col  bg-black gap-0 bg-no-repeat overflow-hidden bg-cover bg-center relative w-screen h-dvh">
+    <div className="flex flex-col text-white bg-black gap-0 bg-no-repeat overflow-hidden bg-cover bg-center relative w-screen h-dvh">
       {/*bg image */}
 
       <div className=" absolute scale-100 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 w-[100%] h-[100%]">

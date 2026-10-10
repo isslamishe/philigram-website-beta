@@ -92,12 +92,12 @@ export default function SystemeInventaire() {
 
       {/*phone image in under xl screens */}
 
-      <div className="  w-[100%] my-[5svh]  md:w-[35%] xl:w-0 xl:hidden flex  h-[70svh]  sm:h-full relative ">
+      <div className="  w-[100%] my-[5svh]  md:w-[35%] xl:w-0 xl:hidden flex  h-[80svh]  sm:h-full relative ">
         <Image
           unoptimized
           alt=""
-          src={"/gameplay/New inventory (5)-left 1.svg"}
-          className=" scale-125 xl:scale-120 z-20  object-contain"
+          src={"/gameplay/New inventory (5)-left 1 mobile.svg"}
+          className=" scale-110 object-top xl:scale-120 z-20  object-contain "
           fill
         />
         <div className=" w-1/2  left-1/2 z-10 -translate-x-1/2 h-[70%] bg-black opacity-40 blur-2xl absolute" />{" "}

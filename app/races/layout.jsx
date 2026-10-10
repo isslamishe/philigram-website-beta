@@ -2,7 +2,9 @@ import Decouvrir from "@/commponents/layout/dcouvrir.jsx";
 
 export default function RootLayout({ children }) {
   return (
-    <div className={` h-full overflow-hidden w-full antialiased`}>
+    <div
+      className={` h-full overflow-hidden text-white bg-black w-full antialiased`}
+    >
       {children}
       <Decouvrir
         type={"races"}

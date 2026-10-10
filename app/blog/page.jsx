@@ -51,7 +51,7 @@ export default function Blogs() {
   }, []);
 
   return (
-    <div className="flex flex-col bg-white gap-0 relative w-screen min-h-screen">
+    <div className="flex flex-col text-white bg-white gap-0 relative w-screen min-h-screen">
       {loading && <ArticlesLoading />}
 
       {!loading && error && (

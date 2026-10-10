@@ -173,7 +173,7 @@ export default function NavBar() {
     <div
       ref={navMaineRef}
       dir="ltr"
-      className={`flex flex-row fixed z-50 duration-500 transition-colors h-[10vh] top-0 w-full items-center justify-center    ${isOpen ? "bg-[#403E37]" : "bg-transparent"}`}
+      className={`flex flex-row  text-white fixed z-50 duration-500 transition-colors h-[10vh] top-0 w-full items-center justify-center    ${isOpen ? "bg-[#403E37]" : "bg-transparent"}`}
     >
       <Link
         href={"/"}

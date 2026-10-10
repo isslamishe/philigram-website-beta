@@ -224,7 +224,7 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased `}
     >
       <body
         className={`${outfit.className} min-h-full bg-black overflow-x-hidden flex flex-col`}

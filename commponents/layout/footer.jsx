@@ -38,7 +38,7 @@ export default function Footer() {
   return (
     <div
       dir="ltr"
-      className="flex flex-col bg-[#262522] z-20 gap-0 bg-no-repeat bg-cover bg-center relative w-full min-h-[50vh] items-start justify-start pb-10"
+      className="flex flex-col text-white bg-[#262522] z-20 gap-0 bg-no-repeat bg-cover bg-center relative w-full min-h-[50vh] items-start justify-start pb-10"
     >
       <div className="hidden md:flex bg-[#403E37] flex-row justify-center gap-[10%] w-full h-[11vh]">
         {navs.map((n) => (

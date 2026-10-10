@@ -70,7 +70,7 @@ export default function SideBar({ isOpen, setIsOpen }) {
   return (
     <div
       dir={isRTL ? "rtl" : "ltr"}
-      className={`flex md:hidden flex-col fixed z-55 h-[90vh] bg-[#403E37] transition-all duration-300 top-[10vh] w-full    items-center justify-center    ${
+      className={`flex md:hidden flex-col fixed z-55 h-[90dvh] bg-[#403E37] transition-all duration-300 top-[10dvh] w-full    items-center justify-center    ${
         isOpen
           ? "left-0 rtl:left-auto rtl:right-0"
           : "-left-full rtl:left-auto rtl:-right-full"

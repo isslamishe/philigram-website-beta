@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`flex flex-col overflow-hidden h-auto  `}>
+    <div className={`flex flex-col text-white overflow-hidden h-auto  `}>
       <Hero />
       <Section2 />
       <ESM />

@@ -14,7 +14,7 @@ export default function Races() {
   }, []);
 
   return (
-    <div className="flex flex-col   gap-0 bg-no-repeat bg-cover bg-center relative w-screen min-h-screen">
+    <div className="flex flex-col text-white bg-black  gap-0 bg-no-repeat bg-cover bg-center relative w-screen min-h-screen">
       <Hero />
       <ShowCase />
     </div>
